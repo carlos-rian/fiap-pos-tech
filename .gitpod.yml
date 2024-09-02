@@ -1,0 +1,9 @@
+tasks:
+    - name: Install required packages & Open Jupyter Notebook
+      init: pip install -r requirements.txt
+      command: gp open quickstart-demo.ipynb
+
+vscode:
+    extensions:
+        - ms-toolsai.jupyter
+        - ms-python.python
