@@ -6,7 +6,7 @@ from generator import (
 )
 from algorithm import genetic_algorithm
 
-GENERATIONS = 2000
+GENERATIONS = 1000
 POPULATION_SIZE = 200
 MUTATION_RATE = 0.01
 
