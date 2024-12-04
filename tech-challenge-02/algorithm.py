@@ -6,13 +6,7 @@ from collections import deque
 from models import Chromosome, Resource, Task
 from consts import ScheduleReturnType
 from operators import calculate_fitness, crossover, mutation, selection
-from draw import (
-    draw_last_10_fitness,
-    draw_schedule,
-    draw_time,
-    start_pygame,
-    stop_pygame,
-)
+from draw import draw_schedule, draw_time, start_pygame, stop_pygame
 
 
 def create_schedule(
@@ -119,12 +113,12 @@ def genetic_algorithm(
         )
 
         # Control the speed of visualization
-        sleep(0.02)
+        # sleep(0.01)
 
     # write the time in the pygame window
     end = monotonic()
     draw_time(time=end - start)
 
-    sleep(10)
+    sleep(20)
     stop_pygame()
     return best_chromosome
