@@ -119,7 +119,7 @@ def genetic_algorithm(
         )
 
         # Control the speed of visualization
-        sleep(0.05)
+        sleep(0.02)
 
     # write the time in the pygame window
     end = monotonic()

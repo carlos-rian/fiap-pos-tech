@@ -132,8 +132,6 @@ DEFAULT_TASKS = [
     Task(id=101, duration=1, priority=4),
     Task(id=102, duration=2, priority=2),
     Task(id=103, duration=2, priority=5),
-    Task(id=104, duration=1, priority=1),
-    Task(id=105, duration=1, priority=2),
     Task(id=106, duration=4, priority=3),
     Task(id=107, duration=1, priority=1),
     Task(id=108, duration=2, priority=4),
