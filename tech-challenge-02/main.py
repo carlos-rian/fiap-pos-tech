@@ -6,8 +6,8 @@ from generator import (
 )
 from algorithm import genetic_algorithm
 
-GENERATIONS = 200
-POPULATION_SIZE = 100
+GENERATIONS = 2000
+POPULATION_SIZE = 200
 MUTATION_RATE = 0.01
 
 NUM_TASKS = 100
@@ -27,6 +27,7 @@ def main():
     print(f"Best fitness: {best_chromosome.fitness}")
     print(f"Best chromosome: {best_chromosome.gene}")
 
+    return
     ### generated tasks and resources
 
     # Generate tasks and resources

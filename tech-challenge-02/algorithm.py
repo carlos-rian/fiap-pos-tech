@@ -2,10 +2,17 @@
 from time import monotonic, sleep
 import pygame
 import random
+from collections import deque
 from models import Chromosome, Resource, Task
 from consts import ScheduleReturnType
 from operators import calculate_fitness, crossover, mutation, selection
-from draw import draw_schedule, draw_time, start_pygame, stop_pygame
+from draw import (
+    draw_last_10_fitness,
+    draw_schedule,
+    draw_time,
+    start_pygame,
+    stop_pygame,
+)
 
 
 def create_schedule(
@@ -38,6 +45,7 @@ def genetic_algorithm(
     num_tasks = len(tasks)
     num_resources = len(resources)
     total_duration = sum([task.duration for task in tasks])
+    last_10_fitness = deque(maxlen=10)
 
     # Initialize population
     population: list[Chromosome] = []
@@ -97,12 +105,16 @@ def genetic_algorithm(
         # Create schedule with start and finish times
         schedule = create_schedule(best_chromosome, tasks, resources)
 
+        if best_chromosome.fitness not in last_10_fitness:
+            last_10_fitness.append(best_chromosome.fitness)
+
         # Draw the schedule
         draw_schedule(
             schedule=schedule,
             generation=gen,
             best_fitness=best_chromosome.fitness,
             total_duration=total_duration,
+            last_10_fitness=last_10_fitness,
             gen_without_improvement=gen_without_improvement,
         )
 

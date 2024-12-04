@@ -44,15 +44,23 @@ def stop_pygame():
 
 
 @lru_cache(maxsize=None)
-def create_color(_task_id: str) -> tuple[int, int, int]:
-    color = (random.randint(20, 255), random.randint(30, 255), random.randint(40, 255))
+def create_color(text: str) -> tuple:
+    random_color = (
+        random.randint(00, 255),
+        random.randint(00, 255),
+        random.randint(00, 255),
+    )
 
-    match color:
+    match random_color:
         # recreate the color if it is too light
         case (r, g, b) if r + g + b > 650:
-            return create_color(_task_id)
+            t = f"{text}{random.randint(0, 10)}"
+            color, _ = create_color(t)
         case _:
-            return color
+            color = random_color
+
+    font_color = (255, 255, 255) if sum(color) < 500 else (0, 0, 0)
+    return (color, font_color)
 
 
 # Function to draw the schedule using Pygame
@@ -61,6 +69,7 @@ def draw_schedule(
     generation: int,
     best_fitness: float,
     total_duration: int,
+    last_10_fitness: list[float],
     gen_without_improvement: int = 0,
 ):
     margin = 150
@@ -96,7 +105,7 @@ def draw_schedule(
             x = margin + start * time_scale
             width = duration * time_scale
 
-            color = create_color(task.name)
+            color, font_color = create_color(task.name)
 
             pygame.draw.rect(
                 surface=SCREEN,
@@ -109,7 +118,7 @@ def draw_schedule(
                 ),
                 border_radius=6,
             )
-            task_label = BOLD_FONT.render(task.name, True, (255, 255, 255))
+            task_label = BOLD_FONT.render(task.name, True, font_color)
             SCREEN.blit(source=task_label, dest=(x + 105, y - resource_height // 2 + 5))
 
     # Display generation and fitness
@@ -189,22 +198,23 @@ def draw_schedule(
     rectangle_start_x = margin + spacing_x
 
     # y position remains the same (placed near the bottom)
-    rectangle_y = HEIGHT - 80
+    rectangle_y = HEIGHT - 120
 
     for idx, (duration, count) in enumerate(tasks_by_duration_count.items()):
-        # Render the duration count text in bold
-        duration_text = BOLD_FONT_TITLE.render(
-            f"Duration {duration} secs: {count}", True, (255, 255, 255)
-        )
-        text_width, _ = duration_text.get_size()
-
         # Define rectangle position for horizontal layout
         rectangle_x = rectangle_start_x + idx * (rectangle_width + spacing_x)  # * 0.90
 
+        text = f"Duration {duration} secs: {count}"
         # Draw the rectangle
+        color, font_color = create_color(text)
+        # Render the duration count text in bold
+        duration_text = BOLD_FONT_TITLE.render(text, True, font_color)
+
+        text_width, _ = duration_text.get_size()
+
         pygame.draw.rect(
             surface=SCREEN,
-            color=create_color(f"Duration {duration}"),
+            color=color,
             rect=(rectangle_x, rectangle_y, rectangle_width, rectangle_height),
             # width=4,
             border_radius=6,
@@ -216,6 +226,8 @@ def draw_schedule(
 
         # Blit the duration text onto the screen
         SCREEN.blit(duration_text, (text_x, text_y))
+
+    draw_last_10_fitness(last_10_fitness)
 
     pygame.display.update()
 
@@ -232,3 +244,48 @@ def draw_time(time: int):
     time_text = BOLD_FONT_TITLE.render(f"Time: {time:.3f} secs", True, (0, 0, 0))
     SCREEN.blit(time_text, (WIDTH - 290, 20))
     pygame.display.update()
+
+
+def draw_last_10_fitness(last_10_fitness: list[float]):
+    margin = 150
+    len_fitness = len(last_10_fitness)
+    rectangle_width = ((WIDTH - 2 * margin) // len_fitness) - 15
+    rectangle_height = 30
+
+    # Total width occupied by all rectangles
+    total_rect_width = len_fitness * rectangle_width
+
+    # Calculate available space for spacing
+    available_space = WIDTH - 2 * margin - total_rect_width
+
+    # Calculate spacing between rectangles
+    if len_fitness > 1:
+        spacing_x = available_space / (len_fitness + 1)
+    else:
+        spacing_x = available_space / 2  # Center the single rectangle
+
+    # Enforce minimum spacing if necessary
+    min_spacing_x = 20  # Minimum spacing in pixels
+    spacing_x = max(spacing_x, min_spacing_x)
+
+    # Starting x position
+    rectangle_start_x = margin + spacing_x
+    for idx, fitness in enumerate(sorted(last_10_fitness, reverse=True)):
+        rectangle_x = rectangle_start_x
+        rectangle_y = HEIGHT - 70
+        rectangle_start_x += rectangle_width + spacing_x
+        text = f"Fitness top {idx + 1}: {fitness:.4f}"
+        color, font_color = create_color(text)
+        pygame.draw.rect(
+            surface=SCREEN,
+            color=color,
+            rect=(rectangle_x, rectangle_y, rectangle_width, rectangle_height),
+            border_radius=6,
+        )
+        fitness_text = BOLD_FONT_TITLE.render(text, True, font_color)
+        text_width, _ = fitness_text.get_size()
+
+        text_x = rectangle_x + (rectangle_width - text_width) / 2
+        text_y = rectangle_y
+
+        SCREEN.blit(fitness_text, (text_x, text_y))
