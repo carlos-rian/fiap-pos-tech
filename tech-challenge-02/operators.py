@@ -28,12 +28,18 @@ def calculate_fitness(
 
 
 # Selection operator
-def selection(population: list[Chromosome]) -> tuple[Chromosome, Chromosome]:
+def _selection(population: list[Chromosome]) -> tuple[Chromosome, Chromosome]:
     # Using tournament selection
     tournament_size = 3
     # select random chromosomes and return the best two
     selected = random.sample(population, tournament_size)
     selected.sort(reverse=True)
+    return (selected[0], selected[1])
+
+
+def selection(population: list[Chromosome]) -> tuple[Chromosome, Chromosome]:
+    # select random chromosomes and return the best two
+    selected = sorted(population, reverse=True)
     return (selected[0], selected[1])
 
 
