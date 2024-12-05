@@ -2,11 +2,25 @@
 from time import monotonic, sleep
 import pygame
 import random
+from logger import logger
 from collections import deque
-from models import Chromosome, Resource, Task
+from models import Chromosome, Resource, SelectionType, Task
 from consts import ScheduleReturnType
-from operators import calculate_fitness, crossover, mutation, selection
-from draw import draw_schedule, draw_time, start_pygame, stop_pygame
+from operators import (
+    calculate_fitness,
+    crossover,
+    fitness_value,
+    mutation,
+    selection_best_chromosome_pair,
+    selection_by_tournament,
+)
+from draw import (
+    draw_schedule,
+    draw_time,
+    draw_solution,
+    start_pygame,
+    stop_pygame,
+)
 
 
 def create_schedule(
@@ -45,7 +59,12 @@ def create_schedule(
 
 # Genetic Algorithm function with Pygame visualization
 def genetic_algorithm(
-    tasks: list[Task], resources: list[Resource], population_size: int, generations: int
+    tasks: list[Task],
+    resources: list[Resource],
+    population_size: int,
+    generations: int,
+    selection_type: SelectionType,
+    delay: int = 0.1,
 ):
     """
     Run a genetic algorithm to optimize task scheduling on resources with Pygame visualization.
@@ -63,10 +82,16 @@ def genetic_algorithm(
     num_tasks = len(tasks)
     num_resources = len(resources)
     total_duration = sum([task.duration for task in tasks])
+    last_10_best_fitness = deque(maxlen=10)
     last_10_fitness = deque(maxlen=10)
 
     # Initialize population
     population: list[Chromosome] = []
+    selection = (
+        selection_by_tournament
+        if selection_type == SelectionType.TOURNAMENT
+        else selection_best_chromosome_pair
+    )
 
     gen_without_improvement = 0
     last_best_fitness = 0
@@ -123,8 +148,8 @@ def genetic_algorithm(
         # Create schedule with start and finish times
         schedule = create_schedule(best_chromosome, tasks, resources)
 
-        if best_chromosome.fitness not in last_10_fitness:
-            last_10_fitness.append(best_chromosome.fitness)
+        if best_chromosome.fitness not in last_10_best_fitness:
+            last_10_best_fitness.append(best_chromosome.fitness)
 
         # Draw the schedule
         draw_schedule(
@@ -132,17 +157,43 @@ def genetic_algorithm(
             generation=gen,
             best_fitness=best_chromosome.fitness,
             total_duration=total_duration,
-            last_10_fitness=last_10_fitness,
+            last_10_fitness=last_10_best_fitness,
+            population_size=population_size,
+            selection_type=selection_type.name,
+            max_generation=generations,
+            current_time=monotonic() - start,
             gen_without_improvement=gen_without_improvement,
         )
 
+        fitness = fitness_value(
+            chromosome=best_chromosome, tasks=tasks, resources=resources
+        )
+        if fitness not in last_10_fitness:
+            last_10_fitness.append(fitness)
+
+        if fitness.load_balance <= 0.0:
+            msg = f"Best solution found at generation: {gen + 1}"
+            draw_solution(solution="best", text_value=msg)
+            break
         # Control the speed of visualization
-        # sleep(0.01)
+        sleep(delay)
+
+    fitness = last_10_fitness[-1]
+    if fitness.load_balance > 0.0 and fitness.load_balance < 1:
+        msg = "Good solution found, but not the best!"
+        draw_solution(solution="good", text_value=msg)
+
+    elif fitness.load_balance >= 1:
+        msg = "The solution is not so good!"
+        draw_solution(solution="bad", text_value=msg)
+
+    for idx, fitness in enumerate(last_10_fitness):
+        logger.info(f"Last Fitness {idx + 1}: {fitness}")
 
     # write the time in the pygame window
     end = monotonic()
     draw_time(time=end - start)
 
-    sleep(20)
+    sleep(delay * 1000)
     stop_pygame()
     return best_chromosome

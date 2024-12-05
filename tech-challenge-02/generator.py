@@ -23,28 +23,27 @@ def generate_tasks(num_tasks: int):
 
 
 # Generate sample resources
-def generate_resources(num_resources: int, capacity: int):
+def generate_resources(num_resources: int):
     """
-    Generate a list of resources with a specified capacity.
+    Generate a list of resources
 
     Args:
         num_resources (int): The number of resources to generate.
-        capacity (int): The capacity of each resource.
 
     Returns:
         list[Resource]: A list of generated Resource objects.
     """
-    return [Resource(id=id, capacity=capacity) for id in range(num_resources)]
+    return [Resource(id=id) for id in range(num_resources)]
 
 
 DEFAULT_RESOURCES = [
-    Resource(id=0, capacity=10),
-    Resource(id=1, capacity=10),
-    Resource(id=2, capacity=10),
-    Resource(id=3, capacity=10),
-    Resource(id=4, capacity=10),
+    Resource(id=0),
+    Resource(id=1),
+    Resource(id=2),
+    Resource(id=3),
+    Resource(id=4),
 ]
-"""List[Resource]: A default list of resources with a capacity of 10."""
+"""List[Resource]: A default list of resources."""
 
 
 DEFAULT_TASKS = [

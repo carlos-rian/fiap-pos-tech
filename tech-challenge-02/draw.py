@@ -1,5 +1,6 @@
 from functools import lru_cache
 import random
+from typing import Literal
 import pygame
 from consts import ScheduleReturnType
 
@@ -70,6 +71,10 @@ def draw_schedule(
     best_fitness: float,
     total_duration: int,
     last_10_fitness: list[float],
+    max_generation: int,
+    population_size: int,
+    selection_type: str,
+    current_time: float,
     gen_without_improvement: int = 0,
 ):
     margin = 150
@@ -133,9 +138,11 @@ def draw_schedule(
 
     gen_text = BOLD_FONT_TITLE.render(f"Generation: {generation + 1}", *default)
     fitness_text = BOLD_FONT_TITLE.render(f"Best Fitness: {best_fitness:.4f}", *default)
+    gen2_text = BOLD_FONT_TITLE.render(
+        f"Generation without improvement: {gen_without_improvement}", *default
+    )
 
     total_tasks = sum([len(tasks) for tasks in schedule.values()])
-    total_text = BOLD_FONT_TITLE.render(f"Task Total: {total_tasks}", *default)
 
     pygame.draw.rect(
         surface=SCREEN,
@@ -144,14 +151,31 @@ def draw_schedule(
         width=4,
         border_radius=6,
     )
-    gen2_text = BOLD_FONT_TITLE.render(
-        f"Generation without improvement: {gen_without_improvement}", *default
-    )
+    total_text = BOLD_FONT_TITLE.render(f"Task Total: {total_tasks}", *default)
     total_duration_text = BOLD_FONT_TITLE.render(
         f"Total duration: {total_duration} secs", *default
     )
     mean_time_text = BOLD_FONT_TITLE.render(
         f"Mean time by tasks: {total_duration / total_tasks:.2f} secs", *default
+    )
+
+    pygame.draw.rect(
+        surface=SCREEN,
+        color=BORDER_RGB,
+        rect=(margin + 1200, 16, 500, 100),
+        width=4,
+        border_radius=6,
+    )
+
+    generation_max_text = BOLD_FONT_TITLE.render(
+        f"Max Generation: {max_generation}", *default
+    )
+
+    population_text = BOLD_FONT_TITLE.render(
+        f"Population Size: {population_size}", *default
+    )
+    selection_text = BOLD_FONT_TITLE.render(
+        f"Selection Type: {selection_type}", *default
     )
 
     TEXT_MARGIN = 20
@@ -162,6 +186,10 @@ def draw_schedule(
     SCREEN.blit(total_text, (margin + 600 + TEXT_MARGIN, 20))
     SCREEN.blit(total_duration_text, (margin + 600 + TEXT_MARGIN, 50))
     SCREEN.blit(mean_time_text, (margin + 600 + TEXT_MARGIN, 80))
+
+    SCREEN.blit(generation_max_text, (margin + 1200 + TEXT_MARGIN, 20))
+    SCREEN.blit(population_text, (margin + 1200 + TEXT_MARGIN, 50))
+    SCREEN.blit(selection_text, (margin + 1200 + TEXT_MARGIN, 80))
 
     tasks_by_duration_count = {}
     for resource_id, tasks_info in schedule.items():
@@ -229,10 +257,12 @@ def draw_schedule(
 
     draw_last_10_fitness(last_10_fitness)
 
+    draw_time(current_time)
+
     pygame.display.update()
 
 
-def draw_time(time: int):
+def draw_time(time: float):
     BORDER_RGB = (11, 37, 87)
     pygame.draw.rect(
         surface=SCREEN,
@@ -241,9 +271,9 @@ def draw_time(time: int):
         border_radius=6,
         width=4,
     )
-    time_text = BOLD_FONT_TITLE.render(f"Time: {time:.3f} secs", True, (0, 0, 0))
-    SCREEN.blit(time_text, (WIDTH - 290, 20))
-    pygame.display.update()
+    text = BOLD_FONT_TITLE.render(f"Time: {time:.3f} secs", True, (0, 0, 0))
+    text_center = WIDTH - 320 + (250 - text.get_width()) / 2
+    SCREEN.blit(text, (text_center, 21))
 
 
 def draw_last_10_fitness(last_10_fitness: list[float]):
@@ -289,3 +319,25 @@ def draw_last_10_fitness(last_10_fitness: list[float]):
         text_y = rectangle_y
 
         SCREEN.blit(fitness_text, (text_x, text_y))
+
+
+def draw_solution(solution: Literal["best", "good", "bad"], text_value: str):
+    if solution == "best":
+        color = (102, 255, 0)  # green
+    elif solution == "good":
+        # orange, ok solution
+        color = (255, 165, 0)
+    else:
+        color = (255, 0, 0)  # red
+
+    pygame.draw.rect(
+        surface=SCREEN,
+        color=color,
+        rect=(WIDTH - 320 - 600, 18, 420, 35),
+        border_radius=6,
+    )
+    text = BOLD_FONT_TITLE.render(text_value, True, (0, 0, 0))
+    # using the rectangle width to center the text and length of the text
+    text_center = (WIDTH - 320 - 600) + (420 - text.get_width()) / 2
+    SCREEN.blit(text, (text_center, 21))
+    pygame.display.update()
