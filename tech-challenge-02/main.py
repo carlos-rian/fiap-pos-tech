@@ -16,6 +16,12 @@ RESOURCE_CAPACITY = 10
 
 
 def main():
+    """
+    Run the genetic algorithm to find the best chromosome for the given tasks and resources.
+
+    This function first runs the algorithm with default tasks and resources, then prints the best fitness and chromosome.
+    It then generates new tasks and resources, runs the algorithm again, and prints the results.
+    """
     ### default tasks and resources
     best_chromosome = genetic_algorithm(
         tasks=DEFAULT_TASKS,

@@ -12,6 +12,18 @@ from draw import draw_schedule, draw_time, start_pygame, stop_pygame
 def create_schedule(
     chromosome: Chromosome, tasks: list[Task], resources: list[Resource]
 ) -> ScheduleReturnType:
+    """
+    Create a schedule with start and finish times for each task assigned to resources.
+
+    Args:
+        chromosome (Chromosome): The chromosome representing the task-resource assignments.
+        tasks (list[Task]): The list of tasks to be scheduled.
+        resources (list[Resource]): The list of available resources.
+
+    Returns:
+        ScheduleReturnType: A dictionary where keys are resource IDs and values are lists of
+                            dictionaries containing task, start time, and finish time.
+    """
     schedule = {r.id: [] for r in resources}
     resource_end_times = {r.id: 0 for r in resources}
 
@@ -35,6 +47,18 @@ def create_schedule(
 def genetic_algorithm(
     tasks: list[Task], resources: list[Resource], population_size: int, generations: int
 ):
+    """
+    Run a genetic algorithm to optimize task scheduling on resources with Pygame visualization.
+
+    Args:
+        tasks (list[Task]): The list of tasks to be scheduled.
+        resources (list[Resource]): The list of available resources.
+        population_size (int): The size of the population for the genetic algorithm.
+        generations (int): The number of generations to run the genetic algorithm.
+
+    Returns:
+        Chromosome: The best chromosome found after the specified number of generations.
+    """
     start = monotonic()
     num_tasks = len(tasks)
     num_resources = len(resources)
