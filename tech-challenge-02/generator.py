@@ -3,6 +3,15 @@ from models import Task, Resource
 
 
 def generate_tasks(num_tasks: int):
+    """
+    Generate a list of tasks with random durations and priorities.
+
+    Args:
+        num_tasks (int): The number of tasks to generate.
+
+    Returns:
+        list[Task]: A list of generated Task objects.
+    """
     tasks = []
     for task_id in range(num_tasks):
         # Task duration between 1 and 10 units
@@ -14,17 +23,27 @@ def generate_tasks(num_tasks: int):
 
 
 # Generate sample resources
-def generate_resources(num_resources: int, capacity: int):
-    return [Resource(id=id, capacity=capacity) for id in range(num_resources)]
+def generate_resources(num_resources: int):
+    """
+    Generate a list of resources
+
+    Args:
+        num_resources (int): The number of resources to generate.
+
+    Returns:
+        list[Resource]: A list of generated Resource objects.
+    """
+    return [Resource(id=id) for id in range(num_resources)]
 
 
 DEFAULT_RESOURCES = [
-    Resource(id=0, capacity=10),
-    Resource(id=1, capacity=10),
-    Resource(id=2, capacity=10),
-    Resource(id=3, capacity=10),
-    Resource(id=4, capacity=10),
+    Resource(id=0),
+    Resource(id=1),
+    Resource(id=2),
+    Resource(id=3),
+    Resource(id=4),
 ]
+"""List[Resource]: A default list of resources."""
 
 
 DEFAULT_TASKS = [
@@ -137,3 +156,4 @@ DEFAULT_TASKS = [
     Task(id=108, duration=2, priority=4),
     Task(id=109, duration=1, priority=3),
 ]
+"""List[Task]: A default list of tasks with varying durations and priorities."""
