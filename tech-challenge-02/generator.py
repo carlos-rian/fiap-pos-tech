@@ -2,7 +2,7 @@ import random
 from models import Task, Resource
 
 
-def generate_tasks(num_tasks: int):
+def generate_tasks(num_tasks: int) -> list[Task]:
     """
     Generate a list of tasks with random durations and priorities.
 
