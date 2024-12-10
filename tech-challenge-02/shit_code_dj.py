@@ -154,12 +154,15 @@ MAX_TASKS = 10
 
 start = monotonic()
 
+products = list(product(tasks[:MAX_TASKS], repeat=len(resources)))
+
+print(f"Products generated: {len(products)}")
+# remove duplicates
+products = [product for product in products if len(set(product)) == len(resources)]
+print(f"Products after removing duplicates: {len(products)}")
+
 # Generate all possible distributions of tasks to resources
 for distribution in product(tasks[:MAX_TASKS], repeat=len(resources)):
-    # Check if all tasks are different
-    if len(set(distribution)) != len(resources):
-        continue
-
     # Assign tasks to resources
     for i in range(len(resources)):
         resources[i].tasks = [distribution[i]]
