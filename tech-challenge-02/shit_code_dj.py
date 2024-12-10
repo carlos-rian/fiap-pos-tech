@@ -1,10 +1,17 @@
 from itertools import product
+import random
+from time import monotonic
+
 
 class Task:
-    def __init__(self, name, duration, priority):
-        self.name = name
+    sequece: int = 0
+
+    def __init__(self, duration, priority):
+        Task.sequece += 1
+        self.name = f"Task name {Task.sequece}"
         self.duration = duration
         self.priority = priority
+
 
 class Resource:
     def __init__(self, name):
@@ -17,17 +24,125 @@ class Resource:
     def get_total_time(self):
         return sum(task.duration for task in self.tasks)
 
-resources = [Resource("Resource 1"), Resource("Resource 2"), Resource("Resource 3"), Resource("Resource 4")]
+
+resources = [
+    Resource("Resource 1"),
+    Resource("Resource 2"),
+    Resource("Resource 3"),
+    Resource("Resource 4"),
+    Resource("Resource 4"),
+]
 
 tasks = [
-    Task("Task 1", 2, 3),
-    Task("Task 2", 1, 1),
-    Task("Task 3", 3, 2),
-    Task("Task 4", 2, 3),
-    Task("Task 5", 1, 2),
-    Task("Task 6", 3, 1),
-    Task("Task 7", 2, 2),
-    Task("Task 8", 1, 3),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
+    Task(random.randrange(1, 10), random.randrange(1, 5)),
 ]
 
 # Sort tasks by priority
@@ -35,9 +150,12 @@ tasks.sort(key=lambda x: -x.priority)
 
 best_distribution = None
 best_max_time = None
+MAX_TASKS = 10
+
+start = monotonic()
 
 # Generate all possible distributions of tasks to resources
-for distribution in product(tasks, repeat=len(resources)):
+for distribution in product(tasks[:MAX_TASKS], repeat=len(resources)):
     # Check if all tasks are different
     if len(set(distribution)) != len(resources):
         continue
@@ -54,7 +172,4 @@ for distribution in product(tasks, repeat=len(resources)):
         best_distribution = distribution
         best_max_time = max_time
 
-# Print out the best distribution
-for i in range(len(best_distribution)):
-    print(f"{resources[i].name} tasks:")
-    print(f"  {best_distribution[i].name}")
+print(f"Total time: {monotonic() - start:.6f} seconds")
