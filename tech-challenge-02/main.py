@@ -10,14 +10,14 @@ from logger import logger
 import logging
 
 
-GENERATIONS = 1000
+GENERATIONS = 500
 POPULATION_SIZE = 10
 MUTATION_RATE = 0.001
 
-NUM_TASKS = 100
-NUM_RESOURCES = 5
+NUM_TASKS = 500
+NUM_RESOURCES = 6
 
-VISUALIZATION_DELAY = 0.01
+VISUALIZATION_DELAY = 0.03
 
 
 def main():
@@ -30,7 +30,7 @@ def main():
 
     logging.basicConfig(level=logging.INFO)
 
-    SELECTION_TYPE = SelectionType.TOURNAMENT
+    SELECTION_TYPE = SelectionType.BEST_INDIVIDUALS
 
     def default():
         ### default tasks and resources
@@ -64,8 +64,8 @@ def main():
         print(f"Best fitness: {best_chromosome.fitness}")
         print(f"Best chromosome: {best_chromosome.gene}")
 
-    default()
-    # randomize()
+    # default()
+    randomize()
 
 
 if __name__ == "__main__":

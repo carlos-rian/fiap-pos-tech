@@ -194,6 +194,6 @@ def genetic_algorithm(
     end = monotonic()
     draw_time(time=end - start)
 
-    sleep(delay * 1000)
+    sleep(60)
     stop_pygame()
     return best_chromosome
