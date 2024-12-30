@@ -130,3 +130,34 @@ Número máximo de gerações: O algoritmo será encerrado após um número pred
 Fitness estável: Caso o valor de fitness não apresente melhora significativa após um determinado número de gerações consecutivas, o algoritmo será interrompido.
 
 Essas condições permitem flexibilidade na execução do algoritmo, garantindo que ele possa ser ajustado para diferentes cenários e requisitos práticos.
+
+
+## Comparativo: Força Bruta vs. Algoritmo Genético
+
+Uma comparação entre o método de força bruta e o algoritmo genético demonstra a eficiência deste último para problemas complexos de distribuição de tarefas. Seguem os principais pontos:
+
+### Força Bruta
+
+O método de força bruta consiste em avaliar todas as combinações possíveis de distribuição de tarefas entre os recursos para identificar a solução ótima. Embora garantido para encontrar a melhor solução, possui as seguintes desvantagens:
+
+- **Complexidade Computacional**: Cresce exponencialmente com o número de tarefas e recursos.
+- **Tempo de Execução**: Tornar-se inviável para problemas com grande escala devido ao tempo necessário para processar todas as possibilidades.
+
+### Algoritmo Genético
+
+O algoritmo genético utiliza operações inspiradas na evolução natural, como seleção, cruzamento e mutação, para explorar o espaço de soluções de forma eficiente. Suas vantagens incluem:
+
+- **Eficiência**: Encontra soluções de alta qualidade em um tempo significativamente menor.
+- **Escalabilidade**: Pode lidar com problemas de grande escala de maneira prática.
+- **Flexibilidade**: Adapta-se facilmente a diferentes funções objetivo e restrições.
+
+### Desempenho Comparativo
+
+| Método           | Tempo de Execução      | Qualidade da Solução | Escalabilidade |
+|-------------------|-----------------------|-----------------------|----------------|
+| Força Bruta       | Muito alto            | Ótima (Garantida)     | Baixa          |
+| Algoritmo Genético | Baixo/Moderado        | Alta (Não Garantida)  | Alta           |
+
+Em testes realizados, o algoritmo genético apresentou uma redução de **ordens de magnitude no tempo de execução** em relação ao método de força bruta, mantendo uma solução muito próxima do ótimo para a maioria dos casos práticos.
+
+Essa eficiência torna o algoritmo genético uma escolha ideal para aplicações onde o tempo é um fator crítico, como na alocação dinâmica de recursos em sistemas reais.
