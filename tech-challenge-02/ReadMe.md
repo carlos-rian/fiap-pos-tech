@@ -1,5 +1,3 @@
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
-
 # Documentação do Código: Algoritmo Genético com Visualização em Pygame
 
 Este documento fornece uma descrição detalhada sobre as funcionalidades, classes e métodos
