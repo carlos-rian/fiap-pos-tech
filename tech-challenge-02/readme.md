@@ -140,7 +140,7 @@ Aplica mutação a um cromossomo, alterando aleatoriamente alguns genes.
  - `num_resources` (int): Número total de recursos disponíveis.
  - `mutation_rate` (float): Taxa de probabilidade de mutação.
 
-Condições de Parada
+## Condições de Parada
 
 As condições de parada do algoritmo genético são definidas com base nos critérios de equilíbrio de carga (load_balance), calculados pelo método FitnessValue. O algoritmo será encerrado quando for atingida a seguinte condição:
 
