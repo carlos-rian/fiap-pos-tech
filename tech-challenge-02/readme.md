@@ -142,7 +142,7 @@ Aplica mutação a um cromossomo, alterando aleatoriamente alguns genes.
 
 ## Condições de Parada
 
-As condições de parada do algoritmo genético são definidas com base nos critérios de equilíbrio de carga (load_balance), calculados pelo método FitnessValue. O algoritmo será encerrado quando for atingida a seguinte condição:
+As condições de parada do algoritmo genético são definidas com base nos critérios de equilíbrio de carga (load_balance), calculados pela classe `FitnessValue`. O algoritmo será encerrado quando for atingida a seguinte condição:
 
 O load_balance entre todos os recursos for igual, ou seja, quando o desvio padrão da utilização dos recursos atingir zero (ou um valor considerado suficientemente pequeno para fins práticos, dependendo da implementação). Isso indica que as tarefas foram distribuídas uniformemente entre os recursos.
 
