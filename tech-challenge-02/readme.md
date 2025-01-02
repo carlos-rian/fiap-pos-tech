@@ -26,7 +26,6 @@ acompanhamento do progresso.
  - `id` (int): Identificador único da tarefa.
  - `duration` (int): Duração da tarefa em unidades de tempo.
  - `priority` (int): Prioridade da tarefa (quanto maior o valor, mais prioritária a tarefa).
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
 - **Métodos:**
  - `__repr__`: Retorna uma representação em string da tarefa no formato `Task(id, duration,
 priority)`.
@@ -54,7 +53,6 @@ atribuindo a tarefa correspondente. O tamanho da lista é igual ao número de ta
 
 #### **FitnessValue**
 - Representa os componentes do valor de fitness que avaliam uma solução.
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
 
 - **Atributos:**
  - `makespan` (int): Tempo total necessário para concluir todas as tarefas.
@@ -81,7 +79,6 @@ Cria um cronograma para alocação de tarefas aos recursos com base em um cromos
 - **Argumentos:**
  - `chromosome` (Chromosome): O cromossomo representando a alocação de tarefas aos
 recursos.
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
  - `tasks` (list[Task]): Lista de tarefas a serem agendadas.
  - `resources` (list[Resource]): Lista de recursos disponíveis para a alocação.
 - **Retorno:**
@@ -108,7 +105,6 @@ Calcula os componentes de fitness para avaliar um cromossomo.
  - `tasks` (list[Task]): Lista de tarefas relacionadas ao cromossomo.
  - `resources` (list[Resource]): Lista de recursos utilizados.
 - **Retorno:**
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
  - `FitnessValue`: Objeto contendo os valores detalhados de fitness.
 
 #### **selection_by_tournament**
@@ -134,7 +130,6 @@ Realiza cruzamento entre dois cromossomos para gerar um descendente.
  - `Chromosome`: Novo cromossomo descendente.
 
 #### **mutation**
-Documentação do Código: Algoritmo Genético com Visualização em Pygame
 Aplica mutação a um cromossomo, alterando aleatoriamente alguns genes.
 - **Argumentos:**
  - `chromosome` (Chromosome): Cromossomo a ser mutado.
