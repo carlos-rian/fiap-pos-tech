@@ -47,7 +47,7 @@ atribuídas aos recursos.
 
 - **Atributos:**
  - `gene` (list[int]): Lista que mapeia tarefas a recursos. Cada elemento indica qual recurso está
-atribuindo a tarefa correspondente.
+atribuindo a tarefa correspondente. O tamanho da lista é igual ao número de tarefas. Cada valor em cada posição da lista representa o ID do recurso atribuído à tarefa.
  - `fitness` (float): Valor de fitness que avalia a qualidade da solução.
 - **Métodos:**
  - `__lt__`: Permite comparar cromossomos com base no fitness para ordenar populações.
