@@ -4,8 +4,8 @@ Este documento fornece uma descrição detalhada sobre as funcionalidades, class
 presentes no código fornecido, que implementa um algoritmo genético para otimização de tarefas
 com suporte à visualização em Pygame.
 
-Link para o video: [Youtube - Vídeo de Apresentação](https://www.youtube.com/watch?v=2RJ8wV5Y8gw)
-Link para o código: [GitHub - Algoritmo Genético com Visualização em Pygame](https://github.com/carlos-rian/fiap-pos-tech/tree/catalito/tech-challenge-02)
+- Link para o video: [Youtube - Vídeo de Apresentação](https://www.youtube.com/watch?v=2RJ8wV5Y8gw)
+- Link para o código: [GitHub - Algoritmo Genético com Visualização em Pygame](https://github.com/carlos-rian/fiap-pos-tech/tree/catalito/tech-challenge-02)
 
 ## Objetivo do Código
 
