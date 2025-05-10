@@ -8,5 +8,5 @@ It specifies the logging format and debug level for debugging and informational 
 import logging
 
 Logger = logging.getLogger("video_analysis")
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
-Logger.setLevel(logging.DEBUG)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+Logger.setLevel(logging.INFO)

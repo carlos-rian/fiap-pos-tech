@@ -19,6 +19,7 @@ import cv2
 from deepface import DeepFace
 
 from video_analysis.activity_detector import VideoActivityDetector
+from video_analysis.audio_summarization import AudioSummarization
 from video_analysis.face_detector import VideoFaceDetector, VideoFrame
 from video_analysis.video import VideoCapture, VideoWriter
 
@@ -94,6 +95,20 @@ def video_face_detector(input_file: Path, output_file: Path, output_analysis_jso
     video_writer.release()
 
 
+def audio_summarization(input_video: str, output_folder: str):
+    """
+    Summarize the audio content of a video file.
+
+    This function extracts audio from the video, transcribes it, and summarizes the transcription.
+
+    Args:
+        input_video (str): Path to the input video file.
+        output_folder (str): Path to save the extracted audio and summary text files.
+    """
+    audio_summarizer = AudioSummarization(input_video, output_folder)
+    audio_summarizer.summarize()
+
+
 def main():
     """
     Main function to set up paths and start video processing.
@@ -123,6 +138,10 @@ def main():
     output_face_detector_jsonl = output_folder / "face_detector.jsonl"
     output_face_detector_json = output_folder / "face_detector.json"
 
+    # audio summarization
+    audio_summarization(input_video, output_folder)
+
+    # video activity detector
     video_face_detector(
         input_file=input_video,
         output_file=output_face_detector_video,
@@ -130,6 +149,7 @@ def main():
         output_analysis_json=output_face_detector_json,
     )
 
+    # video face detector
     video_activity_detector(
         label_file_path=label_file_path,
         input_file=input_video,

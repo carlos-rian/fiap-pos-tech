@@ -1,5 +1,10 @@
 # Tech Challenge 04 - Video Analysis Application
 
+## Description
+This repository contains a video analysis application that performs activity detection and face/emotion recognition using TensorFlow and DeepFace. The application processes video files, annotates them with detected activities and emotions, and saves the results in various formats.
+
+You must add the video "input_video.mp4" to the root directory of the project for the application to run successfully.
+
 ## Overview
 This application analyzes videos to perform:
 - **Activity Detection:** Uses a sliding window approach with a TensorFlow Hub (Movinet) model to predict activities.
