@@ -6,34 +6,40 @@ This repository contains a video analysis application that performs activity det
 You must add the video "input_video.mp4" to the root directory of the project for the application to run successfully.
 
 ## Overview
-This application analyzes videos to perform:
-- **Activity Detection:** Uses a sliding window approach with a TensorFlow Hub (Movinet) model to predict activities.
-- **Face & Emotion Detection:** Utilizes DeepFace and OpenCV to detect faces and analyze emotions in video frames.
+This application provides comprehensive video analysis:
+- **Activity Detection:** Implements a sliding window strategy with a TensorFlow Hub (Movinet) model to predict actions.
+- **Face & Emotion Recognition:** Utilizes DeepFace and OpenCV to detect faces and determine the dominant emotion in each frame.
+- **Audio Summarization:** Extracts and processes the audio track from the video to generate a concise summary of dialogues and audio events.
 
 ## Modules
-- **main.py:** Sets up file paths, output directories, and orchestrates the video processing pipeline.
-- **video_analysis/video.py:** Provides classes for video capture and video writing.
-- **video_analysis/activity_detector.py:** Implements activity detection by processing frames in batches and annotating them with prediction results.
-- **video_analysis/face_detector.py:** Handles face detection and emotion analysis, drawing bounding boxes and labels.
-- **video_analysis/logger.py:** Configures the logging for debugging and tracking.
-- **video_analysis/util.py:** Contains helper functions such as writing text with a background for better readability.
-- **video_analysis/kinetics_labels_600.txt:** Contains the activity labels used by the TensorFlow model.
-- **pyproject.toml:** Manages project metadata and external dependencies.
-- **.gitignore & .python-version:** Define files to ignore and the Python version to be used.
+- **main.py:** Entry point that configures file paths, output directories, and orchestrates the video analysis pipeline.
+- **video_analysis/video.py:** Contains classes for video capture and writing.
+- **video_analysis/activity_detector.py:** Handles batch processing of frames for activity detection, performing preprocessing, prediction, and annotation.
+- **video_analysis/face_detector.py:** Performs face detection and emotion recognition, drawing bounding boxes and labels on detected faces.
+- **video_analysis/logger.py:** Configures logging to output debug messages and track processing steps.
+- **video_analysis/util.py:** Provides helper functions for tasks like rendering text with a background overlay.
+- **video_analysis/kinetics_labels_600.txt:** Lists the activity labels corresponding to predictions from the TensorFlow model.
+- **audio_analysis/audio_summarizer.py:** Extracts the audio track from the video and generates a concise summary of dialogues and key audio events.
+- **pyproject.toml:** Manages project metadata and dependencies.
+- **.gitignore & .python-version:** Specify files to ignore and enforce the Python version.
 
 ## Process
-1. **Video Input & Capture:** Loads the video using OpenCV and processes it frame by frame.
+1. **Video Input & Capture:** 
+   - Loads the video using OpenCV.
+   - Processes the video frame by frame.
 2. **Activity Detection:** 
-   - Frames are collected in a sliding window (50 frames).
-   - Frames are resized, normalized, and fed to the TensorFlow model.
-   - The top 3 predictions are extracted and annotated on the video.
+   - Collects frames in a sliding window (50 frames).
+   - Resizes, normalizes, and feeds frames into the TensorFlow model.
+   - Extracts the top 3 predictions to annotate the video.
 3. **Face & Emotion Analysis:** 
-   - Each frame is analyzed using DeepFace for face detection and emotion recognition.
-   - Annotated with bounding boxes and labels based on the dominant emotion.
-4. **Output:** 
-   - Annotated videos are saved.
-   - Detailed analysis outputs are generated in CSV, JSON, and JSONL formats.
-   - Output folders are timestamped.
+   - Applies DeepFace on each frame to detect faces and evaluate emotions.
+   - Overlays bounding boxes and labels for the dominant emotion on detected faces.
+4. **Output Generation:** 
+   - Saves the annotated video files.
+   - Generates detailed analysis reports in CSV, JSON, and JSONL formats within timestamped directories.
+5. **Audio Summarization:** 
+   - Extracts the audio track from the video.
+   - Processes the audio to generate a concise summary of dialogues and key audio events.
 
 ## Setup & Installation
 1. Ensure Python 3.12 is installed (see `.python-version`).

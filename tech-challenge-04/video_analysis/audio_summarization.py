@@ -70,7 +70,7 @@ class AudioSummarization:
         try:
             text: str = recognizer.recognize_google(audio, language="en-US")
             self.save_text_to_file(text, "transcribe.txt")
-            Logger.info("Transcription successful.")
+            Logger.info("Transcription successful. (Length: {} characters)".format(len(text)))
             return text
         except UnknownValueError:
             raise VideoSummarizationError("Google Speech Recognition could not understand the audio.")
@@ -85,11 +85,13 @@ class AudioSummarization:
         """
         self.extract_audio()
         transcription = self.transcribe_audio()
+        if not transcription.strip():
+            Logger.info("No transcription obtained; skipping summarization.")
+            return
         Logger.info("Summarizing transcription...")
         summary = self.summarizer(transcription, max_length=150, min_length=30, do_sample=False)
         summary_text = summary[0]["summary_text"]
         self.save_text_to_file(summary_text, "summary.txt")
         Logger.info("Summarization complete.")
-
         Logger.info(f"Transcription saved to {self.output_folder}/transcribe.txt")
         Logger.info(f"Summary saved to {self.output_folder}/summary.txt")
