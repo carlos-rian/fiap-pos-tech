@@ -1,0 +1,52 @@
+{
+    "[plaintext]": {
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 120,
+        "editor.wrappingStrategy": "advanced"
+    },
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": false,
+    "files.exclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        "**/.ruff_cache**": true,
+        "**/.pytest_cache**": true,
+        "**/__pycache__/**": true,
+        "**/htmlcov/**": true,
+        "**/.coverage/**": true,
+    },
+    "[python]": {
+        "editor.rulers": [
+            150
+        ],
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.bracketPairColorization.enabled": true
+    },
+    "python.analysis.languageServerMode": "full",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.fixAll": [
+        "source.unusedImports",
+        "source.convertImportFormat",
+    ],
+    "python.analysis.exclude": [
+        "**/site-packages/**",
+        "**__pycache__/**",
+        "**.vscode/**",
+        "**.git/**",
+        "**.mypy_cache/**",
+        "**.pytest_cache/**",
+        "**.venv/**",
+        "**env/**",
+        "**venv/**",
+        "**envs/**",
+        "**.ruff**",
+    ],
+}
