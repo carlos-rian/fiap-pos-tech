@@ -153,6 +153,14 @@ def main():
     output_face_detector_jsonl = output_folder / "face_detector.jsonl"
     output_face_detector_json = output_folder / "face_detector.json"
 
+    # video activity detector
+    video_face_detector(
+        input_file=input_video,
+        output_file=output_face_detector_video,
+        output_analysis_jsonl=output_face_detector_jsonl,
+        output_analysis_json=output_face_detector_json,
+    )
+
     # video face detector
     video_activity_detector(
         label_file_path=label_file_path,
@@ -165,14 +173,6 @@ def main():
 
     # audio summarization
     audio_summarization(input_video, output_folder)
-
-    # video activity detector
-    video_face_detector(
-        input_file=input_video,
-        output_file=output_face_detector_video,
-        output_analysis_jsonl=output_face_detector_jsonl,
-        output_analysis_json=output_face_detector_json,
-    )
 
 
 if __name__ == "__main__":
