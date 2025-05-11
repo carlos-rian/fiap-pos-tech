@@ -154,6 +154,15 @@ class VideoWriter:
         """
         self.out.write(frame)
 
+    def is_opened(self):
+        """
+        Check if the video writer is successfully opened.
+
+        Returns:
+            bool: True if the video writer is active, else False.
+        """
+        return self.out.isOpened()
+
     def release(self):
         """
         Release the video writer resource.
