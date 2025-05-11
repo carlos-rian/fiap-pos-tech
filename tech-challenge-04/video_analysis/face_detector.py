@@ -135,6 +135,9 @@ class VideoFaceDetector:
         drawed_frame = frame.frame.copy()
 
         for face in results:
+            if face["face_confidence"] < 0.3:
+                continue
+
             dominate_emotion = face["dominant_emotion"]
             color = self.get_color_by_emotion(dominate_emotion)
             # get the bounding box of the face
