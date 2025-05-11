@@ -17,6 +17,7 @@ import tensorflow_hub as hub
 from rich.pretty import pprint
 from tqdm import tqdm
 
+from video_analysis.face_detector import VideoFrame
 from video_analysis.logger import Logger
 from video_analysis.util import write_text
 from video_analysis.video import VideoCapture, VideoWriter
@@ -175,9 +176,9 @@ class VideoActivityDetector:
         Logger.info(f"Window size: {self.window_size}, Target size: {self.target_size}")
         Logger.info(f"Model loaded from: {self.model}")
 
-        def process_frames(frames_buffer: list):
+        def process_frames(frames_buffer: list[VideoFrame]):
             # Use the correct signature and input name
-            frames = self.prepare_frames(frames_buffer)
+            frames = self.prepare_frames([f.frame for f in frames_buffer])
             predictions = self.model.signatures["serving_default"](tf.constant(frames))
             # Extract the prediction tensor from the dictionary
             pred_tensor = next(iter(predictions.values()))
@@ -189,13 +190,13 @@ class VideoActivityDetector:
             first_frame = True
             for frame in frames_buffer:
                 y_pos = 30
-                current_frame = frame.copy()
+                current_frame = frame.frame.copy()
                 for idx in top_3_indices:
                     activity = self.labels[idx] if idx < len(self.labels) else f"Activity_{idx}"
                     # confidence = probs[0][idx] * 10
                     confidence = probs[0][idx]
                     text = f"{activity}: {confidence:.2f}%"
-                    write_text(current_frame, text, x=10, y=y_pos)
+                    write_text(current_frame, text, x=10, y=y_pos, frame_id=frame.id)
                     y_pos += 30
                     # save activity in analysis
                     if first_frame:
@@ -209,7 +210,7 @@ class VideoActivityDetector:
 
         for chunk in tqdm(self.video.stream(), total=self.video.total_frames, desc="Processing frames"):
             # Append the current frame to the buffer
-            frames_buffer.append(chunk.frame)
+            frames_buffer.append(chunk)
             frame_count += 1
 
             if len(frames_buffer) >= self.window_size:
