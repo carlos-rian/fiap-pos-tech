@@ -162,7 +162,6 @@ def main():
         output_analysis_json=output_activity_detector_json,
         window_size=32,
     )
-
     # audio summarization
     audio_summarization(input_video, output_folder)
 

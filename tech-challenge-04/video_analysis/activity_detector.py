@@ -114,6 +114,12 @@ class VideoActivityDetector:
             resized = cv2.cvtColor(resized, cv2.COLOR_BGR2RGB)
             resized_frames.append(resized)
 
+        # Ensure the number of frames is equal to the window size
+        if len(resized_frames) < self.window_size:
+            last_frame = resized_frames[-1]
+            while len(resized_frames) < self.window_size:
+                resized_frames.append(last_frame)
+
         frames_array = np.array(resized_frames)
         frames_array = frames_array / 255.0
         frames_array = frames_array.astype(np.float32)
@@ -168,43 +174,55 @@ class VideoActivityDetector:
         Logger.info(f"Video dimensions: {self.video.width}x{self.video.height}, FPS: {self.video.fps}, Total frames: {self.video.total_frames}")
         Logger.info(f"Window size: {self.window_size}, Target size: {self.target_size}")
         Logger.info(f"Model loaded from: {self.model}")
+
+        def process_frames(frames_buffer: list):
+            # Use the correct signature and input name
+            frames = self.prepare_frames(frames_buffer)
+            predictions = self.model.signatures["serving_default"](tf.constant(frames))
+            # Extract the prediction tensor from the dictionary
+            pred_tensor = next(iter(predictions.values()))
+            # Now we can convert to numpy
+            probs = pred_tensor.numpy()
+            # Get top 3 predictions
+            top_3_indices = np.argsort(probs[0])[-3:][::-1]
+
+            first_frame = True
+            for frame in frames_buffer:
+                y_pos = 30
+                current_frame = frame.copy()
+                for idx in top_3_indices:
+                    activity = self.labels[idx] if idx < len(self.labels) else f"Activity_{idx}"
+                    # confidence = probs[0][idx] * 10
+                    confidence = probs[0][idx]
+                    text = f"{activity}: {confidence:.2f}%"
+                    write_text(current_frame, text, x=10, y=y_pos)
+                    y_pos += 30
+                    # save activity in analysis
+                    if first_frame:
+                        activity_detected = ActivityDetected(activity, confidence, idx)
+                        self.analysis[frame_count].append(activity_detected)
+
+                first_frame = False
+
+                # Write frame to output video
+                self.output_video.write(current_frame)
+
         for chunk in tqdm(self.video.stream(), total=self.video.total_frames, desc="Processing frames"):
             # Append the current frame to the buffer
             frames_buffer.append(chunk.frame)
             frame_count += 1
 
             if len(frames_buffer) >= self.window_size:
-                # Use the correct signature and input name
-                frames = self.prepare_frames(frames_buffer)
-                predictions = self.model.signatures["serving_default"](tf.constant(frames))
-                # Extract the prediction tensor from the dictionary
-                pred_tensor = next(iter(predictions.values()))
-                # Now we can convert to numpy
-                probs = pred_tensor.numpy()
-                # Get top 3 predictions
-                top_3_indices = np.argsort(probs[0])[-3:][::-1]
+                # Process the buffered frames
+                process_frames(frames_buffer)
+                # Clear the buffer for the next set of frames
+                frames_buffer.clear()
 
-                first_frame = True
-                for frame in frames_buffer:
-                    y_pos = 30
-                    current_frame = frame.copy()
-                    for idx in top_3_indices:
-                        activity = self.labels[idx] if idx < len(self.labels) else f"Activity_{idx}"
-                        # confidence = probs[0][idx] * 10
-                        confidence = probs[0][idx]
-                        text = f"{activity}: {confidence:.2f}%"
-                        write_text(current_frame, text, x=10, y=y_pos)
-                        y_pos += 30
-                        # save activity in analysis
-                        if first_frame:
-                            activity_detected = ActivityDetected(activity, confidence, idx)
-                            self.analysis[frame_count].append(activity_detected)
-                    first_frame = False
-
-                    # Write frame to output video
-                    self.output_video.write(current_frame)
-
-                frames_buffer = []
+        # Process any remaining frames in the buffer
+        if frames_buffer:
+            Logger.info(f"Processing remaining {len(frames_buffer)} frames in buffer.")
+            process_frames(frames_buffer)
+            frames_buffer.clear()
 
         Logger.info("Video analysis completed.")
         self.save_analysis_to_csv()
