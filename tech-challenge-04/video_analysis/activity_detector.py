@@ -69,7 +69,13 @@ class VideoActivityDetector:
     """
 
     def __init__(
-        self, labels: list[str], input_video: VideoCapture, output_video: VideoWriter, output_analysis_csv: Path, output_analysis_json: Path
+        self,
+        labels: list[str],
+        input_video: VideoCapture,
+        output_video: VideoWriter,
+        output_analysis_csv: Path,
+        output_analysis_json: Path,
+        window_size: int = 50,
     ):
         """
         Initialize the VideoActivityDetector.
@@ -80,6 +86,7 @@ class VideoActivityDetector:
             output_video (VideoWriter): Destination for annotated output video.
             output_analysis_csv (Path): Output CSV file path for analysis.
             output_analysis_json (Path): Output JSON file path for analysis.
+            window_size (int): Size of the sliding window for activity detection.
         """
         self.labels = labels
         self.video = input_video
@@ -87,7 +94,7 @@ class VideoActivityDetector:
         self.output_analysis_csv = output_analysis_csv
         self.output_analysis_json = output_analysis_json
         self.model = hub.load("https://tfhub.dev/tensorflow/movinet/a4/base/kinetics-600/classification/3")
-        self.window_size = 50  # Number of frames to consider in the sliding window
+        self.window_size = window_size  # Number of frames to consider in the sliding window
         self.target_size = (224, 224)  # Size to resize frames to
         self.analysis: dict[int, list[ActivityDetected]] = defaultdict(list)
 
@@ -139,7 +146,7 @@ class VideoActivityDetector:
         Logger.info("Activity analysis:")
         pprint(sorted_counts, indent_guides=False)
         with open(self.output_analysis_json, "w") as f:
-            json.dump(counts, f, indent=4)
+            json.dump(counts, f, indent=4, sort_keys=True)
         Logger.info(f"Analysis saved to JSON file: {self.output_analysis_json}")
 
     def predict(self):
@@ -183,8 +190,8 @@ class VideoActivityDetector:
                     current_frame = frame.copy()
                     for idx in top_3_indices:
                         activity = self.labels[idx] if idx < len(self.labels) else f"Activity_{idx}"
-                        confidence = probs[0][idx]
-                        text = f"{activity}: {confidence:.2f}% - activityId: {idx}"
+                        confidence = probs[0][idx] * 10
+                        text = f"{activity}: {confidence:.2f}%"
                         write_text(current_frame, text, x=10, y=y_pos)
                         y_pos += 30
                         # save activity in analysis
