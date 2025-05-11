@@ -190,7 +190,8 @@ class VideoActivityDetector:
                     current_frame = frame.copy()
                     for idx in top_3_indices:
                         activity = self.labels[idx] if idx < len(self.labels) else f"Activity_{idx}"
-                        confidence = probs[0][idx] * 10
+                        # confidence = probs[0][idx] * 10
+                        confidence = probs[0][idx]
                         text = f"{activity}: {confidence:.2f}%"
                         write_text(current_frame, text, x=10, y=y_pos)
                         y_pos += 30
