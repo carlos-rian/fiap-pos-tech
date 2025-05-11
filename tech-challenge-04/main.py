@@ -26,7 +26,9 @@ from video_analysis.video import VideoCapture, VideoWriter
 root_path = Path(__file__).parent
 
 
-def video_activity_detector(label_file_path: Path, input_file: Path, output_file: Path, output_analysis_csv: Path, output_analysis_json: Path):
+def video_activity_detector(
+    label_file_path: Path, input_file: Path, output_file: Path, output_analysis_csv: Path, output_analysis_json: Path, window_size: int = 50
+):
     """
     Detect activities in the video using a sliding window approach.
 
@@ -39,6 +41,7 @@ def video_activity_detector(label_file_path: Path, input_file: Path, output_file
         output_file (Path): Path where the annotated output video will be saved.
         output_analysis_csv (Path): Path to save the CSV analysis result.
         output_analysis_json (Path): Path to save the JSON analysis result.
+        window_size (int): Size of the sliding window for activity detection.
     """
     video_capture = VideoCapture(input_file)
     video_writer = VideoWriter(output_file, video_capture.width, video_capture.height, video_capture.fps)
@@ -46,11 +49,18 @@ def video_activity_detector(label_file_path: Path, input_file: Path, output_file
     with open(label_file_path, "r") as f:
         labels = [line.strip() for line in f.readlines()]
 
-    video_detector = VideoActivityDetector(labels, video_capture, video_writer, output_analysis_csv, output_analysis_json)
-    video_detector.predict()
+    try:
+        video_detector = VideoActivityDetector(
+            labels, video_capture, video_writer, output_analysis_csv, output_analysis_json, window_size=window_size
+        )
+        video_detector.predict()
+    finally:
+        # Ensure resources are released even if an error occurs
+        if video_capture.is_opened():
+            video_capture.release()
 
-    video_capture.release()
-    video_writer.release()
+        if video_writer.is_opened():
+            video_writer.release()
 
 
 def video_face_detector(input_file: Path, output_file: Path, output_analysis_jsonl: Path, output_analysis_json: Path):
@@ -88,11 +98,16 @@ def video_face_detector(input_file: Path, output_file: Path, output_analysis_jso
     video_capture = VideoCapture(input_file)
     video_writer = VideoWriter(output_file, video_capture.width, video_capture.height, video_capture.fps)
 
-    video_detector = VideoFaceDetector(analyze_frame, video_capture, video_writer, output_analysis_jsonl, output_analysis_json)
-    video_detector.detect()
+    try:
+        video_detector = VideoFaceDetector(analyze_frame, video_capture, video_writer, output_analysis_jsonl, output_analysis_json)
+        video_detector.detect()
+    finally:
+        # Ensure resources are released even if an error occurs
+        if video_capture.is_opened():
+            video_capture.release()
 
-    video_capture.release()
-    video_writer.release()
+        if video_writer.is_opened():
+            video_writer.release()
 
 
 def audio_summarization(input_video: str, output_folder: str):
@@ -138,6 +153,16 @@ def main():
     output_face_detector_jsonl = output_folder / "face_detector.jsonl"
     output_face_detector_json = output_folder / "face_detector.json"
 
+    # video face detector
+    video_activity_detector(
+        label_file_path=label_file_path,
+        input_file=input_video,
+        output_file=output_activity_detector_video,
+        output_analysis_csv=output_activity_detector_csv,
+        output_analysis_json=output_activity_detector_json,
+        window_size=32,
+    )
+
     # audio summarization
     audio_summarization(input_video, output_folder)
 
@@ -147,15 +172,6 @@ def main():
         output_file=output_face_detector_video,
         output_analysis_jsonl=output_face_detector_jsonl,
         output_analysis_json=output_face_detector_json,
-    )
-
-    # video face detector
-    video_activity_detector(
-        label_file_path=label_file_path,
-        input_file=input_video,
-        output_file=output_activity_detector_video,
-        output_analysis_csv=output_activity_detector_csv,
-        output_analysis_json=output_activity_detector_json,
     )
 
 
