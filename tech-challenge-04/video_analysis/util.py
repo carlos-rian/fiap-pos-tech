@@ -5,9 +5,10 @@ This module provides helper functions such as write_text, which draws text with 
 """
 
 import cv2
+from cv2.typing import MatLike
 
 
-def write_text(frame, text, x=10, y=30):
+def write_text(frame: MatLike, text, x=10, y=30, frame_id: int = None):
     """
     Write text on a frame with a background rectangle for improved visibility.
 
@@ -33,3 +34,12 @@ def write_text(frame, text, x=10, y=30):
     # Draw the rectangle and the text
     cv2.rectangle(frame, rect_start, rect_end, (0, 0, 0), -1)
     cv2.putText(frame, text, (x, y), font, font_scale, font_color, line_type)
+
+    # If frame_id is provided, draw it in the bottom right corner
+    if frame_id is not None:
+        frame_height, frame_width = frame.shape[:2]
+        text = f"Frame Id: {frame_id}"
+        text_size = cv2.getTextSize(text, font, font_scale, line_type)[0]
+        x = frame_width - text_size[0] - 10
+        y = frame_height - text_size[1] - 10
+        cv2.putText(frame, text, (x, y), font, font_scale, font_color, line_type)
