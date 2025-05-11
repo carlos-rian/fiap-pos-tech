@@ -98,7 +98,7 @@ class VideoFaceDetector:
             counts[emotion] += len(frames)
 
         with open(self.output_analysis_json, "w") as f:
-            json.dump(counts, f, indent=4)
+            json.dump(counts, f, indent=4, sort_keys=True)
         print(f"Analysis saved to JSON file: {self.output_analysis_json}")
 
     def get_color_by_emotion(self, emotion: str) -> tuple:
