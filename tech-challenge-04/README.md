@@ -1,3 +1,6 @@
+Link github: https://github.com/carlos-rian/fiap-pos-tech/tree/main/tech-challenge-04
+Link video youtube: https://www.youtube.com/watch?v=k0YrGupHk9A
+
 # Tech Challenge 04 - Video Analysis Application
 
 ## Description
