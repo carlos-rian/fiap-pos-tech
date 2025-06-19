@@ -5,11 +5,26 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "albumentations>=2.0.8",
+    "opencv-python>=4.11.0.86",
     "pandas>=2.3.0",
 ]
 
 [dependency-groups]
-dev = [
-    "isort>=6.0.1",
-    "ruff>=0.11.13",
-]
+dev = ["isort>=6.0.1", "ruff>=0.11.13"]
+
+[tool.ruff]
+line-length = 150
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+docstring-code-line-length = 150
+
+[tool.ruff.lint]
+ignore = ["E402", "F403", "F405"]
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+combine-as-imports = true
