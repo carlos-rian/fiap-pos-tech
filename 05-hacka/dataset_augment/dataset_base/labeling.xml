@@ -1,0 +1,36 @@
+<View>
+  <Image name="image" value="$image" zoom="false" zoomControl="true" />
+  <RectangleLabels name="label" toName="image">
+    <Label value="user" background="#FF0000" />
+    <Label value="aws_waf" background="#00FF00" />
+    <Label value="aws_shield" background="#0000FF" />
+    <Label value="aws_cloudfront" background="#fff714" />
+    <Label value="aws_cloud" background="#FF00FF" />
+    <Label value="aws_region" background="#00FFFF" />
+    <Label value="aws_virtual_private_cloud" background="#ff0000" />
+    <Label value="aws_cloud_trail" background="#4bfa00" />
+    <Label value="aws_key_management_service" background="#000000" />
+    <Label value="aws_backup" background="#FF8000" />
+    <Label value="aws_cloudwatch" background="#8000FF" />
+    <Label value="aws_simple_email_service" background="#fd0db1" />
+    <Label value="aws_public_subnet" background="#fb5b5b" />
+    <Label value="aws_private_subnet" background="#fd0db1" />
+    <Label value="aws_application_load_balancer" background="#0080FF" />
+    <Label value="aws_elactic_file_system(nfs)_multi-az" background="#00FFFF" />
+    <Label value="aws_rds" background="#fd0db1" />
+    <Label value="aws_elasticache" background="#0aff0a" />
+    <Label value="solr" background="#fd0db1" />
+    <Label value="sei/sip" background="#fd0db1" />
+    <Label value="aws_autoscaling" background="#fd0db1" />
+    <Label value="api" background="#FFA39E" />
+    <Label value="internet" background="#D4380D" />
+    <Label value="microsoft_entra" background="#FFC069" />
+    <Label value="azure_api_management" background="#AD8B00" />
+    <Label value="developer_portal" background="#D3F261" />
+    <Label value="logic_apps" background="#389E0D" />
+    <Label value="azure_services" background="#5CDBD3" />
+    <Label value="sass_services" background="#096DD9" />
+    <Label value="resource_group" background="#ADC6FF" />
+    <Label value="web" background="#9254DE" />
+  </RectangleLabels>
+</View>
