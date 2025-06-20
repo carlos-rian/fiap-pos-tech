@@ -8,6 +8,7 @@ dependencies = [
     "albumentations>=2.0.8",
     "opencv-python>=4.11.0.86",
     "pandas>=2.3.0",
+    "pillow>=11.2.1",
 ]
 
 [dependency-groups]
