@@ -6,6 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "albumentations>=2.0.8",
+    "langchain>=0.3.26",
+    "langchain-openai>=0.3.24",
     "opencv-python>=4.11.0.86",
     "pandas>=2.3.0",
     "pillow>=11.2.1",
