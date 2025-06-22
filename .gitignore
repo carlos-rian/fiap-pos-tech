@@ -4,7 +4,8 @@
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
-*/dataset_base_augmented/
+*/dataset_base_augmented
+*/dataset_augment_old
 *.zip
 */dataset_output/
 */dataset_base_output/
