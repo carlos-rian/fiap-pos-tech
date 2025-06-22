@@ -23,12 +23,12 @@ from tqdm import tqdm
 BASE_DIR: Path = Path(__file__).parent
 ICON_DIR: Path = BASE_DIR / "dataset_base/"
 BACKGROUND_DIR: Path = BASE_DIR / "diagram_base/"
-OUTPUT_DIR: Path = BASE_DIR / "dataset_output/"
+OUTPUT_DIR: Path = BASE_DIR / "dataset_base_output/"
 
 # Generation parameters
 NUM_VARIATIONS_PER_ICON: int = 10
-MIN_TOTAL_ICONS_PER_IMAGE: int = 4
-MAX_TOTAL_ICONS_PER_IMAGE: int = 12
+MIN_TOTAL_ICONS_PER_IMAGE: int = 6
+MAX_TOTAL_ICONS_PER_IMAGE: int = 14
 NUM_WORKERS: int = mp.cpu_count() - 1  # Leave one CPU core free
 
 # NEW PARAMETER: Defines grid for distribution (rows, columns)
@@ -68,8 +68,13 @@ def augment_icon(icon_image: Image.Image, max_size: Tuple[int, int]) -> Image.Im
     Returns:
         Image.Image: The augmented icon image
     """
-    # Resize the icon to fit in the cell
-    icon_image.thumbnail(max_size, Image.Resampling.LANCZOS)
+    # Escolhe tamanho aleatório dentro do intervalo definido
+    # min_icon = min(ICON_SIZE_RANGE)
+    # max_icon = min(max(max_size), max(ICON_SIZE_RANGE))
+    # icon_side = random.randint(min_icon, max_icon)
+    icon_side = random.choice(ICON_SIZE_RANGE)
+    icon_image = icon_image.copy()
+    icon_image.thumbnail((icon_side, icon_side), Image.Resampling.LANCZOS)
 
     rotation_angle = random.uniform(*ROTATION_RANGE)
     icon_image = icon_image.rotate(rotation_angle, expand=True, resample=Image.Resampling.BICUBIC)
@@ -143,8 +148,13 @@ def generate_single_variation(task_data: Dict[str, Any]) -> Dict[str, Any]:
             placed_annotations: List[AnnotationObject] = []
 
             rows, cols = GRID_DIMENSIONS
-            cell_width = bg_image.width // cols
-            cell_height = bg_image.height // rows
+            # Safe zone: 10% de margem em todos os lados
+            margin_x = int(bg_image.width * 0.10)
+            margin_y = int(bg_image.height * 0.10)
+            safe_width = bg_image.width - 2 * margin_x
+            safe_height = bg_image.height - 2 * margin_y
+            cell_width = safe_width // cols
+            cell_height = safe_height // rows
 
             grid_cells = [(r, c) for r in range(rows) for c in range(cols)]
             random.shuffle(grid_cells)
@@ -166,15 +176,15 @@ def generate_single_variation(task_data: Dict[str, Any]) -> Dict[str, Any]:
                     # Passes the cell size to ensure the augmented icon fits
                     augmented_icon = augment_icon(icon_image.copy(), (cell_width, cell_height))
 
-                    # Calculate position within the cell with jitter (variation)
-                    cell_x_start = col * cell_width
-                    cell_y_start = row * cell_height
+                    # Posição da célula dentro da safe zone
+                    cell_x_start = margin_x + col * cell_width
+                    cell_y_start = margin_y + row * cell_height
 
-                    # Free space within the cell for jitter
+                    # Espaço livre dentro da célula
                     free_space_x = cell_width - augmented_icon.width
                     free_space_y = cell_height - augmented_icon.height
 
-                    # Final icon position
+                    # Posição final do ícone dentro da célula
                     paste_x = cell_x_start + random.randint(0, max(0, free_space_x))
                     paste_y = cell_y_start + random.randint(0, max(0, free_space_y))
 

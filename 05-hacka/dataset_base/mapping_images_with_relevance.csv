@@ -1,4 +1,4 @@
-File_Path,RelevanceId,RelevanceName
+ImageName,RelevanceId,RelevanceName
 azure_cost_alerts,4,Medium-Low
 azure_sendgrid_accounts,3,Medium
 azure_power_up,5,Low
