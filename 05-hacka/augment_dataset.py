@@ -18,11 +18,13 @@ Requirements:
 """
 
 import xml.etree.ElementTree as ET
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 import albumentations as A
 import cv2
 import pandas
+from tqdm import tqdm
 
 # --- CONFIGURATION ---
 # 1. Place your images and XMLs exported from Label Studio in this folder
@@ -33,10 +35,10 @@ OUTPUT_DIR = Path("dataset_base_augmented")
 
 # 3. How many variants do you want to create PER ORIGINAL IMAGE?
 # If you have 2 images and set 100 here, you'll have 200 images at the end.
-AUGMENTATIONS_PER_IMAGE = 20
+AUGMENTATIONS_PER_IMAGE = 10
 # --- END OF CONFIGURATION ---
 
-RELEVANCE_FILTER = {"Medium", "Medium-High", "High"}
+RELEVANCE_FILTER = {"Medium-High", "High"}
 
 df = pandas.read_csv("dataset_base/mapping_images_with_relevance.csv")
 IMAGES_WITH_RELEVANCE = set(df[df["RelevanceName"].isin(RELEVANCE_FILTER)]["ImageName"].tolist())
@@ -165,68 +167,75 @@ transform = A.Compose(
 )
 
 
-def process_images() -> None:
-    """
-    Process all images in the INPUT_DIR and create augmented versions.
+# Função para processar uma única imagem (para uso no pool de processos)
+def process_single_image(image_file: Path) -> None:
+    xml_path = image_file.with_suffix(".xml")
+    if not xml_path.exists():
+        print(f"Warning: XML file not found for {image_file.name}. Skipping.")
+        return
 
-    This function finds all image files in the input directory, processes each one
-    with its corresponding XML annotation file, and generates augmented versions
-    with updated bounding box coordinates.
-    """
-    # Create directories if they don't exist
+    image = cv2.imread(str(image_file))
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    bboxes, class_labels = parse_voc_xml(xml_path)
+
+    for i in range(AUGMENTATIONS_PER_IMAGE):
+        transformed = transform(image=image, bboxes=bboxes, class_labels=class_labels)
+        transformed_image = transformed["image"]
+        transformed_bboxes = transformed["bboxes"]
+        transformed_labels = transformed["class_labels"]
+
+        # Clip bounding boxes to image boundaries
+        image_height, image_width, _ = transformed_image.shape
+        transformed_bboxes = clip_bboxes(transformed_bboxes, image_height, image_width)
+
+        # Preserve subfolder structure
+        relative_path = image_file.relative_to(INPUT_DIR)
+        output_subfolder = OUTPUT_DIR / relative_path.parent
+        output_subfolder.mkdir(parents=True, exist_ok=True)
+
+        # Generate a unique filename for the augmented image
+        output_filename_base = f"{image_file.stem}_aug_{i}"
+        output_image_path = output_subfolder / f"{output_filename_base}.png"
+
+        # Save the augmented image
+        cv2.imwrite(str(output_image_path), cv2.cvtColor(transformed_image, cv2.COLOR_RGB2BGR))
+
+        # Create and save the corresponding XML
+        create_voc_xml(output_image_path, transformed_bboxes, transformed_labels, output_subfolder)
+
+
+def process_images() -> None:
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     print(f"Place your images and XMLs in the folder: '{INPUT_DIR}' and run the script again.")
 
-    # Find all image files with supported extensions
-    image_files = []
-    for file in INPUT_DIR.rglob("*"):
-        if file.is_file() and file.suffix.lower() in {".png"} and file.parent.name in IMAGES_WITH_RELEVANCE:
-            image_files.append(file)
+    image_files = [
+        file for file in INPUT_DIR.rglob("*") if file.is_file() and file.suffix.lower() == ".png" and file.parent.name in IMAGES_WITH_RELEVANCE
+    ]
 
     if not image_files:
         print(f"No images found in folder '{INPUT_DIR}'")
         return
 
-    for image_file in image_files:
-        xml_path = image_file.with_suffix(".xml")
+    failed_images = []
 
-        if not xml_path.exists():
-            print(f"Warning: XML file not found for {image_file.name}. Skipping.")
-            continue
+    # Paraleliza o processamento das imagens de forma simples, com tqdm
+    with ProcessPoolExecutor() as pool:
+        futures = [pool.submit(process_single_image, image_file) for image_file in image_files]
+        for future, image_file in zip(tqdm(as_completed(futures), total=len(futures), desc="Augmentando imagens", unit="img"), image_files):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Erro ao processar uma imagem: {e}")
+                failed_images.append(str(image_file))
 
-        image = cv2.imread(str(image_file))
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        bboxes, class_labels = parse_voc_xml(xml_path)
-
-        print(f"Processing {image_file.name} and generating {AUGMENTATIONS_PER_IMAGE} variations...")
-
-        for i in range(AUGMENTATIONS_PER_IMAGE):
-            transformed = transform(image=image, bboxes=bboxes, class_labels=class_labels)
-
-            transformed_image = transformed["image"]
-            transformed_bboxes = transformed["bboxes"]
-            transformed_labels = transformed["class_labels"]
-
-            # Clip bounding boxes to image boundaries
-            image_height, image_width, _ = transformed_image.shape
-            transformed_bboxes = clip_bboxes(transformed_bboxes, image_height, image_width)
-
-            # Preserve subfolder structure
-            relative_path = image_file.relative_to(INPUT_DIR)
-            output_subfolder = OUTPUT_DIR / relative_path.parent
-            output_subfolder.mkdir(parents=True, exist_ok=True)
-
-            # Generate a unique filename for the augmented image
-            output_filename_base = f"{image_file.stem}_aug_{i}"
-            output_image_path = output_subfolder / f"{output_filename_base}.png"
-
-            # Save the augmented image
-            cv2.imwrite(str(output_image_path), cv2.cvtColor(transformed_image, cv2.COLOR_RGB2BGR))
-
-            # Create and save the corresponding XML
-            create_voc_xml(output_image_path, transformed_bboxes, transformed_labels, output_subfolder)
+    if failed_images:
+        failed_path = OUTPUT_DIR / "failed_images.txt"
+        with open(failed_path, "w") as f:
+            for path in failed_images:
+                f.write(path + "\n")
+        print(f"\nAlgumas imagens falharam. Veja a lista em: {failed_path}")
 
     print("\nAugmentation process completed!")
     print(f"Your new dataset is ready in folder: '{OUTPUT_DIR}'")
