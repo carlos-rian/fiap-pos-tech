@@ -145,7 +145,7 @@ def show_image(image_path: Path) -> None:
     """
     result_image = cv2.imread(str(image_path))
     try:
-        cv2_imshow(result_image)
+        cv2.imshow("Image", result_image)
     except NameError:
         # cv2_imshow pode não estar disponível fora do Colab/Jupyter
         pass
