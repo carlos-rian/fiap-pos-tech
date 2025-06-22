@@ -20,15 +20,23 @@ resize_png_for_pytorch() {
     local output_dir="$2"
     local target_size="$3"
     local quality_mode="$4"
-    
+    local search_directory="$5"
+
+    # Get relative path from search_directory to png_file
+    local rel_path="${png_file#$search_directory/}"
+    local rel_dir=$(dirname "$rel_path")
     local basename=$(basename "$png_file" .png)
-    local output_file="$output_dir/${basename}.png"
-    
+    local output_subdir="$output_dir/$rel_dir"
+    local output_file="$output_subdir/${basename}.png"
+
+    # Create output subdirectory if it doesn't exist
+    mkdir -p "$output_subdir"
+
     echo "Resizing: $png_file -> $output_file"
-    
+
     if [[ "$quality_mode" == "upscale" ]]; then
         # Best for upscaling small PNGs - use Mitchell filter for better results
-        convert "$png_file" \
+        magick "$png_file" \
                 -filter Mitchell \
                 -resize "${target_size}x${target_size}!" \
                 -unsharp 0x0.75+0.75+0.008 \
@@ -36,7 +44,7 @@ resize_png_for_pytorch() {
                 "$output_file"
     elif [[ "$quality_mode" == "crop" ]]; then
         # Center crop to exact square
-        convert "$png_file" \
+        magick "$png_file" \
                 -filter Lanczos \
                 -resize "${target_size}x${target_size}^" \
                 -gravity center \
@@ -45,7 +53,7 @@ resize_png_for_pytorch() {
                 "$output_file"
     elif [[ "$quality_mode" == "high" ]]; then
         # Maintain aspect ratio with transparent padding
-        convert "$png_file" \
+        magick "$png_file" \
                 -filter Lanczos \
                 -resize "${target_size}x${target_size}>" \
                 -background transparent \
@@ -55,13 +63,13 @@ resize_png_for_pytorch() {
                 "$output_file"
     else
         # Force resize (may distort aspect ratio)
-        convert "$png_file" \
+        magick "$png_file" \
                 -filter Lanczos \
                 -resize "${target_size}x${target_size}!" \
                 -quality 100 \
                 "$output_file"
     fi
-    
+
     if [[ $? -eq 0 ]]; then
         echo "Success: Created $output_file"
     else
@@ -75,20 +83,20 @@ process_png_files() {
     local output_directory="$2"
     local target_size="$3"
     local quality_mode="$4"
-    
+
     echo "Processing PNG files from: $search_directory"
     echo "Output directory: $output_directory"
     echo "Target size: ${target_size}x${target_size}"
     echo "Quality mode: $quality_mode"
     echo
-    
+
     local count=0
-    
+
     find "$search_directory" -type f -name "*.png" | while read -r png_file; do
-        resize_png_for_pytorch "$png_file" "$output_directory" "$target_size" "$quality_mode"
+        resize_png_for_pytorch "$png_file" "$output_directory" "$target_size" "$quality_mode" "$search_directory"
         ((count++))
     done
-    
+
     echo "Processing completed!"
     echo "Total files processed: $(find "$search_directory" -type f -name "*.png" | wc -l)"
 }
@@ -140,53 +148,6 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
     echo "Examples:"
     echo "  $0                              # Resize to 224x224 with upscale quality"
     echo "  $0 ./images ./output 256        # Resize to 256x256 with upscale"
-    echo "  $0 ./images ./output 512 crop   # Resize to 512x512 with center crop"
-    exit 0
-fi
-
-echo "Input directory: $search_directory"
-echo "Output directory: $output_directory"
-echo "Target size: ${target_size}x${target_size}"
-echo "Quality mode: $quality_mode"
-echo
-
-# Confirm before proceeding
-read -p "Do you want to proceed? (y/N): " confirm
-if [[ $confirm =~ ^[Yy]$ ]]; then
-    process_png_files "$search_directory" "$output_directory" "$target_size" "$quality_mode"
-else
-    echo "Operation cancelled."
-fi
-    echo "Error: Directory '$search_directory' does not exist."
-    exit 1
-fi
-
-# Create output directory
-mkdir -p "$output_directory"
-
-# Show usage if needed
-if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "Usage: $0 [input_directory] [output_directory] [size] [mode]"
-    echo ""
-    echo "Parameters:"
-    echo "  input_directory   - Directory with PNG files (default: current directory)"
-    echo "  output_directory  - Output directory (default: ./pytorch_resized)"
-    echo "  size             - Target size in pixels (default: 224)"
-    echo "  mode             - Quality mode: 'high', 'crop', or 'standard' (default: high)"
-    echo ""
-    echo "Common PyTorch sizes:"
-    echo "  224 - Standard for most CNN models (ResNet, VGG, etc.)"
-    echo "  256 - Good balance of quality and performance"
-    echo "  512 - High resolution for detailed models"
-    echo ""
-    echo "Quality modes:"
-    echo "  high     - Preserve aspect ratio with padding (recommended)"
-    echo "  crop     - Center crop to exact square"
-    echo "  standard - Simple resize"
-    echo ""
-    echo "Examples:"
-    echo "  $0                              # Resize to 224x224 with high quality"
-    echo "  $0 ./images ./output 256        # Resize to 256x256"
     echo "  $0 ./images ./output 512 crop   # Resize to 512x512 with center crop"
     exit 0
 fi
