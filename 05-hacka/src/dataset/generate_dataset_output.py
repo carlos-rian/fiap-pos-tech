@@ -13,7 +13,7 @@ import random
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any
 from xml.dom import minidom
 
 from PIL import Image, ImageEnhance
@@ -32,19 +32,19 @@ MAX_TOTAL_ICONS_PER_IMAGE: int = 14
 NUM_WORKERS: int = mp.cpu_count() - 1  # Leave one CPU core free
 
 # NEW PARAMETER: Defines grid for distribution (rows, columns)
-GRID_DIMENSIONS: Tuple[int, int] = (4, 5)  # 4 rows and 5 columns = 20 cells
+GRID_DIMENSIONS: tuple[int, int] = (4, 5)  # 4 rows and 5 columns = 20 cells
 
 # Augmentation parameters
-ICON_SIZE_RANGE: Tuple = (64, 96, 128)  # Reduced to better fit in grid
-ROTATION_RANGE: Tuple[float, float] = (-5.0, 5.0)
-BRIGHTNESS_RANGE: Tuple[float, float] = (0.8, 1.2)
-CONTRAST_RANGE: Tuple[float, float] = (0.8, 1.2)
+ICON_SIZE_RANGE: tuple = (64, 96, 128)  # Reduced to better fit in grid
+ROTATION_RANGE: tuple[float, float] = (-5.0, 5.0)
+BRIGHTNESS_RANGE: tuple[float, float] = (0.8, 1.2)
+CONTRAST_RANGE: tuple[float, float] = (0.8, 1.2)
 # --- END CONFIGURATION ---
 
-AnnotationObject = Dict[str, Any]
+AnnotationObject = dict[str, Any]
 
 
-def get_asset_paths(directory: Path) -> List[Path]:
+def get_asset_paths(directory: Path) -> list[Path]:
     """
     Recursively search for all image files in a directory.
 
@@ -57,7 +57,7 @@ def get_asset_paths(directory: Path) -> List[Path]:
     return list(directory.glob("**/*.png")) + list(directory.glob("**/*.jpg"))
 
 
-def augment_icon(icon_image: Image.Image, max_size: Tuple[int, int]) -> Image.Image:
+def augment_icon(icon_image: Image.Image, max_size: tuple[int, int]) -> Image.Image:
     """
     Apply augmentation to an icon image, ensuring it doesn't exceed the cell size.
 
@@ -68,10 +68,6 @@ def augment_icon(icon_image: Image.Image, max_size: Tuple[int, int]) -> Image.Im
     Returns:
         Image.Image: The augmented icon image
     """
-    # Escolhe tamanho aleatório dentro do intervalo definido
-    # min_icon = min(ICON_SIZE_RANGE)
-    # max_icon = min(max(max_size), max(ICON_SIZE_RANGE))
-    # icon_side = random.randint(min_icon, max_icon)
     icon_side = random.choice(ICON_SIZE_RANGE)
     icon_image = icon_image.copy()
     icon_image.thumbnail((icon_side, icon_side), Image.Resampling.LANCZOS)
@@ -87,7 +83,12 @@ def augment_icon(icon_image: Image.Image, max_size: Tuple[int, int]) -> Image.Im
     return icon_image
 
 
-def generate_pascal_voc_xml(folder_name: str, image_filename: str, image_size: Tuple[int, int, int], objects: List[AnnotationObject]) -> str:
+def generate_pascal_voc_xml(
+    folder_name: str,
+    image_filename: str,
+    image_size: tuple[int, int, int],
+    objects: list[AnnotationObject],
+) -> str:
     """
     Generate a formatted XML string in Pascal VOC format.
 
@@ -124,7 +125,7 @@ def generate_pascal_voc_xml(folder_name: str, image_filename: str, image_size: T
     return dom.toprettyxml(indent="  ")
 
 
-def generate_single_variation(task_data: Dict[str, Any]) -> Dict[str, Any]:
+def generate_single_variation(task_data: dict[str, Any]) -> dict[str, Any]:
     """
     Generate a single image variation - designed for parallel processing.
 
@@ -145,7 +146,7 @@ def generate_single_variation(task_data: Dict[str, Any]) -> Dict[str, Any]:
         output_subdir.mkdir(parents=True, exist_ok=True)
 
         with Image.open(bg_path).convert("RGBA") as bg_image:
-            placed_annotations: List[AnnotationObject] = []
+            placed_annotations: list[AnnotationObject] = []
 
             rows, cols = GRID_DIMENSIONS
             # Safe zone: 10% de margem em todos os lados

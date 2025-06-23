@@ -1,13 +1,11 @@
 import os
+import random
 from enum import Enum
-from typing import List, Set
 
 from langchain.output_parsers import PydanticOutputParser
 from langchain.prompts import ChatPromptTemplate
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
-
-# --- Pydantic Models for Structured Output ---
 
 
 class EnumStrideType(str, Enum):
@@ -24,7 +22,7 @@ class EnumStrideType(str, Enum):
 class Threat(BaseModel):
     """Represents a single threat with its category, description, and countermeasure."""
 
-    threat_category: EnumStrideType = Field(..., description="Type of threat (e.g., S_Spoofing)")
+    threat_category: EnumStrideType = Field(..., description="Type of threat (e.g., S_Spoofing, T_Tampering, etc.).")
     threat_description: str = Field(..., description="A detailed description of the identified threat.")
     suggested_countermeasure: str = Field(..., description="A suggested action to mitigate the threat.")
 
@@ -33,7 +31,7 @@ class STRIDEAnalysisResponse(BaseModel):
     """The main response model for the STRIDE analysis of a component."""
 
     component_name: str = Field(..., description="The name of the software or system component being analyzed.")
-    threats: List[Threat] = Field(..., description="A list of potential threats related to the component.")
+    threats: list[Threat] = Field(..., description="A list of potential threats related to the component.")
 
 
 def perform_stride_analysis(component_name: str, openai_api_key: str) -> STRIDEAnalysisResponse | None:
@@ -47,7 +45,8 @@ def perform_stride_analysis(component_name: str, openai_api_key: str) -> STRIDEA
     Returns:
         A STRIDEAnalysisResponse object containing the structured threat analysis, or None if an error occurs.
     """
-    model = ChatOpenAI(temperature=0.6, model="gpt-4o-mini", openai_api_key=openai_api_key)
+    temperature = round(random.uniform(0.2, 0.9), 1)
+    model = ChatOpenAI(temperature=temperature, model="gpt-4o-mini", openai_api_key=openai_api_key)
     parser = PydanticOutputParser(pydantic_object=STRIDEAnalysisResponse)
     prompt_template = """
     You are an expert cybersecurity analyst specializing in threat modeling.
@@ -77,7 +76,7 @@ def perform_stride_analysis(component_name: str, openai_api_key: str) -> STRIDEA
         return None
 
 
-def analyze_components(components: Set[str]) -> list[STRIDEAnalysisResponse]:
+def analyze_components(components: set[str]) -> list[STRIDEAnalysisResponse]:
     """
     Analyze a set of components and return the STRIDE analysis results.
 
@@ -98,3 +97,16 @@ def analyze_components(components: Set[str]) -> list[STRIDEAnalysisResponse]:
         if analysis_result:
             all_results.append(analysis_result)
     return all_results
+
+
+def generate_stride_analysis(components: set[str]) -> list[STRIDEAnalysisResponse]:
+    """
+    Generate STRIDE analysis for a set of components.
+
+    Args:
+        components: A set of component names to analyze.
+
+    Returns:
+        A list of STRIDEAnalysisResponse objects for each successfully analyzed component.
+    """
+    return analyze_components(components)

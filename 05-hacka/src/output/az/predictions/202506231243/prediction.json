@@ -1,0 +1,118 @@
+{
+    "predictions": [
+        {
+            "confidence": 0.9979641437530518,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.32125431299209595,
+                "yMin": 0.3538549244403839,
+                "xMax": 0.4012775421142578,
+                "yMax": 0.4597073495388031
+            }
+        },
+        {
+            "confidence": 0.997519314289093,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.04242051765322685,
+                "yMin": 0.043732572346925735,
+                "xMax": 0.1257275938987732,
+                "yMax": 0.1510223001241684
+            }
+        },
+        {
+            "confidence": 0.9974907636642456,
+            "displayName": "user",
+            "boundingBox": {
+                "xMin": 0.049110375344753265,
+                "yMin": 0.6178019046783447,
+                "xMax": 0.12805165350437164,
+                "yMax": 0.7488557696342468
+            }
+        },
+        {
+            "confidence": 0.9963006973266602,
+            "displayName": "azure_services",
+            "boundingBox": {
+                "xMin": 0.848437488079071,
+                "yMin": 0.2416967749595642,
+                "xMax": 0.9520536065101624,
+                "yMax": 0.35786160826683044
+            }
+        },
+        {
+            "confidence": 0.9961674809455872,
+            "displayName": "api",
+            "boundingBox": {
+                "xMin": 0.8736542463302612,
+                "yMin": 0.8147183656692505,
+                "xMax": 0.9354444146156311,
+                "yMax": 0.9346835613250732
+            }
+        },
+        {
+            "confidence": 0.9960447549819946,
+            "displayName": "developer_portal",
+            "boundingBox": {
+                "xMin": 0.319589763879776,
+                "yMin": 0.6300017833709717,
+                "xMax": 0.3992641866207123,
+                "yMax": 0.7252389788627625
+            }
+        },
+        {
+            "confidence": 0.9954074025154114,
+            "displayName": "sass_services",
+            "boundingBox": {
+                "xMin": 0.8576849102973938,
+                "yMin": 0.43704938888549805,
+                "xMax": 0.9416706562042236,
+                "yMax": 0.5281861424446106
+            }
+        },
+        {
+            "confidence": 0.9953553676605225,
+            "displayName": "api",
+            "boundingBox": {
+                "xMin": 0.8714337944984436,
+                "yMin": 0.6482719779014587,
+                "xMax": 0.9337298274040222,
+                "yMax": 0.7611584663391113
+            }
+        },
+        {
+            "confidence": 0.9924651384353638,
+            "displayName": "resource_group",
+            "boundingBox": {
+                "xMin": 0.05504953861236572,
+                "yMin": 0.3572279214859009,
+                "xMax": 0.12511248886585236,
+                "yMax": 0.45687296986579895
+            }
+        },
+        {
+            "confidence": 0.9920029640197754,
+            "displayName": "logic_apps",
+            "boundingBox": {
+                "xMin": 0.5647966265678406,
+                "yMin": 0.35497593879699707,
+                "xMax": 0.6262819170951843,
+                "yMax": 0.4486275315284729
+            }
+        },
+        {
+            "confidence": 0.9909041523933411,
+            "displayName": "resource_group",
+            "boundingBox": {
+                "xMin": 0.23450784385204315,
+                "yMin": 0.8438363075256348,
+                "xMax": 0.2774578332901001,
+                "yMax": 0.9039021134376526
+            }
+        }
+    ],
+    "modelInfo": {
+        "type": "local_pytorch",
+        "model_path": "src\\models\\soft-arch_epoch-10_202506221523.pth"
+    }
+}

@@ -31,7 +31,7 @@ from tqdm import tqdm
 INPUT_DIR = Path("dataset_base_output")
 
 # 2. Augmented images and XMLs will be saved here
-OUTPUT_DIR = Path("dataset_base_augmented")
+OUTPUT_DIR = Path("dataset_augmented")
 
 # 3. How many variants do you want to create PER ORIGINAL IMAGE?
 # If you have 2 images and set 100 here, you'll have 200 images at the end.
@@ -40,11 +40,10 @@ AUGMENTATIONS_PER_IMAGE = 10
 
 RELEVANCE_FILTER = {"Medium-High", "High"}
 
-df = pandas.read_csv("dataset_base/mapping_images_with_relevance.csv")
+df = pandas.read_csv("./dataset_base/mapping_images_with_relevance.csv")
 IMAGES_WITH_RELEVANCE = set(df[df["RelevanceName"].isin(RELEVANCE_FILTER)]["ImageName"].tolist())
 
 
-# Function to read Pascal VOC .xml files
 def parse_voc_xml(xml_file: Path) -> tuple[list[list[int]], list[str]]:
     """
     Parse Pascal VOC XML annotation file to extract bounding boxes and labels.
@@ -75,7 +74,6 @@ def parse_voc_xml(xml_file: Path) -> tuple[list[list[int]], list[str]]:
     return bboxes, labels
 
 
-# Function to create a new Pascal VOC .xml file
 def create_voc_xml(image_path: Path, bboxes: list[list[int]], labels: list[str], output_dir: Path) -> None:
     """
     Create a new Pascal VOC XML annotation file for an image.
@@ -165,10 +163,30 @@ transform = A.Compose(
     ],
     bbox_params=A.BboxParams(format="pascal_voc", label_fields=["class_labels"]),
 )
+"""
+transform: albumentations.Compose
+    Data augmentation pipeline for diagram images and Pascal VOC bounding boxes.
+
+    Applies the following transformations:
+        - RandomBrightnessContrast: Randomly changes brightness and contrast (30% probability).
+        - Affine: Applies small random translations, scaling, and rotations (70% probability), 
+          with white padding for out-of-bounds areas.
+        - GaussianBlur: Randomly blurs the image (20% probability).
+        - GaussNoise: Randomly adds Gaussian noise (20% probability).
+
+    Bounding boxes are handled in Pascal VOC format and are adjusted accordingly.
+"""
 
 
 # Função para processar uma única imagem (para uso no pool de processos)
 def process_single_image(image_file: Path) -> None:
+    """
+    Process a single image and its annotation by applying data augmentation,
+    saving the augmented images and their corresponding Pascal VOC XML files.
+
+    Args:
+        image_file: Path to the original image file.
+    """
     xml_path = image_file.with_suffix(".xml")
     if not xml_path.exists():
         print(f"Warning: XML file not found for {image_file.name}. Skipping.")
@@ -205,6 +223,10 @@ def process_single_image(image_file: Path) -> None:
 
 
 def process_images() -> None:
+    """
+    Process all relevant images in the input directory, applying augmentation
+    and saving results to the output directory. Handles errors and logs failures.
+    """
     INPUT_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -237,7 +259,7 @@ def process_images() -> None:
                 f.write(path + "\n")
         print(f"\nAlgumas imagens falharam. Veja a lista em: {failed_path}")
 
-    print("\nAugmentation process completed!")
+    print("Augmentation process completed!")
     print(f"Your new dataset is ready in folder: '{OUTPUT_DIR}'")
 
 
