@@ -6,6 +6,8 @@
 # website: http://jupyter.org/
 */dataset_base_augmented
 */dataset_augment_old
+*/dataset_augment*/
+*dataset_augment*
 *.zip
 */dataset_output/
 */dataset_base_output/
