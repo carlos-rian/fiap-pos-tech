@@ -8,7 +8,7 @@ from .util import PascalVOCDataset, get_model, get_transform
 
 MODEL_NAME: str = None
 MODEL_PATH: Path = None
-BUCKER_PATH = Path("/content/drive/MyDrive/hacka")
+BUCKER_PATH = Path("src/dataset")
 DATASET_PATH: Path = BUCKER_PATH / "dataset_augment"
 
 

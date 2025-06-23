@@ -281,3 +281,13 @@ def run_prediction(
         save_json_output(json_output, output_json_path)
 
     return json_output
+
+
+if __name__ == "__main__":
+    # Example usage
+    IMAGE_PATH = Path("src/dataset/test/az.png")
+    MODEL_PATH = Path("src/dataset/models/soft-arch_epoch-10_202310101234.pth")
+    DATASET_PATH = Path("src/dataset/dataset_augment")
+    BASE_OUTPUT_PATH = Path("src/output") / IMAGE_PATH.stem
+
+    run_prediction(IMAGE_PATH, MODEL_PATH, DATASET_PATH, BASE_OUTPUT_PATH, save_json=True, save_image=True)
