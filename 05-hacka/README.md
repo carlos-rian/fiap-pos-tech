@@ -41,6 +41,7 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
 ## Description of Modules and Folders
 
 - **pyproject.toml**: Manages dependencies and Python project settings.
+- **uv.lock**: Lockfile for dependency management with uv.
 - **src/main.py**: Main entry point for running project flows.
 - **src/dataset/**: Scripts and data for handling, augmenting, and testing image datasets.
   - **augment_dataset.py**: Performs data augmentation on images.
@@ -100,12 +101,18 @@ The project follows a structured workflows:
    - Outputs are generated in the `src/output/` directory, organized by image name for example image `aws.png` -> `src/output/aws/`.
 
 
-
 ## Requirements
 - Python 3.12+
+- [uv](https://github.com/astral-sh/uv) for dependency management
 - PyTorch
 - OpenCV
 - Other dependencies listed in `pyproject.toml`
+
+## Dataset and Model Access
+
+Due to size constraints, the dataset and trained model are not included in this repository. Request access from the project team using the following links:
+- [Dataset Google Drive link (+100GB)](https://drive.google.com/file/d/1D3fADFR0UmFvyX54-iIRkyGX4QPjZGPa/view?usp=drive_link)
+- [Model Google Drive link](https://drive.google.com/file/d/1gXZm0NloL2bhaJoEXVPDfNri98f00ZZQ/view?usp=drive_link)
 
 ## License
 [MIT](LICENSE)
