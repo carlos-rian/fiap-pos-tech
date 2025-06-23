@@ -4,7 +4,7 @@
 This project is a solution developed for the FIAP POS Tech Hackathon, focused on processing, augmentation, and analysis of image datasets, as well as integration with generative AI models and training of custom models.
 
 ## Warnings (Files/Directories not available)
-- **src/dataset/dataset_augment/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Request access to the dataset from the [Google Drive link](https://drive.google.com/file/d/1D3fADFR0UmFvyX54-iIRkyGX4QPjZGPa/view?usp=drive_link) provided by the project team.
+- **src/dataset/dataset_augment/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Request access to the dataset from the [Google Drive link +100GB](https://drive.google.com/file/d/1D3fADFR0UmFvyX54-iIRkyGX4QPjZGPa/view?usp=drive_link) provided by the project team.
 - **src/models/** The model trained in this project is not publicly available, because it is too large to upload to GitHub. Request access to the model from the [Google Drive link](https://drive.google.com/file/d/1gXZm0NloL2bhaJoEXVPDfNri98f00ZZQ/view?usp=drive_link) provided by the project team.
 
 
@@ -80,6 +80,24 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
    ```bash
    python src/finetunning/predict.py
    ```
+
+
+## Workflows
+The project follows a structured workflows:
+
+- **Dataset**:
+   - [Dataset generation and processing](src/dataset/generate_dataset_output.py): Generates the dataset with various transformations the step will generate 10 new images for each original image with different background, rotation, and other transformations.
+   - [Data augmentation and processing](src/dataset/augment_dataset.py): Augments the dataset will generate 10 new images for each original image based on the generated dataset run in the previous step.
+- **Model Training**:
+   - [Model training](src/finetunning/train.py): After the dataset is generated, this script trains a custom model using the augmented dataset.
+- **Model Prediction**:
+   - [Model prediction](src/finetunning/predict.py): Uses the trained model to make predictions on new images.
+- **Generative AI**:
+   - [Generative AI integration](src/generative_ai/chatgpt.py): Integrates with ChatGPT for generating text based on image analysis, the analysis is based on the predictions made by the model.
+- **Output Generation**:
+   - Outputs are generated in the `src/output/` directory, organized by image name for example image `aws.png` -> `src/output/aws/`.
+
+
 
 ## Requirements
 - Python 3.12+
