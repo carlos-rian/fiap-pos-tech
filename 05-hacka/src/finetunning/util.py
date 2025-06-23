@@ -80,3 +80,31 @@ def get_model(num_classes: int) -> torchvision.models.detection.FasterRCNN:
     in_features = model.roi_heads.box_predictor.cls_score.in_features
     model.roi_heads.box_predictor = FastRCNNPredictor(in_features, num_classes)
     return model
+
+
+def get_class_from_prediction(prediction: dict[str, list[dict[str, str | float]]]) -> set[str]:
+    """
+    Extracts the class name from a prediction dictionary.
+
+    Args:
+        prediction: A dictionary containing the prediction results.
+
+    Returns:
+        The class name as a string.
+    """
+    """
+    {"predictions": [
+        {
+            "confidence": 0.9979641437530518,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.32125431299209595,
+                "yMin": 0.3538549244403839,
+                "xMax": 0.4012775421142578,
+                "yMax": 0.4597073495388031
+            }
+        }
+    ]}
+    """
+    class_names = [pred.get("displayName") for pred in prediction.get("predictions", [])]
+    return set(class_names)
