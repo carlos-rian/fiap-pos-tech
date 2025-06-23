@@ -29,7 +29,6 @@ for image_path in IMAGES_PATH_FOR_TEST:
         dataset_path=DATASET_PATH,
         base_path=base_path,
         save_json=True,
-        save_image=True,
     )
 
     classes = get_class_from_prediction(prediction=prediction)
