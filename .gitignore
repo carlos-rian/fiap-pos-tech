@@ -13,6 +13,7 @@
 */dataset_base_output/
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+soft-arch_epoch-10_202506221523.pth
 
 # IPython
 profile_default/
