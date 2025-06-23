@@ -61,6 +61,8 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
 
 ## How to Run
 
+That step just works if you have the dataset and model files available, otherwise you will need to generate them using the scripts provided in the project.
+
 1. Install dependencies:
    ```bash
    uv sync --python 3.12
