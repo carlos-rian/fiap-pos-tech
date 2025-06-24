@@ -28,19 +28,19 @@ from tqdm import tqdm
 
 # --- CONFIGURATION ---
 # 1. Place your images and XMLs exported from Label Studio in this folder
-INPUT_DIR = Path("dataset_base_output")
+base_path = Path(__file__).parent
+INPUT_DIR = base_path / Path("dataset_output")
 
 # 2. Augmented images and XMLs will be saved here
-OUTPUT_DIR = Path("dataset_augmented")
+OUTPUT_DIR = base_path / Path("dataset_augmented")
 
 # 3. How many variants do you want to create PER ORIGINAL IMAGE?
 # If you have 2 images and set 100 here, you'll have 200 images at the end.
 AUGMENTATIONS_PER_IMAGE = 10
 # --- END OF CONFIGURATION ---
 
-RELEVANCE_FILTER = {"Medium-High", "High"}
-
-df = pandas.read_csv("./dataset_base/mapping_images_with_relevance.csv")
+RELEVANCE_FILTER = {"High"}
+df = pandas.read_csv(base_path / "dataset_base/mapping_images_with_relevance.csv")
 IMAGES_WITH_RELEVANCE = set(df[df["RelevanceName"].isin(RELEVANCE_FILTER)]["ImageName"].tolist())
 
 
@@ -156,7 +156,7 @@ transform = A.Compose(
             rotate=(-5, 5),
             p=0.7,
             border_mode=cv2.BORDER_CONSTANT,
-            cval=(255, 255, 255),
+            # cval=(255, 255, 255),
         ),
         A.GaussianBlur(p=0.2),
         A.GaussNoise(p=0.2),
@@ -207,8 +207,8 @@ def process_single_image(image_file: Path) -> None:
         transformed_bboxes = clip_bboxes(transformed_bboxes, image_height, image_width)
 
         # Preserve subfolder structure
-        relative_path = image_file.relative_to(INPUT_DIR)
-        output_subfolder = OUTPUT_DIR / relative_path.parent
+        # relative_path = image_file.relative_to(INPUT_DIR)
+        output_subfolder = OUTPUT_DIR  # / relative_path.parent
         output_subfolder.mkdir(parents=True, exist_ok=True)
 
         # Generate a unique filename for the augmented image

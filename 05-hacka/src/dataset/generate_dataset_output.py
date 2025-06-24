@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 from xml.dom import minidom
 
+import pandas
 from PIL import Image, ImageEnhance
 from tqdm import tqdm
 
@@ -23,10 +24,10 @@ from tqdm import tqdm
 BASE_DIR: Path = Path(__file__).parent
 ICON_DIR: Path = BASE_DIR / "dataset_base/"
 BACKGROUND_DIR: Path = BASE_DIR / "diagram_base/"
-OUTPUT_DIR: Path = BASE_DIR / "dataset_base_output/"
+OUTPUT_DIR: Path = BASE_DIR / "dataset_output/"
 
 # Generation parameters
-NUM_VARIATIONS_PER_ICON: int = 10
+NUM_VARIATIONS_PER_ICON: int = 5
 MIN_TOTAL_ICONS_PER_IMAGE: int = 6
 MAX_TOTAL_ICONS_PER_IMAGE: int = 14
 NUM_WORKERS: int = mp.cpu_count() - 1  # Leave one CPU core free
@@ -39,6 +40,14 @@ ICON_SIZE_RANGE: tuple = (64, 96, 128)  # Reduced to better fit in grid
 ROTATION_RANGE: tuple[float, float] = (-5.0, 5.0)
 BRIGHTNESS_RANGE: tuple[float, float] = (0.8, 1.2)
 CONTRAST_RANGE: tuple[float, float] = (0.8, 1.2)
+
+
+RELEVANCE_FILTER = {"High"}
+
+df = pandas.read_csv(BASE_DIR / "dataset_base/mapping_images_with_relevance.csv")
+IMAGES_WITH_RELEVANCE = set(df[df["RelevanceName"].isin(RELEVANCE_FILTER)]["ImageName"].tolist())
+
+
 # --- END CONFIGURATION ---
 
 AnnotationObject = dict[str, Any]
@@ -55,6 +64,10 @@ def get_asset_paths(directory: Path) -> list[Path]:
         List[Path]: List of paths to found image files
     """
     return list(directory.glob("**/*.png")) + list(directory.glob("**/*.jpg"))
+
+
+def filter_images_with_relevance(directory: Path) -> list[Path]:
+    return [img for img in get_asset_paths(directory) if img.is_file() and img.stem in IMAGES_WITH_RELEVANCE]
 
 
 def augment_icon(icon_image: Image.Image, max_size: tuple[int, int]) -> Image.Image:
@@ -245,7 +258,7 @@ def main() -> None:
         shutil.rmtree(OUTPUT_DIR)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    icon_paths = get_asset_paths(ICON_DIR)
+    icon_paths = filter_images_with_relevance(ICON_DIR)
     background_paths = get_asset_paths(BACKGROUND_DIR)
 
     if not icon_paths or not background_paths:
