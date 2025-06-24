@@ -3,8 +3,8 @@
   <folder>aws_key_management_service</folder>
   <filename>aws_key_management_service_0000.png</filename>
   <size>
-    <width>4967</width>
-    <height>1913</height>
+    <width>1541</width>
+    <height>1027</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,22 +14,82 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1707</xmin>
-      <ymin>1005</ymin>
-      <xmax>1811</xmax>
-      <ymax>1109</ymax>
+      <xmin>933</xmin>
+      <ymin>812</ymin>
+      <xmax>1035</xmax>
+      <ymax>914</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_container_instances</name>
+    <name>aws_dynamodb_table</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1456</xmin>
-      <ymin>1359</ymin>
-      <xmax>1554</xmax>
-      <ymax>1457</ymax>
+      <xmin>1202</xmin>
+      <ymin>196</ymin>
+      <xmax>1304</xmax>
+      <ymax>298</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>gcp_cloud_storage</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>226</xmin>
+      <ymin>740</ymin>
+      <xmax>358</xmax>
+      <ymax>872</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_elastic_container_service_service</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>302</xmin>
+      <ymin>237</ymin>
+      <xmax>370</xmax>
+      <ymax>305</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>gcp_cloud_load_balancing</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>654</xmin>
+      <ymin>530</ymin>
+      <xmax>754</xmax>
+      <ymax>630</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_virtual_networks</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>487</xmin>
+      <ymin>569</ymin>
+      <xmax>587</xmax>
+      <ymax>669</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_cloudformation</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>806</xmin>
+      <ymin>339</ymin>
+      <xmax>876</xmax>
+      <ymax>409</ymax>
     </bndbox>
   </object>
   <object>
@@ -38,58 +98,22 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2473</xmin>
-      <ymin>257</ymin>
-      <xmax>2577</xmax>
-      <ymax>361</ymax>
+      <xmin>952</xmin>
+      <ymin>342</ymin>
+      <xmax>1090</xmax>
+      <ymax>480</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_block_store_volume</name>
+    <name>azure_load_balancers</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>987</xmin>
-      <ymin>1104</ymin>
-      <xmax>1085</xmax>
-      <ymax>1202</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_simple_notification_service_topic</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>2601</xmin>
-      <ymin>694</ymin>
-      <xmax>2669</xmax>
-      <ymax>762</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_cloudformation_template</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>3514</xmin>
-      <ymin>332</ymin>
-      <xmax>3616</xmax>
-      <ymax>434</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_virtual_private_cloud</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>2967</xmin>
-      <ymin>1340</ymin>
-      <xmax>3071</xmax>
-      <ymax>1444</ymax>
+      <xmin>1260</xmin>
+      <ymin>643</ymin>
+      <xmax>1328</xmax>
+      <ymax>711</ymax>
     </bndbox>
   </object>
 </annotation>

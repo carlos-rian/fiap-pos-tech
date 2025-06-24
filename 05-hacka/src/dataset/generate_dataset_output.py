@@ -27,9 +27,9 @@ BACKGROUND_DIR: Path = BASE_DIR / "diagram_base/"
 OUTPUT_DIR: Path = BASE_DIR / "dataset_output/"
 
 # Generation parameters
-NUM_VARIATIONS_PER_ICON: int = 5
-MIN_TOTAL_ICONS_PER_IMAGE: int = 6
-MAX_TOTAL_ICONS_PER_IMAGE: int = 14
+NUM_VARIATIONS_PER_ICON: int = 10
+MIN_TOTAL_ICONS_PER_IMAGE: int = 8
+MAX_TOTAL_ICONS_PER_IMAGE: int = 16
 NUM_WORKERS: int = mp.cpu_count() - 1  # Leave one CPU core free
 
 # NEW PARAMETER: Defines grid for distribution (rows, columns)

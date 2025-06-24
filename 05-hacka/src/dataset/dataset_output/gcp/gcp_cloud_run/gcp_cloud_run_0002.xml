@@ -3,8 +3,8 @@
   <folder>gcp_cloud_run</folder>
   <filename>gcp_cloud_run_0002.png</filename>
   <size>
-    <width>1200</width>
-    <height>800</height>
+    <width>3490</width>
+    <height>2327</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,70 +14,58 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>329</xmin>
-      <ymin>142</ymin>
-      <xmax>399</xmax>
-      <ymax>212</ymax>
+      <xmin>2126</xmin>
+      <ymin>960</ymin>
+      <xmax>2196</xmax>
+      <ymax>1030</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_notification_service_topic</name>
+    <name>aws_key_management_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>314</xmin>
-      <ymin>565</ymin>
-      <xmax>452</xmax>
-      <ymax>703</ymax>
+      <xmin>1651</xmin>
+      <ymin>1009</ymin>
+      <xmax>1755</xmax>
+      <ymax>1113</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_api_gateway</name>
+    <name>aws_elastic_container_service_container_2</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>711</xmin>
-      <ymin>402</ymin>
-      <xmax>811</xmax>
-      <ymax>502</ymax>
+      <xmin>2785</xmin>
+      <ymin>1328</ymin>
+      <xmax>2923</xmax>
+      <ymax>1466</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_network_security_groups</name>
+    <name>azure_function_apps</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>976</xmin>
-      <ymin>137</ymin>
-      <xmax>1074</xmax>
-      <ymax>235</ymax>
+      <xmin>1220</xmin>
+      <ymin>1350</ymin>
+      <xmax>1320</xmax>
+      <ymax>1450</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_dynamodb_table</name>
+    <name>aws_amazon_cloudwatch</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>126</xmin>
-      <ymin>277</ymin>
-      <xmax>230</xmax>
-      <ymax>381</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_application_insights</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>596</xmin>
-      <ymin>98</ymin>
-      <xmax>694</xmax>
-      <ymax>196</ymax>
+      <xmin>2604</xmin>
+      <ymin>1661</ymin>
+      <xmax>2702</xmax>
+      <ymax>1759</ymax>
     </bndbox>
   </object>
   <object>
@@ -86,10 +74,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>586</xmin>
-      <ymin>254</ymin>
-      <xmax>684</xmax>
-      <ymax>352</ymax>
+      <xmin>493</xmin>
+      <ymin>803</ymin>
+      <xmax>627</xmax>
+      <ymax>937</ymax>
     </bndbox>
   </object>
   <object>
@@ -98,34 +86,34 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>516</xmin>
-      <ymin>572</ymin>
-      <xmax>654</xmax>
-      <ymax>710</ymax>
+      <xmin>737</xmin>
+      <ymin>440</ymin>
+      <xmax>835</xmax>
+      <ymax>538</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_ec2</name>
+    <name>gcp_identity_and_access_management</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>719</xmin>
-      <ymin>81</ymin>
-      <xmax>853</xmax>
-      <ymax>215</ymax>
+      <xmin>1281</xmin>
+      <ymin>1826</ymin>
+      <xmax>1383</xmax>
+      <ymax>1928</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_elasticache</name>
+    <name>aws_cloudformation_template</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>917</xmin>
-      <ymin>416</ymin>
-      <xmax>985</xmax>
-      <ymax>484</ymax>
+      <xmin>1646</xmin>
+      <ymin>1770</ymin>
+      <xmax>1776</xmax>
+      <ymax>1900</ymax>
     </bndbox>
   </object>
 </annotation>

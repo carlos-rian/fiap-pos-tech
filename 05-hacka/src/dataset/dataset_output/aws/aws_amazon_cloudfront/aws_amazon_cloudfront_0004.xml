@@ -3,8 +3,8 @@
   <folder>aws_amazon_cloudfront</folder>
   <filename>aws_amazon_cloudfront_0004.png</filename>
   <size>
-    <width>4238</width>
-    <height>2878</height>
+    <width>831</width>
+    <height>601</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,46 +14,22 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1872</xmin>
-      <ymin>2108</ymin>
-      <xmax>1974</xmax>
-      <ymax>2210</ymax>
+      <xmin>482</xmin>
+      <ymin>300</ymin>
+      <xmax>618</xmax>
+      <ymax>436</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_identity_and_access_management</name>
+    <name>gcp_cloud_storage</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3030</xmin>
-      <ymin>1732</ymin>
-      <xmax>3098</xmax>
-      <ymax>1800</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_simple_notification_service</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>3351</xmin>
-      <ymin>1247</ymin>
-      <xmax>3483</xmax>
-      <ymax>1379</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_elastic_kubernetes_service</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>2986</xmin>
-      <ymin>1086</ymin>
-      <xmax>3056</xmax>
-      <ymax>1156</ymax>
+      <xmin>615</xmin>
+      <ymin>420</ymin>
+      <xmax>747</xmax>
+      <ymax>552</ymax>
     </bndbox>
   </object>
   <object>
@@ -62,70 +38,70 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>740</xmin>
-      <ymin>2184</ymin>
-      <xmax>808</xmax>
-      <ymax>2252</ymax>
+      <xmin>217</xmin>
+      <ymin>60</ymin>
+      <xmax>349</xmax>
+      <ymax>192</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_elastic_container_service</name>
+    <name>aws_amazon_elastic_kubernetes_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>900</xmin>
-      <ymin>1066</ymin>
-      <xmax>1004</xmax>
-      <ymax>1170</ymax>
+      <xmin>390</xmin>
+      <ymin>227</ymin>
+      <xmax>460</xmax>
+      <ymax>297</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_function_apps</name>
+    <name>gcp_bigquery</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1268</xmin>
-      <ymin>2067</ymin>
-      <xmax>1336</xmax>
-      <ymax>2135</ymax>
+      <xmin>489</xmin>
+      <ymin>423</ymin>
+      <xmax>593</xmax>
+      <ymax>527</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_identity_and_access_management</name>
+    <name>aws_elastic_container_service_container_2</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2917</xmin>
-      <ymin>570</ymin>
-      <xmax>3047</xmax>
-      <ymax>700</ymax>
+      <xmin>505</xmin>
+      <ymin>181</ymin>
+      <xmax>607</xmax>
+      <ymax>283</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_notification_service_topic</name>
+    <name>gcp_pubsub</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2561</xmin>
-      <ymin>2467</ymin>
-      <xmax>2631</xmax>
-      <ymax>2537</ymax>
+      <xmin>350</xmin>
+      <ymin>300</ymin>
+      <xmax>482</xmax>
+      <ymax>432</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_dynamodb_table</name>
+    <name>azure_key_vaults</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1438</xmin>
-      <ymin>440</ymin>
-      <xmax>1574</xmax>
-      <ymax>576</ymax>
+      <xmin>622</xmin>
+      <ymin>72</ymin>
+      <xmax>720</xmax>
+      <ymax>170</ymax>
     </bndbox>
   </object>
 </annotation>

@@ -3,8 +3,8 @@
   <folder>gcp_cloud_storage</folder>
   <filename>gcp_cloud_storage_0001.png</filename>
   <size>
-    <width>2916</width>
-    <height>2316</height>
+    <width>4445</width>
+    <height>2444</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,130 +14,94 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1967</xmin>
-      <ymin>1466</ymin>
-      <xmax>2099</xmax>
-      <ymax>1598</ymax>
+      <xmin>2953</xmin>
+      <ymin>1764</ymin>
+      <xmax>3055</xmax>
+      <ymax>1866</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_ec2</name>
+    <name>azure_synapse_analytics</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1260</xmin>
-      <ymin>1727</ymin>
-      <xmax>1392</xmax>
-      <ymax>1859</ymax>
+      <xmin>1718</xmin>
+      <ymin>577</ymin>
+      <xmax>1816</xmax>
+      <ymax>675</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_container_instances</name>
+    <name>aws_amazon_simple_queue_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>907</xmin>
-      <ymin>1287</ymin>
-      <xmax>1047</xmax>
-      <ymax>1427</ymax>
+      <xmin>636</xmin>
+      <ymin>1810</ymin>
+      <xmax>706</xmax>
+      <ymax>1880</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_key_management_service</name>
+    <name>azure_monitor</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2322</xmin>
-      <ymin>1816</ymin>
-      <xmax>2460</xmax>
-      <ymax>1954</ymax>
+      <xmin>682</xmin>
+      <ymin>609</ymin>
+      <xmax>782</xmax>
+      <ymax>709</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_ec2_instances</name>
+    <name>aws_simple_queue_service_queue</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2365</xmin>
-      <ymin>934</ymin>
-      <xmax>2433</xmax>
-      <ymax>1002</ymax>
+      <xmin>2689</xmin>
+      <ymin>379</ymin>
+      <xmax>2789</xmax>
+      <ymax>479</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_kubernetes_services</name>
+    <name>gcp_cloud_functions</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1107</xmin>
-      <ymin>586</ymin>
-      <xmax>1209</xmax>
-      <ymax>688</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_aurora_amazon_rds_instance</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1467</xmin>
-      <ymin>400</ymin>
-      <xmax>1533</xmax>
-      <ymax>466</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>gcp_pubsub</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1810</xmin>
-      <ymin>1087</ymin>
-      <xmax>1878</xmax>
-      <ymax>1155</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_simple_storage_service_s3_standard</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1388</xmin>
-      <ymin>1283</ymin>
+      <xmin>1322</xmin>
+      <ymin>2038</ymin>
       <xmax>1454</xmax>
-      <ymax>1349</ymax>
+      <ymax>2170</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_databricks</name>
+    <name>azure_virtual_machine</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1987</xmin>
-      <ymin>1748</ymin>
-      <xmax>2057</xmax>
-      <ymax>1818</ymax>
+      <xmin>718</xmin>
+      <ymin>782</ymin>
+      <xmax>858</xmax>
+      <ymax>922</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_virtual_networks</name>
+    <name>aws_elastic_load_balancing_network_load_balancer</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2433</xmin>
-      <ymin>1405</ymin>
-      <xmax>2567</xmax>
-      <ymax>1539</ymax>
+      <xmin>1295</xmin>
+      <ymin>1329</ymin>
+      <xmax>1365</xmax>
+      <ymax>1399</ymax>
     </bndbox>
   </object>
 </annotation>

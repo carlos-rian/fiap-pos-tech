@@ -3,8 +3,8 @@
   <folder>azure_application_insights</folder>
   <filename>azure_application_insights_0000.png</filename>
   <size>
-    <width>886</width>
-    <height>590</height>
+    <width>4819</width>
+    <height>2408</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,118 +14,118 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>237</xmin>
-      <ymin>295</ymin>
-      <xmax>369</xmax>
-      <ymax>427</ymax>
+      <xmin>2587</xmin>
+      <ymin>305</ymin>
+      <xmax>2689</xmax>
+      <ymax>407</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_block_store_volume</name>
+    <name>aws_simple_storage_service_s3_standard</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>101</xmin>
-      <ymin>69</ymin>
-      <xmax>205</xmax>
-      <ymax>173</ymax>
+      <xmin>3899</xmin>
+      <ymin>2025</ymin>
+      <xmax>4029</xmax>
+      <ymax>2155</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_simple_queue_service</name>
+    <name>gcp_cloud_storage</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>675</xmin>
-      <ymin>427</ymin>
-      <xmax>743</xmax>
-      <ymax>495</ymax>
+      <xmin>533</xmin>
+      <ymin>322</ymin>
+      <xmax>665</xmax>
+      <ymax>454</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_virtual_private_cloud</name>
+    <name>aws_identity_access_management_role</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>386</xmin>
-      <ymin>297</ymin>
-      <xmax>456</xmax>
-      <ymax>367</ymax>
+      <xmin>1170</xmin>
+      <ymin>952</ymin>
+      <xmax>1236</xmax>
+      <ymax>1018</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_bucket_with_objects</name>
+    <name>aws_amazon_elastic_block_store</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>141</xmin>
-      <ymin>338</ymin>
-      <xmax>207</xmax>
-      <ymax>404</ymax>
+      <xmin>3114</xmin>
+      <ymin>1971</ymin>
+      <xmax>3182</xmax>
+      <ymax>2039</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_ec2_auto_scaling</name>
+    <name>gcp_bigquery</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>581</xmin>
-      <ymin>193</ymin>
-      <xmax>647</xmax>
-      <ymax>259</ymax>
+      <xmin>2179</xmin>
+      <ymin>1451</ymin>
+      <xmax>2283</xmax>
+      <ymax>1555</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_vpc_virtual_private_cloud_vpc</name>
+    <name>azure_monitor</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>667</xmin>
-      <ymin>202</ymin>
-      <xmax>737</xmax>
-      <ymax>272</ymax>
+      <xmin>3598</xmin>
+      <ymin>964</ymin>
+      <xmax>3730</xmax>
+      <ymax>1096</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_function_apps</name>
+    <name>aws_amazon_elasticache</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>688</xmin>
-      <ymin>69</ymin>
-      <xmax>758</xmax>
-      <ymax>139</ymax>
+      <xmin>4104</xmin>
+      <ymin>387</ymin>
+      <xmax>4240</xmax>
+      <ymax>523</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_simple_notification_service</name>
+    <name>gcp_cloud_functions</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>410</xmin>
-      <ymin>72</ymin>
-      <xmax>510</xmax>
-      <ymax>172</ymax>
+      <xmin>713</xmin>
+      <ymin>1852</ymin>
+      <xmax>781</xmax>
+      <ymax>1920</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_ec2_instance</name>
+    <name>gcp_virtual_private_cloud</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>399</xmin>
-      <ymin>203</ymin>
-      <xmax>469</xmax>
-      <ymax>273</ymax>
+      <xmin>1956</xmin>
+      <ymin>647</ymin>
+      <xmax>2022</xmax>
+      <ymax>713</ymax>
     </bndbox>
   </object>
 </annotation>

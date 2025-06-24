@@ -3,8 +3,8 @@
   <folder>azure_function_apps</folder>
   <filename>azure_function_apps_0001.png</filename>
   <size>
-    <width>1080</width>
-    <height>720</height>
+    <width>4238</width>
+    <height>2878</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,142 +14,178 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>512</xmin>
-      <ymin>90</ymin>
-      <xmax>614</xmax>
-      <ymax>192</ymax>
+      <xmin>3419</xmin>
+      <ymin>2211</ymin>
+      <xmax>3553</xmax>
+      <ymax>2345</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_container_service_service</name>
+    <name>aws_amazon_simple_storage_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>505</xmin>
-      <ymin>224</ymin>
-      <xmax>609</xmax>
-      <ymax>328</ymax>
+      <xmin>699</xmin>
+      <ymin>2388</ymin>
+      <xmax>799</xmax>
+      <ymax>2488</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_ec2_instance</name>
+    <name>aws_identity_access_management_role</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>113</xmin>
-      <ymin>79</ymin>
-      <xmax>247</xmax>
-      <ymax>213</ymax>
+      <xmin>3644</xmin>
+      <ymin>1024</ymin>
+      <xmax>3746</xmax>
+      <ymax>1126</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_dynamodb_table</name>
+    <name>azure_sql_managed_instance</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>465</xmin>
-      <ymin>510</ymin>
-      <xmax>601</xmax>
-      <ymax>646</ymax>
+      <xmin>1633</xmin>
+      <ymin>2152</ymin>
+      <xmax>1703</xmax>
+      <ymax>2222</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_cloudfront</name>
+    <name>azure_container_instances</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>813</xmin>
-      <ymin>367</ymin>
-      <xmax>943</xmax>
-      <ymax>497</ymax>
+      <xmin>1566</xmin>
+      <ymin>1845</ymin>
+      <xmax>1632</xmax>
+      <ymax>1911</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_synapse_analytics</name>
+    <name>gcp_identity_and_access_management</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>632</xmin>
-      <ymin>411</ymin>
-      <xmax>698</xmax>
-      <ymax>477</ymax>
+      <xmin>2660</xmin>
+      <ymin>310</ymin>
+      <xmax>2760</xmax>
+      <ymax>410</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_pubsub</name>
+    <name>aws_elastic_load_balancing_application_load_balancer</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>634</xmin>
-      <ymin>248</ymin>
-      <xmax>732</xmax>
-      <ymax>346</ymax>
+      <xmin>1906</xmin>
+      <ymin>594</ymin>
+      <xmax>2042</xmax>
+      <ymax>730</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_cloud_load_balancing</name>
+    <name>gcp_cloud_functions</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>305</xmin>
-      <ymin>217</ymin>
-      <xmax>441</xmax>
-      <ymax>353</ymax>
+      <xmin>471</xmin>
+      <ymin>718</ymin>
+      <xmax>539</xmax>
+      <ymax>786</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_block_store_volume</name>
+    <name>aws_amazon_elastic_block_store</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>284</xmin>
-      <ymin>72</ymin>
-      <xmax>416</xmax>
-      <ymax>204</ymax>
+      <xmin>2273</xmin>
+      <ymin>1642</ymin>
+      <xmax>2341</xmax>
+      <ymax>1710</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_server</name>
+    <name>aws_key_management_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>875</xmin>
-      <ymin>518</ymin>
-      <xmax>941</xmax>
-      <ymax>584</ymax>
+      <xmin>450</xmin>
+      <ymin>1565</ymin>
+      <xmax>552</xmax>
+      <ymax>1667</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_auto_scaling</name>
+    <name>aws_elastic_load_balancing</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>281</xmin>
-      <ymin>504</ymin>
-      <xmax>419</xmax>
-      <ymax>642</ymax>
+      <xmin>2875</xmin>
+      <ymin>1189</ymin>
+      <xmax>3005</xmax>
+      <ymax>1319</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_object</name>
+    <name>aws_lambda</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>801</xmin>
-      <ymin>84</ymin>
-      <xmax>901</xmax>
-      <ymax>184</ymax>
+      <xmin>2626</xmin>
+      <ymin>1770</ymin>
+      <xmax>2730</xmax>
+      <ymax>1874</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>gcp_virtual_private_cloud</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2377</xmin>
+      <ymin>1281</ymin>
+      <xmax>2447</xmax>
+      <ymax>1351</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_storage_accounts</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2275</xmin>
+      <ymin>2236</ymin>
+      <xmax>2375</xmax>
+      <ymax>2336</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_machine_learning</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1671</xmin>
+      <ymin>478</ymin>
+      <xmax>1739</xmax>
+      <ymax>546</ymax>
     </bndbox>
   </object>
 </annotation>

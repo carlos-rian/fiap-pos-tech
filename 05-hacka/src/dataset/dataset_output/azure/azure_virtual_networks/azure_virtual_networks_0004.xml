@@ -3,8 +3,8 @@
   <folder>azure_virtual_networks</folder>
   <filename>azure_virtual_networks_0004.png</filename>
   <size>
-    <width>1093</width>
-    <height>682</height>
+    <width>4819</width>
+    <height>2408</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,118 +14,106 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>811</xmin>
-      <ymin>530</ymin>
-      <xmax>879</xmax>
-      <ymax>598</ymax>
+      <xmin>1549</xmin>
+      <ymin>320</ymin>
+      <xmax>1615</xmax>
+      <ymax>386</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_container_service_container_2</name>
+    <name>aws_elastic_load_balancing</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>117</xmin>
-      <ymin>68</ymin>
-      <xmax>253</xmax>
-      <ymax>204</ymax>
+      <xmin>3457</xmin>
+      <ymin>1497</ymin>
+      <xmax>3557</xmax>
+      <ymax>1597</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_openai</name>
+    <name>azure_key_vaults</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>815</xmin>
-      <ymin>204</ymin>
-      <xmax>951</xmax>
-      <ymax>340</ymax>
+      <xmin>1476</xmin>
+      <ymin>1748</ymin>
+      <xmax>1546</xmax>
+      <ymax>1818</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_ec2_instances</name>
+    <name>aws_amazon_dynamodb</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>348</xmin>
-      <ymin>265</ymin>
-      <xmax>418</xmax>
-      <ymax>335</ymax>
+      <xmin>930</xmin>
+      <ymin>244</ymin>
+      <xmax>1062</xmax>
+      <ymax>376</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_managed_instance</name>
+    <name>gcp_cloud_sql</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>123</xmin>
-      <ymin>360</ymin>
-      <xmax>189</xmax>
-      <ymax>426</ymax>
+      <xmin>2174</xmin>
+      <ymin>1556</ymin>
+      <xmax>2242</xmax>
+      <ymax>1624</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_server</name>
+    <name>aws_amazon_elasticache</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>473</xmin>
-      <ymin>204</ymin>
-      <xmax>609</xmax>
-      <ymax>340</ymax>
+      <xmin>832</xmin>
+      <ymin>1948</ymin>
+      <xmax>968</xmax>
+      <ymax>2084</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_lambda_lambda_function</name>
+    <name>azure_machine_learning_studio_workspaces</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>646</xmin>
-      <ymin>91</ymin>
-      <xmax>746</xmax>
-      <ymax>191</ymax>
+      <xmin>3784</xmin>
+      <ymin>520</ymin>
+      <xmax>3850</xmax>
+      <ymax>586</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql</name>
+    <name>azure_api_management_services</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>137</xmin>
-      <ymin>476</ymin>
-      <xmax>273</xmax>
-      <ymax>612</ymax>
+      <xmin>956</xmin>
+      <ymin>1377</ymin>
+      <xmax>1092</xmax>
+      <ymax>1513</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_block_store_volume</name>
+    <name>aws_elastic_load_balancing_network_load_balancer</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>639</xmin>
-      <ymin>340</ymin>
-      <xmax>775</xmax>
-      <ymax>476</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_elastic_block_store</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>861</xmin>
-      <ymin>76</ymin>
-      <xmax>963</xmax>
-      <ymax>178</ymax>
+      <xmin>4021</xmin>
+      <ymin>885</ymin>
+      <xmax>4089</xmax>
+      <ymax>953</ymax>
     </bndbox>
   </object>
 </annotation>
