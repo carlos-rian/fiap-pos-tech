@@ -1,0 +1,48 @@
+{
+    "predictions": [
+        {
+            "confidence": 0.9933207631111145,
+            "displayName": "azure_data_factories",
+            "boundingBox": {
+                "xMin": 0.5674223303794861,
+                "yMin": 0.3483104705810547,
+                "xMax": 0.6315341591835022,
+                "yMax": 0.4989014267921448
+            }
+        },
+        {
+            "confidence": 0.8766230940818787,
+            "displayName": "sass_services",
+            "boundingBox": {
+                "xMin": 0.1995614767074585,
+                "yMin": 0.6980013847351074,
+                "xMax": 0.2769923508167267,
+                "yMax": 0.834783673286438
+            }
+        },
+        {
+            "confidence": 0.8184664249420166,
+            "displayName": "user",
+            "boundingBox": {
+                "xMin": 0.03838524594902992,
+                "yMin": 0.3372410535812378,
+                "xMax": 0.1023857593536377,
+                "yMax": 0.5141493082046509
+            }
+        },
+        {
+            "confidence": 0.7400729060173035,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.20712736248970032,
+                "yMin": 0.054713428020477295,
+                "xMax": 0.2766591012477875,
+                "yMax": 0.18418367207050323
+            }
+        }
+    ],
+    "modelInfo": {
+        "type": "local_pytorch",
+        "model_path": "C:\\Users\\CarlosRianQuartile\\Documents\\repo\\my-repos\\fiap-pos-tech\\05-hacka\\src\\models\\soft-arch_epoch-5_202506241703.pth"
+    }
+}

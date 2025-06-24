@@ -146,8 +146,7 @@ def prepare_output_dirs(base_path: Path) -> tuple[Path, Path, Path]:
     Returns:
         tuple[Path, Path, Path]: Tuple containing base output directory, image output path, and JSON output path.
     """
-    datetime_now = datetime.now().strftime("%Y%m%d%H%M")
-    base_output = Path(f"{base_path}/predictions/{datetime_now}")
+    base_output = Path(f"{base_path}/predictions")
     output_image_path = base_output / "prediction.png"
     output_json_path = base_output / "prediction.json"
     base_output.mkdir(parents=True, exist_ok=True)

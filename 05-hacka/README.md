@@ -3,10 +3,14 @@
 ## Overview
 This project is a solution developed for the FIAP POS Tech Hackathon, focused on processing, augmentation, and analysis of image datasets, as well as integration with generative AI models and training of custom models.
 
-## Warnings (Files/Directories not available)
-- **src/dataset/dataset_augment/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Request access to the dataset from the [Google Drive link +100GB](https://drive.google.com/file/d/1D3fADFR0UmFvyX54-iIRkyGX4QPjZGPa/view?usp=drive_link) provided by the project team.
-- **src/models/** The model trained in this project is not publicly available, because it is too large to upload to GitHub. Request access to the model from the [Google Drive link](https://drive.google.com/file/d/1gXZm0NloL2bhaJoEXVPDfNri98f00ZZQ/view?usp=drive_link) provided by the project team.
+## Warnings (Files/Directories not available) - Make sure to download them before running the project
+- **src/dataset/dataset_augmented/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Download the dataset from the [Google Drive link +15GB](https://drive.google.com/file/d/1lTQnRcJTHsUiRcrEUHENfaY8Tietpknp/view?usp=sharing) provided by the project team.
+- **src/models/** The model trained in this project is not publicly available, because it is too large to upload to GitHub. Download the model from the [Google Drive link +150MB](https://drive.google.com/file/d/1sHd2LTZTBwic3TRDgF_e6AI5Pz_btvUA/view?usp=sharing) provided by the project team.
 
+
+Note: The model was trained using just a small subset of the dataset, so it is not expected to work well with the full dataset. The model was trained to demonstrate the process of training and prediction using custom models.
+
+All images and XMLs used to train were saved in the `src/dataset/dataset_augment/` folder and listed in the `dataset_output_image.csv` file.
 
 ## Project Structure
 
@@ -17,14 +21,14 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
 ├── src/
 │   ├── main.py              # Main execution script
 │   └── dataset/
-│       ├── augment_dataset.py           # Data augmentation script
-│       ├── generate_dataset_output.py   # Dataset output generation
-│       ├── dataset_augment/            # Augmented images and annotations
-│       ├── dataset_base/               # Base image dataset
-│       ├── diagram_base/               # Original diagrams
-│       ├── diagram_base_optimized/     # Optimized diagrams
-│       ├── scripts/                    # Auxiliary scripts
-│       └── test/                       # Dataset-related tests
+│       ├── augment_dataset.py            # Data augmentation script
+│       ├── generate_dataset_output.py    # Dataset output generation
+│       ├── dataset_augmented/            # Augmented images and annotations, please download from the link provided in the warnings section
+│       ├── dataset_base/                 # Base image dataset
+│       ├── diagram_base/                 # Original diagrams
+│       ├── diagram_base_optimized/       # Optimized diagrams
+│       ├── scripts/                      # Auxiliary scripts
+│       └── test/                         # Dataset-related tests
 │   ├── finetunning/
 │       ├── predict.py      # Prediction script using trained model
 │       ├── train.py        # Model training script
@@ -32,7 +36,7 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
 │   ├── generative_ai/
 │       └── chatgpt.py      # Integration with generative AI (ChatGPT)
 │   ├── models/
-│       └── *.pth           # Trained models (PyTorch)
+│       └── *.pth           # Trained models (PyTorch), please download from the link provided in the warnings section
 │   └── output/
 │       ├── aws/            # Outputs related to images from dataset/test/aws
 │       └── az/             # Outputs related to images from dataset/test/az
