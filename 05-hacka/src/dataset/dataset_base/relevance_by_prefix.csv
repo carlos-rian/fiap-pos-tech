@@ -1,0 +1,16 @@
+PrefixResource,RelevanceName,Count
+aws,High,43
+aws,Low,166
+aws,Medium,261
+aws,Medium-High,111
+aws,Medium-Low,252
+azure,High,30
+azure,Low,101
+azure,Medium,203
+azure,Medium-High,96
+azure,Medium-Low,175
+gcp,High,12
+gcp,Low,30
+gcp,Medium,62
+gcp,Medium-High,23
+gcp,Medium-Low,89
