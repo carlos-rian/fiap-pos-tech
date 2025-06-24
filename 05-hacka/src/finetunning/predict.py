@@ -275,7 +275,7 @@ def run_prediction(
     if save_image:
         print(f"Saving annotated image to '{output_image_path}'...")
         draw_boxes_on_image(image_path, boxes, labels, scores, class_map, output_image_path)
-        show_image_with_bounding_box(output_image_path)
+        # show_image_with_bounding_box(output_image_path)
     if save_json:
         print(f"Saving JSON output to '{output_json_path}'...")
         save_json_output(json_output, output_json_path)

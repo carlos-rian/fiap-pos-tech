@@ -1,0 +1,98 @@
+{
+    "predictions": [
+        {
+            "confidence": 0.9989417195320129,
+            "displayName": "azure_virtual_machine",
+            "boundingBox": {
+                "xMin": 0.5653875470161438,
+                "yMin": 0.7372283339500427,
+                "xMax": 0.6332928538322449,
+                "yMax": 0.8880524635314941
+            }
+        },
+        {
+            "confidence": 0.9979848861694336,
+            "displayName": "azure_sql",
+            "boundingBox": {
+                "xMin": 0.20259208977222443,
+                "yMin": 0.6868962049484253,
+                "xMax": 0.27694106101989746,
+                "yMax": 0.8511096835136414
+            }
+        },
+        {
+            "confidence": 0.9975916147232056,
+            "displayName": "azure_users",
+            "boundingBox": {
+                "xMin": 0.036025602370500565,
+                "yMin": 0.3457115590572357,
+                "xMax": 0.1059395894408226,
+                "yMax": 0.5028532147407532
+            }
+        },
+        {
+            "confidence": 0.9967656135559082,
+            "displayName": "azure_cosmos_db",
+            "boundingBox": {
+                "xMin": 0.20501388609409332,
+                "yMin": 0.040781524032354355,
+                "xMax": 0.2744077146053314,
+                "yMax": 0.1939251571893692
+            }
+        },
+        {
+            "confidence": 0.9967232346534729,
+            "displayName": "azure_function_apps",
+            "boundingBox": {
+                "xMin": 0.2070266604423523,
+                "yMin": 0.35033392906188965,
+                "xMax": 0.2730587422847748,
+                "yMax": 0.4985275864601135
+            }
+        },
+        {
+            "confidence": 0.9960785508155823,
+            "displayName": "azure_data_factories",
+            "boundingBox": {
+                "xMin": 0.568505585193634,
+                "yMin": 0.3539887070655823,
+                "xMax": 0.6284664869308472,
+                "yMax": 0.4970327913761139
+            }
+        },
+        {
+            "confidence": 0.9950496554374695,
+            "displayName": "azure_kubernetes_services",
+            "boundingBox": {
+                "xMin": 0.3972378969192505,
+                "yMin": 0.3445717692375183,
+                "xMax": 0.4673086404800415,
+                "yMax": 0.5061153173446655
+            }
+        },
+        {
+            "confidence": 0.9943095445632935,
+            "displayName": "azure_openai",
+            "boundingBox": {
+                "xMin": 0.9069736003875732,
+                "yMin": 0.3542594611644745,
+                "xMax": 0.9688332676887512,
+                "yMax": 0.500097393989563
+            }
+        },
+        {
+            "confidence": 0.9841623306274414,
+            "displayName": "azure_databricks",
+            "boundingBox": {
+                "xMin": 0.7550476789474487,
+                "yMin": 0.345817893743515,
+                "xMax": 0.8219164609909058,
+                "yMax": 0.5067657828330994
+            }
+        }
+    ],
+    "modelInfo": {
+        "type": "local_pytorch",
+        "model_path": "src\\models\\soft-arch_epoch-4_202506240023.pth"
+    }
+}

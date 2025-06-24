@@ -1,0 +1,317 @@
+[
+    {
+        "component_name": "azure_databricks",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service to gain unauthorized access to the Azure Databricks environment.",
+                "suggested_countermeasure": "Implement strong authentication mechanisms, such as multi-factor authentication (MFA), to verify user identities."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "Malicious actors could modify data or configurations within Azure Databricks, potentially leading to incorrect analytics or data breaches.",
+                "suggested_countermeasure": "Use data integrity checks and version control for notebooks and configurations, along with logging and monitoring of changes."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users may deny performing actions within Azure Databricks, leading to disputes over data access or modifications.",
+                "suggested_countermeasure": "Implement comprehensive logging of user actions and ensure logs are tamper-proof and stored securely for auditing purposes."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive data processed in Azure Databricks could be exposed to unauthorized users or applications.",
+                "suggested_countermeasure": "Apply strict access controls and encryption for data at rest and in transit to protect sensitive information."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker could overwhelm Azure Databricks resources with excessive requests, leading to service disruptions.",
+                "suggested_countermeasure": "Implement rate limiting and resource quotas to mitigate the impact of potential denial-of-service attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A user with limited access could exploit vulnerabilities to gain higher privileges within Azure Databricks, leading to unauthorized actions.",
+                "suggested_countermeasure": "Regularly review and audit user permissions, and apply the principle of least privilege to limit access rights."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_sql",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user to gain unauthorized access to the Azure SQL instance, potentially allowing them to execute malicious queries.",
+                "suggested_countermeasure": "Implement Multi-Factor Authentication (MFA) and secure identity management practices to ensure that only authorized users can access the database."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker may alter the content of the data stored in Azure SQL, leading to data corruption or unauthorized data manipulation.",
+                "suggested_countermeasure": "Utilize data encryption both at rest and in transit, alongside integrity checks and logging mechanisms to detect and respond to tampering attempts."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users could deny having performed certain actions on the database, such as deleting data or executing unauthorized queries, leading to accountability issues.",
+                "suggested_countermeasure": "Implement comprehensive logging and monitoring to maintain an audit trail of all database transactions and access logs, which can be used for forensic analysis."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Improperly configured access controls could allow unauthorized users to view sensitive data stored in the Azure SQL database.",
+                "suggested_countermeasure": "Enforce strict access controls and role-based access management (RBAC) to limit access to sensitive data based on the principle of least privilege."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker may attempt to overwhelm the Azure SQL database with excessive requests, resulting in service unavailability for legitimate users.",
+                "suggested_countermeasure": "Implement rate limiting, connection throttling, and DDoS protection services to mitigate the impact of denial-of-service attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A user with limited privileges could exploit vulnerabilities in the application or the database to gain higher-level access, allowing them to execute unauthorized actions.",
+                "suggested_countermeasure": "Regularly review and update user permissions, utilize security patches, and conduct security testing to identify and remediate privilege escalation vulnerabilities."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_virtual_machine",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker impersonates a legitimate user to gain unauthorized access to the Azure Virtual Machine.",
+                "suggested_countermeasure": "Implement multi-factor authentication (MFA) for all users accessing the virtual machine."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An adversary modifies data or configurations on the Azure Virtual Machine to alter its operation or compromise its integrity.",
+                "suggested_countermeasure": "Use Azure Role-Based Access Control (RBAC) to restrict permissions and implement logging to monitor changes."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "A user denies performing an action on the Azure Virtual Machine, such as deleting files or changing configurations, leading to accountability issues.",
+                "suggested_countermeasure": "Enable comprehensive logging and auditing to maintain a traceable record of all actions taken on the virtual machine."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive information stored on the Azure Virtual Machine may be exposed due to misconfigurations or vulnerabilities.",
+                "suggested_countermeasure": "Ensure proper encryption for data at rest and in transit, and regularly audit security configuration settings."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker attempts to overwhelm the Azure Virtual Machine with excessive requests, causing service disruptions.",
+                "suggested_countermeasure": "Implement DDoS protection and configure rate limiting for incoming traffic to the virtual machine."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A user or application exploits a vulnerability to gain higher privileges than intended on the Azure Virtual Machine.",
+                "suggested_countermeasure": "Regularly update the operating system and installed applications to patch known vulnerabilities, and implement least privilege access controls."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_kubernetes_services",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service account to gain unauthorized access to the Kubernetes cluster.",
+                "suggested_countermeasure": "Implement strong authentication mechanisms, such as multi-factor authentication (MFA), and use role-based access control (RBAC) to limit permissions."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker could modify the configuration files or manifests used to deploy applications in the Kubernetes cluster, leading to unauthorized changes in application behavior.",
+                "suggested_countermeasure": "Use immutable infrastructure practices and implement version control for configuration files. Enable audit logging to monitor changes."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users or services might deny performing an action within the Kubernetes environment, making it difficult to trace malicious activities.",
+                "suggested_countermeasure": "Enable detailed logging and monitoring of all actions taken within the Kubernetes cluster to ensure accountability and traceability."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive information such as secrets, environment variables, or configuration data could be exposed due to misconfigurations or inadequate access controls.",
+                "suggested_countermeasure": "Use Kubernetes Secrets to manage sensitive information and ensure proper access controls are in place. Regularly audit permissions and configurations."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker could launch a Denial of Service (DoS) attack against the Kubernetes API server or the applications running in the cluster, making them unavailable.",
+                "suggested_countermeasure": "Implement network policies to limit traffic and use rate limiting and resource quotas to prevent abuse. Consider using managed DDoS protection services."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A compromised user or service account might exploit vulnerabilities to gain higher privileges than intended within the Kubernetes cluster.",
+                "suggested_countermeasure": "Regularly review and minimize permissions granted to users and service accounts. Apply the principle of least privilege and conduct security audits."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_users",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker impersonates a legitimate user to gain unauthorized access to the system.",
+                "suggested_countermeasure": "Implement strong multi-factor authentication (MFA) to verify user identities."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker modifies user data or configurations without authorization.",
+                "suggested_countermeasure": "Use data integrity checks and cryptographic signatures to ensure data integrity."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users deny having performed actions in the system, leading to disputes about accountability.",
+                "suggested_countermeasure": "Implement comprehensive logging and auditing mechanisms to provide verifiable records of user actions."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive user information is exposed to unauthorized individuals, either through data leaks or improper access controls.",
+                "suggested_countermeasure": "Apply strict access controls and encryption for sensitive data at rest and in transit."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker overloads the system with requests, causing legitimate users to be unable to access the service.",
+                "suggested_countermeasure": "Deploy rate limiting and traffic monitoring to detect and mitigate potential DoS attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "An attacker exploits a vulnerability to gain higher privileges than intended, allowing them to perform unauthorized actions.",
+                "suggested_countermeasure": "Regularly update and patch the system, and conduct security assessments to identify and remediate vulnerabilities."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_function_apps",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service by obtaining valid credentials, enabling unauthorized access to the Azure Function Apps.",
+                "suggested_countermeasure": "Implement multi-factor authentication (MFA) and enforce strong password policies to enhance identity verification."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker may alter the code or configuration of Azure Function Apps, leading to malicious behavior or data corruption.",
+                "suggested_countermeasure": "Utilize Azure DevOps or Git for version control, and implement strict access controls and code reviews to prevent unauthorized changes."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users may deny performing an action within the Azure Function Apps, leading to disputes or lack of accountability.",
+                "suggested_countermeasure": "Enable comprehensive logging and monitoring to track user actions and changes, ensuring that all interactions are recorded for audit purposes."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive data could be exposed through misconfigured endpoints or insecure data storage, allowing unauthorized users to access confidential information.",
+                "suggested_countermeasure": "Implement data encryption both in transit and at rest, and regularly review access controls to ensure only authorized users have access to sensitive data."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker might overload the Azure Function Apps with excessive requests, causing service outages and disruptions.",
+                "suggested_countermeasure": "Deploy rate limiting, request throttling, and Azure DDoS Protection to mitigate the impact of potential denial-of-service attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "An attacker could exploit vulnerabilities in the Azure Function Apps to gain higher privileges than intended, allowing them to execute unauthorized actions.",
+                "suggested_countermeasure": "Regularly conduct security assessments and apply the principle of least privilege to ensure that users and services have only the access necessary to perform their functions."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_openai",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service to gain unauthorized access to the azure_openai component.",
+                "suggested_countermeasure": "Implement strong authentication mechanisms, such as multi-factor authentication (MFA), to verify the identity of users and services."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker could modify the data being sent to or from the azure_openai component, potentially altering the behavior of the application or corrupting data.",
+                "suggested_countermeasure": "Use cryptographic techniques such as digital signatures and hashing to ensure data integrity and authenticity during transmission."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users may deny having performed an action within the azure_openai component, leading to disputes and lack of accountability.",
+                "suggested_countermeasure": "Implement comprehensive logging and auditing mechanisms to track user actions and ensure that logs are tamper-proof."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive information processed by the azure_openai component could be exposed to unauthorized users, either through vulnerabilities or misconfigurations.",
+                "suggested_countermeasure": "Apply strict access controls and encryption for data at rest and in transit to protect sensitive information from unauthorized access."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker could overwhelm the azure_openai component with excessive requests, rendering it unavailable to legitimate users.",
+                "suggested_countermeasure": "Implement rate limiting and traffic filtering to mitigate the impact of denial-of-service attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "An attacker could exploit vulnerabilities in the azure_openai component to gain higher privileges than intended, allowing them to perform unauthorized actions.",
+                "suggested_countermeasure": "Conduct regular security assessments and apply the principle of least privilege to limit user permissions and access rights."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_cosmos_db",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service to gain unauthorized access to the azure_cosmos_db instance.",
+                "suggested_countermeasure": "Implement strong authentication mechanisms, such as multi-factor authentication (MFA) and identity federation, to verify the identity of users and services accessing the database."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker might modify data stored in azure_cosmos_db, leading to data integrity issues.",
+                "suggested_countermeasure": "Use encryption for data at rest and in transit, and implement access controls to restrict who can modify data in the database."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users might deny having performed an action, such as deleting or modifying data, if there are no proper logs or audit trails.",
+                "suggested_countermeasure": "Enable comprehensive logging and auditing features to track user actions and provide non-repudiable evidence of operations performed on azure_cosmos_db."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive data stored in azure_cosmos_db could be exposed to unauthorized users or attackers due to misconfigurations or vulnerabilities.",
+                "suggested_countermeasure": "Implement strict access controls, data encryption, and regularly review security configurations to prevent unauthorized access to sensitive data."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker could launch a Denial of Service (DoS) attack against azure_cosmos_db, making it unavailable to legitimate users.",
+                "suggested_countermeasure": "Utilize Azure's built-in DDoS protection services and monitor traffic patterns to detect and mitigate potential DoS attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A user with limited access might exploit a vulnerability to gain higher privileges within azure_cosmos_db, allowing unauthorized actions.",
+                "suggested_countermeasure": "Regularly review and enforce the principle of least privilege for user roles and permissions, and conduct security assessments to identify and remediate vulnerabilities."
+            }
+        ]
+    },
+    {
+        "component_name": "azure_data_factories",
+        "threats": [
+            {
+                "threat_category": "S_Spoofing",
+                "threat_description": "An attacker could impersonate a legitimate user or service to gain unauthorized access to the data factories.",
+                "suggested_countermeasure": "Implement strong authentication mechanisms such as multi-factor authentication (MFA) to verify the identity of users and services."
+            },
+            {
+                "threat_category": "T_Tampering",
+                "threat_description": "An attacker might modify the data or configurations within the data factories, leading to unauthorized data manipulation.",
+                "suggested_countermeasure": "Use cryptographic integrity checks and version control for configurations, along with logging changes to detect and prevent tampering."
+            },
+            {
+                "threat_category": "R_Repudiation",
+                "threat_description": "Users could deny performing certain actions within the data factories, making it difficult to trace accountability.",
+                "suggested_countermeasure": "Implement comprehensive logging of user actions and ensure logs are secure and tamper-proof to provide evidence of actions taken."
+            },
+            {
+                "threat_category": "I_Information_Disclosure",
+                "threat_description": "Sensitive data could be exposed to unauthorized users or external parties, either through misconfigurations or vulnerabilities.",
+                "suggested_countermeasure": "Enforce strict access control policies and data encryption both at rest and in transit to protect sensitive information."
+            },
+            {
+                "threat_category": "D_Denial_of_Service",
+                "threat_description": "An attacker could launch a denial-of-service attack to overwhelm the data factories, making them unavailable to legitimate users.",
+                "suggested_countermeasure": "Implement rate limiting, traffic monitoring, and employ a robust DDoS protection service to mitigate the risk of denial-of-service attacks."
+            },
+            {
+                "threat_category": "E_Elevation_of_Privilege",
+                "threat_description": "A user with lower privileges could exploit vulnerabilities to gain elevated access rights within the data factories.",
+                "suggested_countermeasure": "Regularly review and audit user permissions and apply the principle of least privilege to minimize the risk of privilege escalation."
+            }
+        ]
+    }
+]

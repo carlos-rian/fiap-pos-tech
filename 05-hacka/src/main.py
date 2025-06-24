@@ -11,7 +11,7 @@ from src.generative_ai.chatgpt import generate_stride_analysis
 # add the src directory to the Python path
 
 
-IMAGES_PATH_FOR_TEST = [Path("src/dataset/test/az.png"), Path("src/dataset/test/aws.png")]
+IMAGES_PATH_FOR_TEST = [Path("src/dataset/test/az_test_image.png"), Path("src/dataset/test/aws_test_image.png")]
 MODEL_PATH = Path("src/models/soft-arch_epoch-10_202506221523.pth")
 DATASET_PATH = Path("src/dataset/dataset_augment")
 BASE_OUTPUT_PATH = Path("src/output")
@@ -23,13 +23,7 @@ for image_path in IMAGES_PATH_FOR_TEST:
 
     base_path = BASE_OUTPUT_PATH / image_path.stem
     base_path.mkdir(parents=True, exist_ok=True)
-    prediction = run_prediction(
-        image_path=image_path,
-        model_path=MODEL_PATH,
-        dataset_path=DATASET_PATH,
-        base_path=base_path,
-        save_json=True,
-    )
+    prediction = run_prediction(image_path=image_path, model_path=MODEL_PATH, dataset_path=DATASET_PATH, base_path=base_path, save_json=True)
 
     classes = get_class_from_prediction(prediction=prediction)
 
@@ -49,3 +43,5 @@ for image_path in IMAGES_PATH_FOR_TEST:
     all_results = [analysis.model_dump(mode="json") for analysis in stride_analysis]
     with open(output_file, "w") as f:
         json.dump(all_results, f, indent=4, ensure_ascii=False)
+
+    print(f"Stride analysis saved to {output_file}")
