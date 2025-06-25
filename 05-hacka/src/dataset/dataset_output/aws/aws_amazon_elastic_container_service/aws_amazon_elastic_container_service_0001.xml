@@ -3,8 +3,8 @@
   <folder>aws_amazon_elastic_container_service</folder>
   <filename>aws_amazon_elastic_container_service_0001.png</filename>
   <size>
-    <width>1080</width>
-    <height>720</height>
+    <width>2916</width>
+    <height>2316</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,34 +14,34 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>124</xmin>
-      <ymin>390</ymin>
-      <xmax>222</xmax>
-      <ymax>488</ymax>
+      <xmin>2276</xmin>
+      <ymin>978</ymin>
+      <xmax>2374</xmax>
+      <ymax>1076</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_managed_instance</name>
+    <name>aws_simple_storage_service_s3_standard</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>814</xmin>
-      <ymin>542</ymin>
-      <xmax>918</xmax>
-      <ymax>646</ymax>
+      <xmin>1393</xmin>
+      <ymin>1893</ymin>
+      <xmax>1497</xmax>
+      <ymax>1997</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_monitor</name>
+    <name>aws_elastic_load_balancing</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>195</xmin>
-      <ymin>120</ymin>
-      <xmax>261</xmax>
-      <ymax>186</ymax>
+      <xmin>1033</xmin>
+      <ymin>1816</ymin>
+      <xmax>1101</xmax>
+      <ymax>1884</ymax>
     </bndbox>
   </object>
   <object>
@@ -50,70 +50,82 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>310</xmin>
-      <ymin>135</ymin>
-      <xmax>376</xmax>
-      <ymax>201</ymax>
+      <xmin>1850</xmin>
+      <ymin>957</ymin>
+      <xmax>1954</xmax>
+      <ymax>1061</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_resource_groups</name>
+    <name>aws_identity_access_management_role</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>280</xmin>
-      <ymin>506</ymin>
-      <xmax>416</xmax>
-      <ymax>642</ymax>
+      <xmin>1319</xmin>
+      <ymin>904</ymin>
+      <xmax>1417</xmax>
+      <ymax>1002</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_rds</name>
+    <name>azure_load_balancers</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>191</xmin>
-      <ymin>557</ymin>
-      <xmax>257</xmax>
-      <ymax>623</ymax>
+      <xmin>2368</xmin>
+      <ymin>421</ymin>
+      <xmax>2502</xmax>
+      <ymax>555</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_google_kubernetes_engine</name>
+    <name>aws_cloudformation</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>288</xmin>
-      <ymin>364</ymin>
-      <xmax>426</xmax>
-      <ymax>502</ymax>
+      <xmin>868</xmin>
+      <ymin>1391</ymin>
+      <xmax>936</xmax>
+      <ymax>1459</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_database</name>
+    <name>azure_devops</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>298</xmin>
-      <ymin>231</ymin>
-      <xmax>398</xmax>
-      <ymax>331</ymax>
+      <xmin>1515</xmin>
+      <ymin>586</ymin>
+      <xmax>1583</xmax>
+      <ymax>654</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_ec2</name>
+    <name>aws_lambda</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>829</xmin>
-      <ymin>91</ymin>
-      <xmax>897</xmax>
-      <ymax>159</ymax>
+      <xmin>541</xmin>
+      <ymin>1336</ymin>
+      <xmax>671</xmax>
+      <ymax>1466</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_simple_queue_service_queue</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2368</xmin>
+      <ymin>1844</ymin>
+      <xmax>2506</xmax>
+      <ymax>1982</ymax>
     </bndbox>
   </object>
   <object>
@@ -122,22 +134,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>556</xmin>
-      <ymin>109</ymin>
-      <xmax>622</xmax>
-      <ymax>175</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_cloudwatch</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>868</xmin>
-      <ymin>372</ymin>
-      <xmax>934</xmax>
-      <ymax>438</ymax>
+      <xmin>2053</xmin>
+      <ymin>495</ymin>
+      <xmax>2119</xmax>
+      <ymax>561</ymax>
     </bndbox>
   </object>
   <object>
@@ -146,22 +146,46 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>482</xmin>
-      <ymin>221</ymin>
-      <xmax>616</xmax>
-      <ymax>355</ymax>
+      <xmin>454</xmin>
+      <ymin>1870</ymin>
+      <xmax>556</xmax>
+      <ymax>1972</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_virtual_machine</name>
+    <name>aws_cloudformation_template</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>657</xmin>
-      <ymin>104</ymin>
-      <xmax>761</xmax>
-      <ymax>208</ymax>
+      <xmin>1823</xmin>
+      <ymin>1789</ymin>
+      <xmax>1957</xmax>
+      <ymax>1923</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_machine_learning_studio_workspaces</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2004</xmin>
+      <ymin>1462</ymin>
+      <xmax>2106</xmax>
+      <ymax>1564</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_amazon_virtual_private_cloud</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>919</xmin>
+      <ymin>346</ymin>
+      <xmax>985</xmax>
+      <ymax>412</ymax>
     </bndbox>
   </object>
 </annotation>

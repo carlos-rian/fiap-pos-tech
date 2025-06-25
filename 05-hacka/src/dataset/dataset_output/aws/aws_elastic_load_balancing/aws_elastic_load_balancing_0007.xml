@@ -3,8 +3,8 @@
   <folder>aws_elastic_load_balancing</folder>
   <filename>aws_elastic_load_balancing_0007.png</filename>
   <size>
-    <width>1535</width>
-    <height>1083</height>
+    <width>3490</width>
+    <height>2327</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,118 +14,94 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1017</xmin>
-      <ymin>558</ymin>
-      <xmax>1119</xmax>
-      <ymax>660</ymax>
+      <xmin>2772</xmin>
+      <ymin>381</ymin>
+      <xmax>2842</xmax>
+      <ymax>451</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_queue_service_queue</name>
+    <name>gcp_pubsub</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>771</xmin>
-      <ymin>684</ymin>
-      <xmax>837</xmax>
-      <ymax>750</ymax>
+      <xmin>1821</xmin>
+      <ymin>1228</ymin>
+      <xmax>1887</xmax>
+      <ymax>1294</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_lambda_lambda_function</name>
+    <name>azure_kubernetes_services</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1145</xmin>
-      <ymin>347</ymin>
-      <xmax>1275</xmax>
-      <ymax>477</ymax>
+      <xmin>1077</xmin>
+      <ymin>971</ymin>
+      <xmax>1147</xmax>
+      <ymax>1041</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_database</name>
+    <name>aws_amazon_elastic_block_store</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>920</xmin>
-      <ymin>170</ymin>
-      <xmax>1056</xmax>
-      <ymax>306</ymax>
+      <xmin>1569</xmin>
+      <ymin>719</ymin>
+      <xmax>1699</xmax>
+      <ymax>849</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_elastic_container_service</name>
+    <name>azure_databricks</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>725</xmin>
-      <ymin>336</ymin>
-      <xmax>825</xmax>
-      <ymax>436</ymax>
+      <xmin>3011</xmin>
+      <ymin>832</ymin>
+      <xmax>3111</xmax>
+      <ymax>932</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_synapse_analytics</name>
+    <name>aws_simple_storage_service_object</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>488</xmin>
-      <ymin>828</ymin>
-      <xmax>590</xmax>
-      <ymax>930</ymax>
+      <xmin>595</xmin>
+      <ymin>1555</ymin>
+      <xmax>661</xmax>
+      <ymax>1621</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_simple_queue_service</name>
+    <name>gcp_vertex_ai</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>252</xmin>
-      <ymin>437</ymin>
-      <xmax>318</xmax>
-      <ymax>503</ymax>
+      <xmin>481</xmin>
+      <ymin>907</ymin>
+      <xmax>547</xmax>
+      <ymax>973</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_route_53_hosted_zone</name>
+    <name>aws_ec2_instances</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>497</xmin>
-      <ymin>438</ymin>
-      <xmax>595</xmax>
-      <ymax>536</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_cloudwatch</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>518</xmin>
-      <ymin>549</ymin>
-      <xmax>586</xmax>
-      <ymax>617</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_cloudformation</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>761</xmin>
-      <ymin>780</ymin>
-      <xmax>829</xmax>
-      <ymax>848</ymax>
+      <xmin>1331</xmin>
+      <ymin>579</ymin>
+      <xmax>1397</xmax>
+      <ymax>645</ymax>
     </bndbox>
   </object>
 </annotation>

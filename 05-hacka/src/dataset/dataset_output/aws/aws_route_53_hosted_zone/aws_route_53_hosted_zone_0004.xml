@@ -3,8 +3,8 @@
   <folder>aws_route_53_hosted_zone</folder>
   <filename>aws_route_53_hosted_zone_0004.png</filename>
   <size>
-    <width>4238</width>
-    <height>2878</height>
+    <width>1535</width>
+    <height>1083</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,46 +14,22 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1790</xmin>
-      <ymin>2262</ymin>
-      <xmax>1856</xmax>
-      <ymax>2328</ymax>
+      <xmin>154</xmin>
+      <ymin>386</ymin>
+      <xmax>286</xmax>
+      <ymax>518</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_virtual_private_cloud</name>
+    <name>aws_vpc_virtual_private_cloud_vpc</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>886</xmin>
-      <ymin>2016</ymin>
-      <xmax>956</xmax>
-      <ymax>2086</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>gcp_bigquery</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>3350</xmin>
-      <ymin>2182</ymin>
-      <xmax>3454</xmax>
-      <ymax>2286</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_elastic_container_service_service</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>2610</xmin>
-      <ymin>2378</ymin>
-      <xmax>2740</xmax>
-      <ymax>2508</ymax>
+      <xmin>932</xmin>
+      <ymin>382</ymin>
+      <xmax>998</xmax>
+      <ymax>448</ymax>
     </bndbox>
   </object>
   <object>
@@ -62,58 +38,58 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>513</xmin>
-      <ymin>1215</ymin>
-      <xmax>581</xmax>
-      <ymax>1283</ymax>
+      <xmin>568</xmin>
+      <ymin>660</ymin>
+      <xmax>634</xmax>
+      <ymax>726</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_cloud_sql</name>
+    <name>azure_network_security_groups</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3145</xmin>
-      <ymin>1255</ymin>
-      <xmax>3275</xmax>
-      <ymax>1385</ymax>
+      <xmin>1290</xmin>
+      <ymin>553</ymin>
+      <xmax>1358</xmax>
+      <ymax>621</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_compute_engine</name>
+    <name>gcp_cloud_run</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3589</xmin>
-      <ymin>563</ymin>
-      <xmax>3655</xmax>
-      <ymax>629</ymax>
+      <xmin>1232</xmin>
+      <ymin>367</ymin>
+      <xmax>1368</xmax>
+      <ymax>503</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_bucket</name>
+    <name>azure_virtual_machine</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>700</xmin>
-      <ymin>661</ymin>
-      <xmax>800</xmax>
-      <ymax>761</ymax>
+      <xmin>1003</xmin>
+      <ymin>246</ymin>
+      <xmax>1073</xmax>
+      <ymax>316</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_vertex_ai</name>
+    <name>aws_key_management_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1784</xmin>
-      <ymin>1883</ymin>
-      <xmax>1882</xmax>
-      <ymax>1981</ymax>
+      <xmin>946</xmin>
+      <ymin>826</ymin>
+      <xmax>1084</xmax>
+      <ymax>964</ymax>
     </bndbox>
   </object>
   <object>
@@ -122,82 +98,46 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1922</xmin>
-      <ymin>762</ymin>
-      <xmax>2022</xmax>
-      <ymax>862</ymax>
+      <xmin>476</xmin>
+      <ymin>114</ymin>
+      <xmax>612</xmax>
+      <ymax>250</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_kubernetes_services</name>
+    <name>gcp_bigquery</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1397</xmin>
-      <ymin>2287</ymin>
-      <xmax>1467</xmax>
-      <ymax>2357</ymax>
+      <xmin>699</xmin>
+      <ymin>816</ymin>
+      <xmax>837</xmax>
+      <ymax>954</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_sql_managed_instance</name>
+    <name>aws_amazon_api_gateway</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1478</xmin>
-      <ymin>1870</ymin>
-      <xmax>1580</xmax>
-      <ymax>1972</ymax>
+      <xmin>236</xmin>
+      <ymin>132</ymin>
+      <xmax>304</xmax>
+      <ymax>200</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_container_service_container_2</name>
+    <name>aws_identity_access_management_role</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>801</xmin>
-      <ymin>1651</ymin>
-      <xmax>905</xmax>
-      <ymax>1755</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_machine_learning_studio_workspaces</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>3185</xmin>
-      <ymin>1808</ymin>
-      <xmax>3283</xmax>
-      <ymax>1906</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_elastic_block_store_volume</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1613</xmin>
-      <ymin>988</ymin>
-      <xmax>1713</xmax>
-      <ymax>1088</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_cloudformation_template</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1516</xmin>
-      <ymin>334</ymin>
-      <xmax>1648</xmax>
-      <ymax>466</ymax>
+      <xmin>294</xmin>
+      <ymin>640</ymin>
+      <xmax>394</xmax>
+      <ymax>740</ymax>
     </bndbox>
   </object>
 </annotation>

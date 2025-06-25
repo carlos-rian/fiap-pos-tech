@@ -10,7 +10,6 @@ Author: Generated for FIAP Pos-Tech Hackathon
 
 import multiprocessing as mp
 import random
-import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
@@ -253,9 +252,6 @@ def main() -> None:
     print("--- Starting Dataset Generation (Parallel Processing) ---")
     print(f"Using {NUM_WORKERS} worker processes")
 
-    if OUTPUT_DIR.exists():
-        print(f"Cleaning existing output directory: {OUTPUT_DIR}")
-        shutil.rmtree(OUTPUT_DIR)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     icon_paths = filter_images_with_relevance(ICON_DIR)

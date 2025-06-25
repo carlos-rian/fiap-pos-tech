@@ -3,8 +3,8 @@
   <folder>aws_elastic_load_balancing_application_load_balancer</folder>
   <filename>aws_elastic_load_balancing_application_load_balancer_0000.png</filename>
   <size>
-    <width>6150</width>
-    <height>3210</height>
+    <width>1323</width>
+    <height>882</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,106 +14,106 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>4302</xmin>
-      <ymin>836</ymin>
-      <xmax>4370</xmax>
-      <ymax>904</ymax>
+      <xmin>179</xmin>
+      <ymin>125</ymin>
+      <xmax>317</xmax>
+      <ymax>263</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_aurora_amazon_rds_instance</name>
+    <name>azure_virtual_machine</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1226</xmin>
-      <ymin>1117</ymin>
-      <xmax>1324</xmax>
-      <ymax>1215</ymax>
+      <xmin>355</xmin>
+      <ymin>272</ymin>
+      <xmax>453</xmax>
+      <ymax>370</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_simple_storage_service</name>
+    <name>azure_machine_learning_studio_workspaces</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1469</xmin>
-      <ymin>2497</ymin>
-      <xmax>1571</xmax>
-      <ymax>2599</ymax>
+      <xmin>170</xmin>
+      <ymin>271</ymin>
+      <xmax>300</xmax>
+      <ymax>401</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_bucket_with_objects</name>
+    <name>aws_lambda_lambda_function</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>4190</xmin>
-      <ymin>2684</ymin>
-      <xmax>4290</xmax>
-      <ymax>2784</ymax>
+      <xmin>361</xmin>
+      <ymin>120</ymin>
+      <xmax>495</xmax>
+      <ymax>254</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_cloud_run</name>
+    <name>aws_simple_notification_service_topic</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>4726</xmin>
-      <ymin>2262</ymin>
-      <xmax>4794</xmax>
-      <ymax>2330</ymax>
+      <xmin>804</xmin>
+      <ymin>478</ymin>
+      <xmax>942</xmax>
+      <ymax>616</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_container_instances</name>
+    <name>azure_cosmos_db</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>4241</xmin>
-      <ymin>990</ymin>
-      <xmax>4375</xmax>
-      <ymax>1124</ymax>
+      <xmin>1087</xmin>
+      <ymin>672</ymin>
+      <xmax>1157</xmax>
+      <ymax>742</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_object</name>
+    <name>aws_simple_queue_service_queue</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2760</xmin>
-      <ymin>1332</ymin>
-      <xmax>2858</xmax>
-      <ymax>1430</ymax>
+      <xmin>772</xmin>
+      <ymin>617</ymin>
+      <xmax>870</xmax>
+      <ymax>715</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_ec2_auto_scaling</name>
+    <name>azure_logic_apps</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2951</xmin>
-      <ymin>1645</ymin>
-      <xmax>3019</xmax>
-      <ymax>1713</ymax>
+      <xmin>214</xmin>
+      <ymin>453</ymin>
+      <xmax>314</xmax>
+      <ymax>553</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_cloud_sql</name>
+    <name>aws_cloudformation</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>4698</xmin>
-      <ymin>375</ymin>
-      <xmax>4768</xmax>
-      <ymax>445</ymax>
+      <xmin>446</xmin>
+      <ymin>548</ymin>
+      <xmax>512</xmax>
+      <ymax>614</ymax>
     </bndbox>
   </object>
 </annotation>

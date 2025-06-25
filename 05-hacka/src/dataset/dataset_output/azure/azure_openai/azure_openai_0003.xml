@@ -3,8 +3,8 @@
   <folder>azure_openai</folder>
   <filename>azure_openai_0003.png</filename>
   <size>
-    <width>4967</width>
-    <height>1913</height>
+    <width>1400</width>
+    <height>894</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,142 +14,94 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1622</xmin>
-      <ymin>1191</ymin>
-      <xmax>1758</xmax>
-      <ymax>1327</ymax>
+      <xmin>163</xmin>
+      <ymin>195</ymin>
+      <xmax>229</xmax>
+      <ymax>261</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_route_53</name>
+    <name>azure_api_management_services</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3470</xmin>
-      <ymin>1076</ymin>
-      <xmax>3572</xmax>
-      <ymax>1178</ymax>
+      <xmin>445</xmin>
+      <ymin>653</ymin>
+      <xmax>549</xmax>
+      <ymax>757</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_block_store_volume</name>
+    <name>aws_amazon_cloudwatch</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>806</xmin>
-      <ymin>1024</ymin>
-      <xmax>908</xmax>
-      <ymax>1126</ymax>
+      <xmin>238</xmin>
+      <ymin>694</ymin>
+      <xmax>342</xmax>
+      <ymax>798</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_compute_engine</name>
+    <name>gcp_pubsub</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1500</xmin>
-      <ymin>737</ymin>
-      <xmax>1600</xmax>
-      <ymax>837</ymax>
+      <xmin>1120</xmin>
+      <ymin>554</ymin>
+      <xmax>1188</xmax>
+      <ymax>622</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_container_service_container_2</name>
+    <name>gcp_vertex_ai</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>619</xmin>
-      <ymin>495</ymin>
-      <xmax>685</xmax>
-      <ymax>561</ymax>
+      <xmin>389</xmin>
+      <ymin>116</ymin>
+      <xmax>521</xmax>
+      <ymax>248</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_cloud_load_balancing</name>
+    <name>aws_amazon_dynamodb</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2140</xmin>
-      <ymin>1510</ymin>
-      <xmax>2242</xmax>
-      <ymax>1612</ymax>
+      <xmin>644</xmin>
+      <ymin>315</ymin>
+      <xmax>742</xmax>
+      <ymax>413</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_machine_learning</name>
+    <name>azure_vm_scale_sets</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3802</xmin>
-      <ymin>237</ymin>
-      <xmax>3904</xmax>
-      <ymax>339</ymax>
+      <xmin>423</xmin>
+      <ymin>509</ymin>
+      <xmax>525</xmax>
+      <ymax>611</ymax>
     </bndbox>
   </object>
   <object>
-    <name>gcp_identity_and_access_management</name>
+    <name>aws_elastic_load_balancing</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1157</xmin>
-      <ymin>709</ymin>
-      <xmax>1287</xmax>
-      <ymax>839</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_elastic_load_balancing_network_load_balancer</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>3448</xmin>
-      <ymin>681</ymin>
-      <xmax>3586</xmax>
-      <ymax>819</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_simple_queue_service_queue</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>4141</xmin>
-      <ymin>655</ymin>
-      <xmax>4241</xmax>
-      <ymax>755</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_elastic_load_balancing_application_load_balancer</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1883</xmin>
-      <ymin>1469</ymin>
-      <xmax>1951</xmax>
-      <ymax>1537</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_simple_storage_service_bucket_with_objects</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>4010</xmin>
-      <ymin>1099</ymin>
-      <xmax>4110</xmax>
-      <ymax>1199</ymax>
+      <xmin>865</xmin>
+      <ymin>352</ymin>
+      <xmax>931</xmax>
+      <ymax>418</ymax>
     </bndbox>
   </object>
 </annotation>

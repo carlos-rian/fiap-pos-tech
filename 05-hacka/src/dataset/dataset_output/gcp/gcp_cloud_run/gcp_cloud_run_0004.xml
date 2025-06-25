@@ -3,8 +3,8 @@
   <folder>gcp_cloud_run</folder>
   <filename>gcp_cloud_run_0004.png</filename>
   <size>
-    <width>1541</width>
-    <height>1027</height>
+    <width>2664</width>
+    <height>1776</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -14,70 +14,22 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>468</xmin>
-      <ymin>105</ymin>
-      <xmax>606</xmax>
-      <ymax>243</ymax>
+      <xmin>2267</xmin>
+      <ymin>232</ymin>
+      <xmax>2371</xmax>
+      <ymax>336</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_application_insights</name>
+    <name>aws_amazon_redshift</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>183</xmin>
-      <ymin>591</ymin>
-      <xmax>287</xmax>
-      <ymax>695</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_logic_apps</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>967</xmin>
-      <ymin>330</ymin>
-      <xmax>1099</xmax>
-      <ymax>462</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_elastic_load_balancing_network_load_balancer</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1224</xmin>
-      <ymin>756</ymin>
-      <xmax>1364</xmax>
-      <ymax>896</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_openai</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>977</xmin>
-      <ymin>122</ymin>
-      <xmax>1115</xmax>
-      <ymax>260</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>aws_amazon_elastic_kubernetes_service</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1254</xmin>
-      <ymin>179</ymin>
-      <xmax>1324</xmax>
-      <ymax>249</ymax>
+      <xmin>540</xmin>
+      <ymin>1011</ymin>
+      <xmax>642</xmax>
+      <ymax>1113</ymax>
     </bndbox>
   </object>
   <object>
@@ -86,58 +38,94 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>465</xmin>
-      <ymin>720</ymin>
-      <xmax>599</xmax>
-      <ymax>854</ymax>
+      <xmin>1233</xmin>
+      <ymin>680</ymin>
+      <xmax>1301</xmax>
+      <ymax>748</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_amazon_cloudfront</name>
+    <name>azure_function_apps</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1230</xmin>
-      <ymin>341</ymin>
-      <xmax>1362</xmax>
-      <ymax>473</ymax>
+      <xmin>524</xmin>
+      <ymin>251</ymin>
+      <xmax>590</xmax>
+      <ymax>317</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_object</name>
+    <name>gcp_compute_engine</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>477</xmin>
-      <ymin>382</ymin>
-      <xmax>579</xmax>
-      <ymax>484</ymax>
+      <xmin>811</xmin>
+      <ymin>976</ymin>
+      <xmax>881</xmax>
+      <ymax>1046</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_event_hubs</name>
+    <name>aws_elastic_block_store_volume</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>996</xmin>
-      <ymin>811</ymin>
-      <xmax>1062</xmax>
-      <ymax>877</ymax>
+      <xmin>1289</xmin>
+      <ymin>992</ymin>
+      <xmax>1357</xmax>
+      <ymax>1060</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_devops</name>
+    <name>azure_machine_learning_studio_workspaces</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>771</xmin>
-      <ymin>433</ymin>
-      <xmax>839</xmax>
-      <ymax>501</ymax>
+      <xmin>851</xmin>
+      <ymin>1486</ymin>
+      <xmax>921</xmax>
+      <ymax>1556</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_elastic_container_service_service</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>732</xmin>
+      <ymin>737</ymin>
+      <xmax>864</xmax>
+      <ymax>869</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_sql_database</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1632</xmin>
+      <ymin>927</ymin>
+      <xmax>1702</xmax>
+      <ymax>997</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>gcp_pubsub</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1293</xmin>
+      <ymin>280</ymin>
+      <xmax>1359</xmax>
+      <ymax>346</ymax>
     </bndbox>
   </object>
 </annotation>

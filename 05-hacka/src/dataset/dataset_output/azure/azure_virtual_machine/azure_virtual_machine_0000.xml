@@ -14,70 +14,34 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3538</xmin>
-      <ymin>2377</ymin>
-      <xmax>3642</xmax>
-      <ymax>2481</ymax>
+      <xmin>3432</xmin>
+      <ymin>2173</ymin>
+      <xmax>3498</xmax>
+      <ymax>2239</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_event_hubs</name>
+    <name>gcp_vertex_ai</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>618</xmin>
-      <ymin>948</ymin>
-      <xmax>754</xmax>
-      <ymax>1084</ymax>
+      <xmin>1439</xmin>
+      <ymin>1113</ymin>
+      <xmax>1539</xmax>
+      <ymax>1213</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_app_services</name>
+    <name>gcp_cloud_run</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2171</xmin>
-      <ymin>1050</ymin>
-      <xmax>2271</xmax>
-      <ymax>1150</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_vm_scale_sets</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1354</xmin>
-      <ymin>1548</ymin>
-      <xmax>1484</xmax>
-      <ymax>1678</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_api_management_services</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1811</xmin>
-      <ymin>2488</ymin>
-      <xmax>1909</xmax>
-      <ymax>2586</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>azure_monitor</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>446</xmin>
-      <ymin>358</ymin>
-      <xmax>516</xmax>
-      <ymax>428</ymax>
+      <xmin>1436</xmin>
+      <ymin>638</ymin>
+      <xmax>1538</xmax>
+      <ymax>740</ymax>
     </bndbox>
   </object>
   <object>
@@ -86,70 +50,142 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>3660</xmin>
-      <ymin>1598</ymin>
-      <xmax>3728</xmax>
-      <ymax>1666</ymax>
+      <xmin>814</xmin>
+      <ymin>1639</ymin>
+      <xmax>950</xmax>
+      <ymax>1775</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_simple_storage_service_s3_standard</name>
+    <name>aws_amazon_simple_notification_service</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>600</xmin>
-      <ymin>1786</ymin>
-      <xmax>668</xmax>
-      <ymax>1854</ymax>
+      <xmin>2744</xmin>
+      <ymin>655</ymin>
+      <xmax>2874</xmax>
+      <ymax>785</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_kubernetes_services</name>
+    <name>azure_logic_apps</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2839</xmin>
-      <ymin>406</ymin>
-      <xmax>2941</xmax>
-      <ymax>508</ymax>
+      <xmin>3663</xmin>
+      <ymin>1524</ymin>
+      <xmax>3761</xmax>
+      <ymax>1622</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_auto_scaling</name>
+    <name>azure_function_apps</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>1246</xmin>
-      <ymin>677</ymin>
-      <xmax>1384</xmax>
-      <ymax>815</ymax>
+      <xmin>1501</xmin>
+      <ymin>1719</ymin>
+      <xmax>1605</xmax>
+      <ymax>1823</ymax>
     </bndbox>
   </object>
   <object>
-    <name>azure_machine_learning</name>
+    <name>aws_lambda</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2966</xmin>
-      <ymin>1213</ymin>
-      <xmax>3104</xmax>
-      <ymax>1351</ymax>
+      <xmin>2582</xmin>
+      <ymin>2065</ymin>
+      <xmax>2720</xmax>
+      <ymax>2203</ymax>
     </bndbox>
   </object>
   <object>
-    <name>aws_elastic_container_service_service</name>
+    <name>azure_sql_server</name>
     <pose>Unspecified</pose>
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>2253</xmin>
-      <ymin>507</ymin>
-      <xmax>2319</xmax>
-      <ymax>573</ymax>
+      <xmin>466</xmin>
+      <ymin>706</ymin>
+      <xmax>598</xmax>
+      <ymax>838</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_key_management_service</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>502</xmin>
+      <ymin>1082</ymin>
+      <xmax>638</xmax>
+      <ymax>1218</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>gcp_pubsub</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>3233</xmin>
+      <ymin>388</ymin>
+      <xmax>3337</xmax>
+      <ymax>492</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_amazon_cloudwatch</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>2314</xmin>
+      <ymin>1342</ymin>
+      <xmax>2384</xmax>
+      <ymax>1412</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_load_balancers</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>3519</xmin>
+      <ymin>927</ymin>
+      <xmax>3585</xmax>
+      <ymax>993</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>azure_container_instances</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>1910</xmin>
+      <ymin>1741</ymin>
+      <xmax>2008</xmax>
+      <ymax>1839</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>aws_amazon_elasticache</name>
+    <pose>Unspecified</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <bndbox>
+      <xmin>913</xmin>
+      <ymin>2124</ymin>
+      <xmax>1043</xmax>
+      <ymax>2254</ymax>
     </bndbox>
   </object>
 </annotation>
