@@ -1,0 +1,318 @@
+{
+    "predictions": [
+        {
+            "confidence": 0.9965779185295105,
+            "displayName": "aws_key_management_service",
+            "boundingBox": {
+                "xMin": 0.8317580223083496,
+                "yMin": 0.33524003624916077,
+                "xMax": 0.902085542678833,
+                "yMax": 0.4215233027935028
+            }
+        },
+        {
+            "confidence": 0.9937173128128052,
+            "displayName": "aws_autoscaling",
+            "boundingBox": {
+                "xMin": 0.6655207276344299,
+                "yMin": 0.7038930058479309,
+                "xMax": 0.6960285305976868,
+                "yMax": 0.7425628304481506
+            }
+        },
+        {
+            "confidence": 0.9931596517562866,
+            "displayName": "aws_private_subnet",
+            "boundingBox": {
+                "xMin": 0.5878815054893494,
+                "yMin": 0.45020660758018494,
+                "xMax": 0.6196228265762329,
+                "yMax": 0.49185454845428467
+            }
+        },
+        {
+            "confidence": 0.9930211901664734,
+            "displayName": "aws_private_subnet",
+            "boundingBox": {
+                "xMin": 0.09808021038770676,
+                "yMin": 0.449825644493103,
+                "xMax": 0.13063260912895203,
+                "yMax": 0.4896988570690155
+            }
+        },
+        {
+            "confidence": 0.9918875098228455,
+            "displayName": "aws_public_subnet",
+            "boundingBox": {
+                "xMin": 0.3331388831138611,
+                "yMin": 0.3032677471637726,
+                "xMax": 0.3648566007614136,
+                "yMax": 0.34402135014533997
+            }
+        },
+        {
+            "confidence": 0.9909658432006836,
+            "displayName": "aws_public_subnet",
+            "boundingBox": {
+                "xMin": 0.5877828001976013,
+                "yMin": 0.30386707186698914,
+                "xMax": 0.6193789839744568,
+                "yMax": 0.3441872000694275
+            }
+        },
+        {
+            "confidence": 0.9909465312957764,
+            "displayName": "aws_application_load_balancer",
+            "boundingBox": {
+                "xMin": 0.16600888967514038,
+                "yMin": 0.35106971859931946,
+                "xMax": 0.2176753282546997,
+                "yMax": 0.40875738859176636
+            }
+        },
+        {
+            "confidence": 0.9906501770019531,
+            "displayName": "aws_autoscaling",
+            "boundingBox": {
+                "xMin": 0.42586979269981384,
+                "yMin": 0.4931009113788605,
+                "xMax": 0.4578048884868622,
+                "yMax": 0.5325177311897278
+            }
+        },
+        {
+            "confidence": 0.9894546270370483,
+            "displayName": "aws_private_subnet",
+            "boundingBox": {
+                "xMin": 0.333412766456604,
+                "yMin": 0.4502171277999878,
+                "xMax": 0.3652185797691345,
+                "yMax": 0.4907618761062622
+            }
+        },
+        {
+            "confidence": 0.9891214966773987,
+            "displayName": "aws_application_load_balancer",
+            "boundingBox": {
+                "xMin": 0.6596834063529968,
+                "yMin": 0.34769612550735474,
+                "xMax": 0.7115578651428223,
+                "yMax": 0.4055159091949463
+            }
+        },
+        {
+            "confidence": 0.9887506365776062,
+            "displayName": "aws_application_load_balancer",
+            "boundingBox": {
+                "xMin": 0.41013413667678833,
+                "yMin": 0.3476608395576477,
+                "xMax": 0.4612524211406708,
+                "yMax": 0.4060109853744507
+            }
+        },
+        {
+            "confidence": 0.987874448299408,
+            "displayName": "aws_public_subnet",
+            "boundingBox": {
+                "xMin": 0.09741925448179245,
+                "yMin": 0.3087000548839569,
+                "xMax": 0.13148100674152374,
+                "yMax": 0.35083362460136414
+            }
+        },
+        {
+            "confidence": 0.9858019948005676,
+            "displayName": "aws_rds",
+            "boundingBox": {
+                "xMin": 0.3445753753185272,
+                "yMin": 0.7769173383712769,
+                "xMax": 0.4148830771446228,
+                "yMax": 0.8568784594535828
+            }
+        },
+        {
+            "confidence": 0.9814738631248474,
+            "displayName": "aws_rds",
+            "boundingBox": {
+                "xMin": 0.20433944463729858,
+                "yMin": 0.7761802077293396,
+                "xMax": 0.2754520773887634,
+                "yMax": 0.8567332029342651
+            }
+        },
+        {
+            "confidence": 0.9714832305908203,
+            "displayName": "aws_cloudwatch",
+            "boundingBox": {
+                "xMin": 0.8328395485877991,
+                "yMin": 0.6350476145744324,
+                "xMax": 0.9004666805267334,
+                "yMax": 0.7194215059280396
+            }
+        },
+        {
+            "confidence": 0.9664729237556458,
+            "displayName": "aws_elasticache",
+            "boundingBox": {
+                "xMin": 0.45985355973243713,
+                "yMin": 0.7771368622779846,
+                "xMax": 0.5292432308197021,
+                "yMax": 0.8623138070106506
+            }
+        },
+        {
+            "confidence": 0.9628435373306274,
+            "displayName": "user",
+            "boundingBox": {
+                "xMin": 0.09100872278213501,
+                "yMin": 0.02324536070227623,
+                "xMax": 0.152025505900383,
+                "yMax": 0.08468380570411682
+            }
+        },
+        {
+            "confidence": 0.9586482048034668,
+            "displayName": "aws_virtual_private_cloud",
+            "boundingBox": {
+                "xMin": 0.07654246687889099,
+                "yMin": 0.22506310045719147,
+                "xMax": 0.10992631316184998,
+                "yMax": 0.26559028029441833
+            }
+        },
+        {
+            "confidence": 0.9569680690765381,
+            "displayName": "aws_region",
+            "boundingBox": {
+                "xMin": 0.051020193845033646,
+                "yMin": 0.16694115102291107,
+                "xMax": 0.08595070987939835,
+                "yMax": 0.20861253142356873
+            }
+        },
+        {
+            "confidence": 0.9535274505615234,
+            "displayName": "aws_cloud_trail",
+            "boundingBox": {
+                "xMin": 0.8330718278884888,
+                "yMin": 0.19517813622951508,
+                "xMax": 0.9009667038917542,
+                "yMax": 0.28123635053634644
+            }
+        },
+        {
+            "confidence": 0.9520869851112366,
+            "displayName": "aws_simple_email_service",
+            "boundingBox": {
+                "xMin": 0.8323962092399597,
+                "yMin": 0.7892341613769531,
+                "xMax": 0.9021193981170654,
+                "yMax": 0.876004159450531
+            }
+        },
+        {
+            "confidence": 0.9455763697624207,
+            "displayName": "aws_cloud",
+            "boundingBox": {
+                "xMin": 0.03815460205078125,
+                "yMin": 0.12526953220367432,
+                "xMax": 0.07295843213796616,
+                "yMax": 0.16282039880752563
+            }
+        },
+        {
+            "confidence": 0.9455042481422424,
+            "displayName": "sei/sip",
+            "boundingBox": {
+                "xMin": 0.15176977217197418,
+                "yMin": 0.5628952980041504,
+                "xMax": 0.225664883852005,
+                "yMax": 0.6514678597450256
+            }
+        },
+        {
+            "confidence": 0.942275881767273,
+            "displayName": "aws_public_subnet",
+            "boundingBox": {
+                "xMin": 0.3195632994174957,
+                "yMin": 0.011673578061163425,
+                "xMax": 0.38984644412994385,
+                "yMax": 0.10076815634965897
+            }
+        },
+        {
+            "confidence": 0.939552366733551,
+            "displayName": "aws_cloudfront",
+            "boundingBox": {
+                "xMin": 0.42334166169166565,
+                "yMin": 0.013662532903254032,
+                "xMax": 0.4929858148097992,
+                "yMax": 0.09981320798397064
+            }
+        },
+        {
+            "confidence": 0.9339786767959595,
+            "displayName": "sei/sip",
+            "boundingBox": {
+                "xMin": 0.6493256092071533,
+                "yMin": 0.5667480230331421,
+                "xMax": 0.7221769094467163,
+                "yMax": 0.65609210729599
+            }
+        },
+        {
+            "confidence": 0.926963210105896,
+            "displayName": "sei/sip",
+            "boundingBox": {
+                "xMin": 0.40396082401275635,
+                "yMin": 0.5671023726463318,
+                "xMax": 0.4773107171058655,
+                "yMax": 0.6557289361953735
+            }
+        },
+        {
+            "confidence": 0.919013261795044,
+            "displayName": "aws_waf",
+            "boundingBox": {
+                "xMin": 0.5488142967224121,
+                "yMin": 0.010211539454758167,
+                "xMax": 0.6237285137176514,
+                "yMax": 0.10176295787096024
+            }
+        },
+        {
+            "confidence": 0.8897386193275452,
+            "displayName": "aws_elactic_file_system(nfs)_multi-az",
+            "boundingBox": {
+                "xMin": 0.11056343466043472,
+                "yMin": 0.7748514413833618,
+                "xMax": 0.17995813488960266,
+                "yMax": 0.8603495955467224
+            }
+        },
+        {
+            "confidence": 0.8691326975822449,
+            "displayName": "aws_backup",
+            "boundingBox": {
+                "xMin": 0.8337094187736511,
+                "yMin": 0.49835455417633057,
+                "xMax": 0.9008968472480774,
+                "yMax": 0.5849528908729553
+            }
+        },
+        {
+            "confidence": 0.8171359300613403,
+            "displayName": "solr",
+            "boundingBox": {
+                "xMin": 0.6480870842933655,
+                "yMin": 0.775723934173584,
+                "xMax": 0.7180673480033875,
+                "yMax": 0.8592186570167542
+            }
+        }
+    ],
+    "modelInfo": {
+        "type": "local_pytorch",
+        "model_path": "/Users/carlosrian/Repos/fiap-pos-tech/05-hacka/src/models/soft-arch_epoch-7_202506251807.pth"
+    }
+}

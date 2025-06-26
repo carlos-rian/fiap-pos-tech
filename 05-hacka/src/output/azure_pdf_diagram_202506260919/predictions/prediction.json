@@ -1,0 +1,118 @@
+{
+    "predictions": [
+        {
+            "confidence": 0.9974173307418823,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.32278090715408325,
+                "yMin": 0.3541356027126312,
+                "xMax": 0.3988149166107178,
+                "yMax": 0.45882388949394226
+            }
+        },
+        {
+            "confidence": 0.9964765906333923,
+            "displayName": "resource_group",
+            "boundingBox": {
+                "xMin": 0.23486176133155823,
+                "yMin": 0.8450517058372498,
+                "xMax": 0.2764390707015991,
+                "yMax": 0.9036356806755066
+            }
+        },
+        {
+            "confidence": 0.996142566204071,
+            "displayName": "microsoft_entra",
+            "boundingBox": {
+                "xMin": 0.0416049025952816,
+                "yMin": 0.044343095272779465,
+                "xMax": 0.12493661791086197,
+                "yMax": 0.15018868446350098
+            }
+        },
+        {
+            "confidence": 0.9955346584320068,
+            "displayName": "user",
+            "boundingBox": {
+                "xMin": 0.04888045787811279,
+                "yMin": 0.6186684370040894,
+                "xMax": 0.12788057327270508,
+                "yMax": 0.7486319541931152
+            }
+        },
+        {
+            "confidence": 0.9951908588409424,
+            "displayName": "resource_group",
+            "boundingBox": {
+                "xMin": 0.05558791011571884,
+                "yMin": 0.356122225522995,
+                "xMax": 0.12478824704885483,
+                "yMax": 0.45510774850845337
+            }
+        },
+        {
+            "confidence": 0.994733452796936,
+            "displayName": "sass_services",
+            "boundingBox": {
+                "xMin": 0.8579509258270264,
+                "yMin": 0.4368157982826233,
+                "xMax": 0.9408521056175232,
+                "yMax": 0.5284186601638794
+            }
+        },
+        {
+            "confidence": 0.9946244359016418,
+            "displayName": "azure_services",
+            "boundingBox": {
+                "xMin": 0.8515100479125977,
+                "yMin": 0.2436590939760208,
+                "xMax": 0.9501747488975525,
+                "yMax": 0.3565579950809479
+            }
+        },
+        {
+            "confidence": 0.9946138262748718,
+            "displayName": "developer_portal",
+            "boundingBox": {
+                "xMin": 0.31794223189353943,
+                "yMin": 0.6313782930374146,
+                "xMax": 0.3989647328853607,
+                "yMax": 0.7260726690292358
+            }
+        },
+        {
+            "confidence": 0.9919330477714539,
+            "displayName": "api",
+            "boundingBox": {
+                "xMin": 0.8725820183753967,
+                "yMin": 0.8170274496078491,
+                "xMax": 0.9352066516876221,
+                "yMax": 0.9333188533782959
+            }
+        },
+        {
+            "confidence": 0.9913768768310547,
+            "displayName": "api",
+            "boundingBox": {
+                "xMin": 0.87176513671875,
+                "yMin": 0.6481417417526245,
+                "xMax": 0.9335461854934692,
+                "yMax": 0.7585904002189636
+            }
+        },
+        {
+            "confidence": 0.9789956212043762,
+            "displayName": "logic_apps",
+            "boundingBox": {
+                "xMin": 0.5656786561012268,
+                "yMin": 0.35688963532447815,
+                "xMax": 0.6265391707420349,
+                "yMax": 0.44761258363723755
+            }
+        }
+    ],
+    "modelInfo": {
+        "type": "local_pytorch",
+        "model_path": "/Users/carlosrian/Repos/fiap-pos-tech/05-hacka/src/models/soft-arch_epoch-7_202506251807.pth"
+    }
+}
