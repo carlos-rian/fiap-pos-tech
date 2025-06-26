@@ -14,8 +14,8 @@ from src.generative_ai.chatgpt import generate_stride_analysis
 
 BASE_PATH = Path(__file__).resolve().parent
 
-IMAGES_PATH_FOR_TEST = (BASE_PATH / "dataset/test/").glob("*.png")
-MODEL_PATH = BASE_PATH / "models/soft-arch_epoch-5_202506241703.pth"
+IMAGES_PATH_FOR_TEST = (BASE_PATH / "dataset/software-arch-image-for-test/").glob("*.png")
+MODEL_PATH = BASE_PATH / "models/soft-arch_epoch-7_202506251807.pth"
 DATASET_PATH = BASE_PATH / "dataset/dataset_augmented"
 BASE_OUTPUT_PATH = BASE_PATH / "output"
 
@@ -25,7 +25,7 @@ for image_path in IMAGES_PATH_FOR_TEST:
         raise FileNotFoundError(f"Image file {image_path} does not exist.")
 
     folder = datetime.now().strftime("%Y%m%d%H%M")
-    base_path = BASE_OUTPUT_PATH / folder
+    base_path = BASE_OUTPUT_PATH / f"{folder}_{image_path.stem}"
     base_path.mkdir(parents=True, exist_ok=True)
     prediction = run_prediction(
         image_path=image_path, model_path=MODEL_PATH, dataset_path=DATASET_PATH, base_path=base_path, save_json=True, save_image=True
