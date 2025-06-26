@@ -3,19 +3,20 @@
 ## Overview
 This project is a solution developed for the FIAP POS Tech Hackathon, focused on processing, augmentation, and analysis of image datasets, as well as integration with generative AI models and training of custom models.
 
-## Warnings (Files/Directories not available) - Make sure to download them before running the project
-- **src/dataset/dataset_augmented/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Download the dataset from the [Software Architecture Dataset](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset) provided by the project team.
-- **src/models/**: The model trained in this project is not publicly available, because it is too large to upload to GitHub. Download the model from the [software-architecture-faster-crnn-cloud-object-detection](https://www.kaggle.com/models/carlosrian/software-architecture-faster-crnn-cloud-object-detection) provided by the project team.
+## Make sure to download them before running the project
+- [Software Architecture Dataset](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset): Download the dataset `dataset_augmented` folder from Kaggle and save it in the `src/dataset/` folder. The dataset is large (over 30GB) and contains images and XML files for training.
+- [Software Arch Faster C-RNN Cloud Object Detection](https://www.kaggle.com/models/carlosrian/software-architecture-faster-crnn-cloud-object-detection):  Download the trained model `soft-arch_epoch-7_202506251807.pth` file from Kaggle and save it in the `src/models/` folder. The model is a custom Faster R-CNN trained on the dataset, with a size of approximately 160MB.
 
-Note: The model was trained using just a small subset of the dataset, so it is not expected to work well with the full dataset. The model was trained to demonstrate the process of training and prediction using custom models.
+Note: The model was trained using just a `small subset of the dataset`, **so it is not expected to work well with the full dataset**. The model was trained to demonstrate the process of training and prediction using custom models.
 
 ## Kaggle Project Links
 
 This project is hosted on Kaggle and includes the following links for training, prediction, and dataset augmentation:
 
-- [Train](https://www.kaggle.com/code/carlosrian/train-model) 
-- [Predict](https://www.kaggle.com/code/carlosrian/predict-model)
-- [Augment Dataset](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset)
+- [Training *Code*](https://www.kaggle.com/code/carlosrian/soft-arch-predict-model) 
+- [Prediction *Code*](https://www.kaggle.com/code/carlosrian/soft-arch-train-model)
+- [Augmented *Dataset*](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset)
+- [Trained Model *Data Card*](https://www.kaggle.com/models/carlosrian/software-architecture-faster-crnn-cloud-object-detection)
 
 All images and XMLs used to train were saved in the `src/dataset/dataset_augmented/` folder and listed in the `dataset_output_image.csv` file.
 
