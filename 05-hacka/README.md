@@ -115,7 +115,7 @@ The project follows a structured workflow:
 
 ## Requirements
 - Python 3.12+
-- [uv](https://github.com/astral-sh/uv) for dependency management
+- UV (for dependency management)
 - PyTorch
 - OpenCV
 - Other dependencies listed in `pyproject.toml`
@@ -123,8 +123,8 @@ The project follows a structured workflow:
 ## Dataset and Model Access
 
 Due to size constraints, the dataset and trained model are not included in this repository. Request access from the project team using the following links:
-- [Dataset Google Drive link (+15GB)](https://drive.google.com/file/d/1lTQnRcJTHsUiRcrEUHENfaY8Tietpknp/view?usp=sharing) save the dataset in the `src/dataset/` folder.
-- [Model Google Drive link (+150MB)](https://drive.google.com/file/d/1sHd2LTZTBwic3TRDgF_e6AI5Pz_btvUA/view?usp=sharing) save the model in the `src/models/` folder.
+- [Dataset Kagle link (+30GB)](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset) save the dataset in the `src/dataset/` folder.
+- [Model Kagle link (+150MB)](https://www.kaggle.com/models/carlosrian/software-architecture-faster-crnn-cloud-object-detection) save the model in the `src/models/` folder.
 
 ## License
 [MIT](LICENSE)
