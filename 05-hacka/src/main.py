@@ -25,7 +25,7 @@ for image_path in IMAGES_PATH_FOR_TEST:
         raise FileNotFoundError(f"Image file {image_path} does not exist.")
 
     folder = datetime.now().strftime("%Y%m%d%H%M")
-    base_path = BASE_OUTPUT_PATH / f"{folder}_{image_path.stem}"
+    base_path = BASE_OUTPUT_PATH / f"{image_path.stem}_{folder}"
     base_path.mkdir(parents=True, exist_ok=True)
     prediction = run_prediction(
         image_path=image_path, model_path=MODEL_PATH, dataset_path=DATASET_PATH, base_path=base_path, save_json=True, save_image=True
