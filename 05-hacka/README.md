@@ -9,6 +9,14 @@ This project is a solution developed for the FIAP POS Tech Hackathon, focused on
 
 Note: The model was trained using just a small subset of the dataset, so it is not expected to work well with the full dataset. The model was trained to demonstrate the process of training and prediction using custom models.
 
+## Kaggle Project Links
+
+This project is hosted on Kaggle and includes the following links for training, prediction, and dataset augmentation:
+
+- [Train](https://www.kaggle.com/code/carlosrian/train-model) 
+- [Predict](https://www.kaggle.com/code/carlosrian/predict-model)
+- [Augment Dataset](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset)
+
 All images and XMLs used to train were saved in the `src/dataset/dataset_augmented/` folder and listed in the `dataset_output_image.csv` file.
 
 ## Project Structure
