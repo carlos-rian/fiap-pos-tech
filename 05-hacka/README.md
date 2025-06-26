@@ -4,8 +4,8 @@
 This project is a solution developed for the FIAP POS Tech Hackathon, focused on processing, augmentation, and analysis of image datasets, as well as integration with generative AI models and training of custom models.
 
 ## Warnings (Files/Directories not available) - Make sure to download them before running the project
-- **src/dataset/dataset_augmented/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Download the dataset from the [Google Drive link +15GB](https://drive.google.com/file/d/1lTQnRcJTHsUiRcrEUHENfaY8Tietpknp/view?usp=sharing) provided by the project team.
-- **src/models/**: The model trained in this project is not publicly available, because it is too large to upload to GitHub. Download the model from the [Google Drive link +150MB](https://drive.google.com/file/d/1sHd2LTZTBwic3TRDgF_e6AI5Pz_btvUA/view?usp=sharing) provided by the project team.
+- **src/dataset/dataset_augmented/**: The official dataset used in this project is not publicly available, because it is too large to upload to GitHub. Download the dataset from the [Software Architecture Dataset](https://www.kaggle.com/datasets/carlosrian/software-architecture-dataset) provided by the project team.
+- **src/models/**: The model trained in this project is not publicly available, because it is too large to upload to GitHub. Download the model from the [software-architecture-faster-crnn-cloud-object-detection](https://www.kaggle.com/models/carlosrian/software-architecture-faster-crnn-cloud-object-detection) provided by the project team.
 
 Note: The model was trained using just a small subset of the dataset, so it is not expected to work well with the full dataset. The model was trained to demonstrate the process of training and prediction using custom models.
 
