@@ -163,6 +163,14 @@ def load_class_map(dataset_path: Path) -> tuple[dict[int, str], int]:
     Returns:
         tuple[dict[int, str], int]: Tuple containing class mapping and number of classes.
     """
+    if not dataset_path.exists():
+        classes_path = dataset_path.parent / "classes.json"
+        with open(classes_path, "r", encoding="utf-8") as f:
+            class_map = json.load(f)
+        class_map = {int(k): str(v) for k, v in class_map.items()}
+        num_classes = len(class_map) + 1
+        return class_map, num_classes
+
     temp_dataset = PascalVOCDataset(root_dir=dataset_path)
     num_classes = len(temp_dataset.class_to_int) + 1
     class_map = temp_dataset.int_to_class
