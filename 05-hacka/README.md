@@ -447,13 +447,15 @@ This section shows the results of running the trained model on a custom image. T
 │   ├── dataset/
 │   │   ├── augment_dataset.py            # Data augmentation script
 │   │   ├── generate_dataset_output.py    # Dataset output generation
+│   │   ├── classes.json                  # Class definitions and mappings for object detection
 │   │   ├── dataset_augmented/            # Augmented images and annotations (PNG, XML)
 │   │   ├── dataset_base/                 # Base image dataset
+│   │   ├── dataset_others/               # Additional dataset files
 │   │   ├── dataset_output/               # Output from dataset processing
 │   │   ├── diagram_base/                 # Original diagrams
 │   │   ├── diagram_base_optimized/       # Optimized diagrams
-│   │   ├── scripts/                      # Auxiliary scripts
-│   │   └── test/                         # Dataset-related tests
+│   │   ├── scripts/                      # Shell scripts for data processing
+│   │   └── software-arch-image-for-test/ # Test images for model validation
 │   ├── finetunning/
 │   │   ├── predict.py      # Prediction script using trained model
 │   │   ├── train.py        # Model training script
@@ -475,12 +477,18 @@ This section shows the results of running the trained model on a custom image. T
 - **src/dataset/**: Scripts and data for handling, augmenting, and testing image datasets.
   - **augment_dataset.py**: Performs data augmentation on images.
   - **generate_dataset_output.py**: Generates processed dataset outputs.
+  - **classes.json**: Contains class definitions and mappings for object detection (113 classes including AWS, Azure, and other cloud services).
   - **dataset_augmented/**: Contains augmented images and their annotation files (e.g., .png, .xml).
   - **dataset_base/**: Original image dataset.
+  - **dataset_others/**: Additional dataset files and resources.
   - **dataset_output/**: Output from dataset processing.
   - **diagram_base/** and **diagram_base_optimized/**: Original and optimized diagrams.
-  - **scripts/**: Auxiliary scripts for data handling.
-  - **test/**: Test scripts for data validation.
+  - **scripts/**: Shell scripts for data processing including:
+    - Image optimization and resizing
+    - File format conversion (SVG to PNG)
+    - CSV manipulation and merging
+    - File renaming and organization
+  - **software-arch-image-for-test/**: Test images for model validation (AWS, Azure diagrams).
 - **src/finetunning/**: Scripts for training, prediction, and utilities for custom models.
   - **train.py**: Model training (e.g., PyTorch).
   - **predict.py**: Prediction using trained models.
@@ -528,6 +536,32 @@ The project follows a structured workflow:
    - [Generative AI integration](src/generative_ai/chatgpt.py): Integrates with ChatGPT for generating text based on image analysis, using the predictions made by the model.
 - **Output Generation**:
    - Outputs are generated in the `src/output/` directory, organized by date of execution.
+
+## Dataset Classes and Processing Scripts
+
+### Class Definitions
+The project includes a comprehensive `classes.json` file that defines 113 different classes for object detection, including:
+- **AWS Services**: API Gateway, CloudFront, CloudWatch, DynamoDB, EC2, RDS, S3, Lambda, and more
+- **Azure Services**: Virtual Machines, Kubernetes Services, Databricks, OpenAI, SQL, Cosmos DB, Data Factories
+- **General Components**: APIs, databases, load balancers, users, networks, and other architectural elements
+
+### Processing Scripts
+The `src/dataset/scripts/` directory contains various shell scripts for data processing:
+- **compare_folders.sh**: Compare contents between different folders
+- **merge_csvs.sh**: Merge multiple CSV files into one
+- **optimize_png_universal.sh**: Optimize PNG files for better performance
+- **rename_png_files.sh**: Batch rename PNG files
+- **rename_png_with_prefix.sh**: Add prefixes to PNG file names
+- **resize_png_for_pytorch.sh**: Resize images to PyTorch-compatible dimensions
+- **split_csv.sh**: Split large CSV files into smaller chunks
+- **svg_to_png.sh**: Convert SVG files to PNG format
+- **svg_to_pytorch_data.sh**: Convert SVG files to PyTorch-compatible data format
+
+### Test Images
+The `software-arch-image-for-test/` folder contains sample architecture diagrams for testing:
+- `aws_pdf_diagram.png`: AWS architecture diagram for testing
+- `azure_custom_diagram.png`: Custom Azure architecture diagram
+- `azure_pdf_diagram.png`: Azure PDF-derived architecture diagram
 
 ## Requirements
 - Python 3.12+
